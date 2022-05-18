@@ -1,0 +1,253 @@
+[
+  {
+    "name": "Setup",
+    "status": "A",
+    "order": 1,
+    "features": [
+      {
+        "name": "External System",
+        "resourceKey": "ExternalSystem",
+        "link": "/odd/setup/external-system",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "ExternalSystem"
+      },
+      {
+        "name": "Payee Company",
+        "resourceKey": "payee",
+        "link": "/odd/setup/payee",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "payee"
+      },
+      {
+        "name": "Payer Company",
+        "resourceKey": "Payer",
+        "link": "/odd/setup/payer",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "Payer"
+      },
+      {
+        "name": "External System - Entity Relationship",
+        "resourceKey": "External System - Entity Relationship",
+        "link": "/odd/setup/external-system-entity-relationship",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "external_system_entity_relationship"
+      },
+      {
+        "name": "Entity Relationship",
+        "resourceKey": "Entity Relationship",
+        "link": "/odd/setup/entity-relationship",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "entity_relationship"
+      }
+    ],
+    "featureId": "setup"
+  },
+  {
+    "name": "User Setup",
+    "status": "A",
+    "order": 2,
+    "features": [
+      {
+        "name": "Bank Admin",
+        "resourceKey": "BankAdmin",
+        "link": "/odd/user-setup/bank-admin",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "BankAdmin"
+      }
+    ],
+    "featureId": "authorization"
+  },
+  {
+    "name": "Transaction Fee Setup",
+    "status": "A",
+    "order": 3,
+    "features": [
+      {
+        "name": "Transaction Fee Setup",
+        "resourceKey": "TransactionFeeSetup",
+        "link": "/odd/user-setup/transaction-fee-setup",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "Transaction Fee Setup"
+      }
+    ],
+    "featureId": "transactionfeesetup"
+  },
+  {
+    "name": "Bank Setup",
+    "status": "A",
+    "order": 4,
+    "featureId": "bank_setup",
+    "features": [
+      {
+        "name": "Bank",
+        "resourceKey": "bank",
+        "link": "/odd/setup/banks",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "bank"
+      },
+      {
+        "name": "Receiving Account",
+        "resourceKey": "receiving_account",
+        "link": "/odd/setup/receiving-accounts",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 2,
+        "featureId": "receiving_account"
+      },
+      {
+        "name": "Payment Account",
+        "resourceKey": "payment",
+        "link": "/odd/setup/odd-accounts",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "bank"
+      }
+    ]
+  },
+  {
+    "name": "Group Setup",
+    "status": "A",
+    "order": 5,
+    "features": [
+      {
+        "name": "Group Setup",
+        "resourceKey": "access_group",
+        "link": "/odd/setup/access-group",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "AccessGroup"
+      }
+    ],
+    "featureId": "groupSetup"
+  },
+  {
+    "name": "Role Setup",
+    "status": "A",
+    "order": 6,
+    "features": [
+      {
+        "name": "Role Definition",
+        "resourceKey": "access_role_definition",
+        "link": "/odd/setup/access-role-definition",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "AccessRole"
+      },
+      {
+        "name": "Role Assignment",
+        "resourceKey": "access_role_assignment",
+        "link": "/odd/setup/access-role-assignment",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "AccessRole"
+      }
+    ],
+    "featureId": "roleSetup"
+  },
+  {
+    "name": "Audit Trail",
+    "status": "A",
+    "order": 7,
+    "features": [
+      {
+        "name": "User Activity Log",
+        "resourceKey": "user-activity-log",
+        "link": "/odd/setup/user-activity-log",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "AccessRole"
+      },
+      {
+        "name": "Transaction Log",
+        "resourceKey": "transaction-log",
+        "link": "/odd/setup/transaction-log",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "transactionId"
+      },
+      {
+        "name": "Web Services Log",
+        "resourceKey": "web-services-trans-log",
+        "link": "/odd/setup/web-services-trans-log",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "AccessRole"
+      }
+    ],
+    "featureId": "audittrial"
+  },
+  {
+    "name": "Reporting Engine",
+    "status": "A",
+    "order": 8,
+    "features": [
+      {
+        "name": "Fee Detail Report",
+        "resourceKey": "FeeDetailReport",
+        "link": "/odd/user-setup/fee-detail-report",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "FeeDetailReport"
+      }
+    ],
+    "featureId": "ReportingEngine"
+  },
+  {
+    "name": "Customer Support Unit",
+    "status": "A",
+    "order": 8,
+    "features": [
+      {
+        "name": "Payment Detail Search",
+        "resourceKey": "PaymentDetailSearch",
+        "link": "/odd/user-setup/payment-detail-search",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "PaymentDetailSearch"
+      }
+    ],
+    "featureId": "CustomerSupportUnit"
+  },
+  {
+    "name": "Supply Chain Unit",
+    "status": "A",
+    "order": 9,
+    "features": [
+      {
+        "name": "Supply Detail Search",
+        "resourceKey": "SupplyDetailSearch",
+        "link": "/odd/supply-chain",
+        "className": "fa fa-user-o",
+        "status": "A",
+        "order": 1,
+        "featureId": "SupplyChainDetailSearch"
+      }
+    ],
+    "featureId": "SupplyChainUnit"
+  }
+]

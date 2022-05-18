@@ -1,0 +1,49 @@
+.menu.sidebar {
+  a, i {
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .MuiListItem-root {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  background-color: #FFF;
+
+}
+
+.nav-list-item.icon {
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  margin-right: 12px;
+  display: inline;
+}
+
+a.nav-list-item.button-like.active-item {
+  font-weight: 500;
+  background: #e8e8e8;
+}
+a.nav-list-item.button-like.active-item i {
+  font-weight: 500;
+}
+
+.nav-list-item {
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: center;
+  font-size: 13px;
+}
+
+.nav-list-item.button-like {
+  display: flex;
+  padding: 16px;
+  justify-content: flex-start;
+  text-transform: none;
+  letter-spacing: 0;
+  width: 100%;
+  font-weight: 600
+}
+

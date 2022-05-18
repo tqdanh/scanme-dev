@@ -1,0 +1,44 @@
+export enum StatusCode {
+  Success = '1', // 'S',
+  Revalidation = '2', // 'V',
+  SecurityError = '-3', // 'R',
+  DataIntegrity = '4', // 'I',
+  DataCorrupt = '5', // 'C',
+  BusinessLogicError = '6', // 'B',
+  DataAccessError = '7', // 'D',
+  SequenceError = '8', // 'U',
+  Error = '9', // 'E',
+  ExceptionError = '515',
+  SessionExpired = '10', // 'X',
+  DuplicatePrimaryKey = '11', // 'P',
+  PrimaryKeyMandatory = '12', // 'Q',
+  DataValidationError = '18',
+  ItemNotExisted = '13', // 'N'
+  ItemDeactivated = '14',
+  PasswordNotExisted = '15',
+  WrongPassword = '16',
+  SystemError = '17',
+  UnfollowSuccess = '1',
+  FollowSuccess = '1',
+  FollowFail = '0',
+  UnfollowFail = '0',
+  Blocking = '2',
+  Unblocking = '3',
+  Following = '2',
+  Unfollow = '3',
+  Reactivate = '18',
+  EmailExisted = '19',
+  Active = 'A', // active record
+  Inactive = 'I', // active record
+  Deleted = 'D', // deleted
+  Deactivated = 'D', // deleted
+  Suspend = 'S',
+  Blocked = 'B',
+  New = 'N',
+  // StatusCode for invitation
+  InvitationCompleted = 'PC',
+  InvitationExpired = 'PE',
+  InvitationPending = 'PE',
+  ExistedInvitation = 'EP',
+  WrongInvitationEmail = 'WIM'
+}

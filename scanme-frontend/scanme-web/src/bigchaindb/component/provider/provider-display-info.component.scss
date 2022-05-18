@@ -1,0 +1,35 @@
+.provider-page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+}
+.provider-basic-info-table {
+    tr td:nth-child(1) {
+        width: 250px;
+        max-width: 50px;
+    }
+    tr td {
+        border: none;
+    }
+}
+.provider-ad-info-table {
+    /*
+    tr td:nth-child(1) {
+        width: 250px;
+        max-width: 50px;
+    }
+    */
+
+}
+
+.provider-tabs {
+    .MuiTabs-flexContainer {
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
+
+.provider-info-table {
+    border: 1px solid #e0e0e0;
+}

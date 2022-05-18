@@ -1,0 +1,39 @@
+.provider-info {
+
+  .provider-info-table {
+    .MuiCardContent-root {
+      padding: 0
+    }
+  }
+
+  .MuiPaper-elevation1 {
+    box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
+  }
+
+  .MuiTableCell-head {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3125rem;
+  }
+
+  .MuiTableCell-body {
+    color: #263238;
+  }
+
+  .MuiTableCell-root {
+    color: #263238;
+    //display: table-cell;
+    //padding: 12px;
+    font-size: 14px;
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    //border-bottom: 1px solid #eeeeee;
+    //border-bottom-width: 1px;
+    //border-bottom-style: solid;
+    //border-bottom-color: rgb(238, 238, 238);
+    letter-spacing: -0.05px;
+    vertical-align: inherit;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": "./src",
+    "outDir": "./es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "experimentalDecorators": true
+    // "emitDecoratorMetadata": true,
+    // "allowJs": true,
+    // "checkJs": true,
+    // "strict": true,
+    // "noImplicitAny": false,
+    // "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

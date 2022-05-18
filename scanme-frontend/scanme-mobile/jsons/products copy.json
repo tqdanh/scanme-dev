@@ -1,0 +1,2594 @@
+[
+  {
+    "code": "f27cf9f38e54f3854aee5b9ae5ed86e7c0e65631b956a39328d7e0cd1ee998c7",
+    "name": "Bình rượu Sâm Ngọc Linh",
+    "status": 0,
+    "actioncode": 0,
+    "point": 10,
+    "image_ads": "binhruousam.png",
+    "image_unit": "binhruousam1l.png",
+    "introduction": "Giúp cho cơ thể tăng thích nghi với điều kiện sống, kích thích chuyển hóa của hệ thần kinh trung ương, não bộ, mạch máu, tăng cường thể chất và tinh thần, hệ thống miễn dịch, chống viêm nhiễm, stress và suy nhược cơ thể.",
+    "exp": "2030-01-01",
+    "mfg": "2019-01-01",
+    "lot": "0516LJ14",
+    "company": {
+      "id": "06b6ced1fc354591881d317539cd7bc4",
+      "name": "Công ty CP Thương mại Dược Sâm Ngọc Linh Quảng Nam",
+      "logo": "provider1.jpg",
+      "address": "Phan Rang-Tháp Chàm, Ninh Thuận, Vietnam",
+      "tel": "10868 5058 39",
+      "email": "info@quasapharco.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "7c045aaedda144ddb990c09fa5cd3c02",
+        "name": "Showroom sâm Ngọc Linh Quảng Nam",
+        "logo": "showroomsamngoclinh.png",
+        "description": "Chuyên bán các mặt hàng chế biến từ sâm tươi Ngọc Linh của Cty Quasapharco.",
+        "location": [
+          10.781622,
+          106.67051
+        ],
+        "location_description": "93 Tô Hiến Thành, Phường 13, Quận 10, TP. HCM",
+        "attributes": [
+          {
+            "time": "2019-11-21T09:00:53.394Z",
+            "activity": "Bán bình sâm Ngọc Linh cho Consummer",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "af5eab94d78340a988c5c78dcf9b9fe2",
+        "name": "Trung Tâm Thực Phẩm Chức Năng",
+        "logo": "tttpchucnang.png",
+        "description": "Chuyên cung cấp các thực phẩm chức năng chính hãng bảo đảm an toàn về sức khỏe. Các sản phẩm có giấy tờ chứng từ rõ ràng và được kiểm duyệt nghiêm ngặt.",
+        "location": [
+          10.780210,
+          106.669600
+        ],
+        "location_description": "200 Tô Hiến Thành, Phường 15, Quận 10, TP. HCM",
+        "attributes": [
+          {
+            "time": "2019-11-21",
+            "activity": "Vận chuyển và Phân phối cho Showroom sâm Ngọc Linh Quảng Nam",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Phương tiện vận chuyển: Xe lạnh",
+              "Nhiệt độ lưu trữ: 22 độ C"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "06b6ced1fc354591881d317539cd7bc4",
+        "name": "Công ty CP Thương mại Dược Sâm Ngọc Linh Quảng Nam",
+        "logo": "download5.png",
+        "description": "Với thế mạnh là công nghệ nuôi trồng – thu hoạch dược liệu, hệ thống máy móc trang thiết bị hiện đại sẵn có và đặc biệt là khả năng nghiên cứu của một công ty dược lâu đời. Các sản phẩm được chiết xuất từ sâm Ngọc Linh của Quasapharco rất phong phú về mặt hàng, đảm bảo an toàn vệ sinh thực phẩm cũng như đạt được uy tín tuyệt đối về nguồn gốc của củ sâm.",
+        "location": [
+          11.57,
+          108.99
+        ],
+        "location_description": "Phan Rang-Tháp Chàm, Ninh Thuận, Vietnam",
+        "attributes": [
+          {
+            "time": "2019-11-21",
+            "activity": "Vận chuyển và Phân phối cho TTTP chức năng TP.HCM",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Phương tiện vận chuyển: Xe lạnh",
+              "Nhiệt độ lưu trữ: 22 độ C"
+            ]
+          },
+          {
+            "time": "2019-11-21",
+            "activity": "Sản xuất Bình rượu sâm Ngọc Linh",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21",
+            "activity": "Divide asset",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21",
+            "activity": "Phân tích thành phần sâm tươi",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "3345a9ee4466460ebf4b16ba4426ae84",
+        "name": "Nông trường sâm Ngọc Linh Nam Trà My",
+        "logo": "namtramy.png",
+        "description": "Huyện Nam Trà My tỉnh Quảng Nam là vùng đất đại ngàn được bao phủ bởi rừng nguyên sinh nằm dưới chân dãy núi Ngọc Linh cao 2.598 mét. Đây là vùng đất hoang sơ có khí hậu mát mẽ, nhiệt độ trung bình khoảng 26 độC, riêng xã Trà Linh nơi có cây sâm Ngọc Linh thì nhiệt độ trung bình khoảng 17 độ C. Cây Sâm Ngọc Linh chỉ sống được ở vùng lõi của khu rừng già nguyên sinh, nên nó có tác dụng  bảo vệ rừng , bảo vệ môi trường xanh thân thiện với cuộc sống con người.",
+        "location": [
+          15.058810,
+          108.090759
+        ],
+        "location_description": "huyện Nam Trà My, tỉnh Quảng Nam",
+        "attributes": [
+          {
+            "time": "2019-11-21",
+            "activity": "Vận chuyển và Bán cho Cty QUASAPHARCO",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21",
+            "activity": "Thêm thông tin của sâm",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21",
+            "activity": "Thu hoạch sâm tươi",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Thành phần",
+        "description": "Đây là cây thuốc quý hiếm. Trong đó, về mặt hóa học, thân và rễ củ Sâm Ngọc Linh đã phân lập được 52 saponin, trong đó có 26 saponin thường thấy ở sâm Triều Tiên, sâm Mỹ, sâm Nhật, đại diện chính của Sâm Ngọc Linh là Ginsenoside - Rb1, Ginsenosid - Rg1, Ginsenosid - Rd, majonosid-R1, majonosid-R2. Đặt biệt majonosid-R2 chiếm 50% hàm lượng saponin toàn phần của sâm Ngọc Linh. Cùng với các đặc điểm này, trong lá và cọng lá của Sâm Ngọc Linh các nhà khoa học còn phân lập được 19 saponin dammaran; trong đó có 8 saponin có cấu trúc mới. Ngoài thành phần chính là saponin, lá và cọng lá Sâm Ngọc Linh còn xác định có 17 acid amin, 20 chất khoáng vi lượng và hàm lượng glucid tinh dầu là 0,1%.",
+        "images": [
+          "thanhphansam.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "20(S) PPD",
+            "value": "3.1"
+          },
+          {
+            "id": "",
+            "name": "20(S) PPT",
+            "value": "2"
+          },
+          {
+            "id": "",
+            "name": "Ocotilol",
+            "value": "5.6"
+          },
+          {
+            "id": "",
+            "name": "Thu suất toàn phần",
+            "value": "10.8"
+          },
+          {
+            "id": "",
+            "name": "Aleanolic axít",
+            "value": "0.09"
+          }
+        ],
+        "notes": [
+          ""
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn trong tháng 01-2020",
+        "description": "Cơ hội duy nhất chỉ có 1 lần",
+        "images": [
+          "product10.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian",
+            "value": "1/12/2019 - 31/12/2019"
+          }
+        ],
+        "notes": [
+          "*Số lượng có hạn"
+        ]
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn của Sữa đậu nành Daioni trong tháng 12-2018",
+        "description": "Sữa đậu nành Daioni ",
+        "images": [
+          "product10.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc"
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "\"Mua bốn mươi tám (48) hộp Sữa đậu nành Daioni Canxi hoặc Nguyên chất 200ml, được tặng một (01) tô sứ cao cấp hoặc hai (02) chén sứ cao cấp."
+          }
+        ],
+        "notes": [
+          "note Daioni "
+        ]
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn từ Daioni Prevent trong tháng 08/2018",
+        "description": "Daioni Prevent",
+        "images": [
+          "product12.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Khi Người tiêu dùng mua 1 Lon sữa bột Sure Prevent 900gr tặng ngay 2 chai sữa bột pha sẵn Sure Prevent 200ml."
+          }
+        ],
+        "notes": [
+          "note Daioni Prevent"
+        ]
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu hiện bán tại Việt Nam",
+        "description": "Là nhãn hiệu đạt chứng nhận tiêu chuẩn Organic nổi tiếng của Anh Quốc, nhận được sự tin tưởng và tiêu dùng tại nhiều nước trên thế giới, với nhiều loại sản phẩm khác nhau.",
+        "images": [
+          "product12.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "test2",
+            "value": "product11.jpg"
+          },
+          {
+            "id": "",
+            "name": "test3",
+            "value": "product9.jpg"
+          },
+          {
+            "id": "",
+            "name": "dfsdf",
+            "value": "download5.png"
+          }
+        ],
+        "notes": [
+          "GHI CHU"
+        ]
+      }
+    ]
+  },
+  {
+    "code": "00CC5AD1AC2444369F0E0090F6925B2B",
+    "name": "Sữa hữu cơ nguyên kem Daioni",
+    "status": 0,
+    "actioncode": 1,
+    "point": 10,
+    "image_ads": "daioni_large.jpg",
+    "image_unit": "daioni.png",
+    "introduction": "Sữa tươi hữu cơ nguyên kem được tiệt trùng và đóng gói vô trùng bằng công nghệ hiện đại hàng đầu thế giới với 100% sữa tươi hữu cơ nguyên kem.",
+    "exp": "2020-03-15",
+    "mfg": "2017-03-15",
+    "lot": "0516LJ14",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Nhà máy sữa Thống Nhất",
+        "description": "Hệ thống nhà máy sữa chuẩn quốc tế hiện đại bậc nhất mang đến những sản phẩm chất lượng cao.",
+        "location": [
+          10.840618,
+          106.765229
+        ],
+        "location_description": "12 Đặng Văn Bi, Quận Thủ Đức, TP Hồ Chí Minh",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Ngày nhập nguyên liệu: 2019-03-16",
+              "Ngày đóng gói: 2019-03-16",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Nông trại Đà Lạt Milk Farm",
+        "description": "Hệ thống trang trại đạt chuẩn quốc tế GLOBAL G.A.P. với 100% giống bò thuần chủng cao cấp, được nhập khẩu trực tiếp từ Mỹ, Úc & New Zealand, cho nguồn sữa tươi thuần khiết.",
+        "location": [
+          11.726208,
+          108.436456
+        ],
+        "location_description": "Cao nguyên Lâm Viên, huyện Đơn Dương, thành phố Đà Lạt, tỉnh Lâm Đồng",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Giá trị dinh dưỡng trung bình trong 100ml",
+        "description": "Được bổ sung đầy đủ Vitamin A & D3 tốt cho mắt và xương, Sữa Daioni là sự lựa chọn thông minh và kinh tế, đảm bảo cung cấp các dưỡng chất thiết yếu cho cả gia đình bạn mỗi ngày.",
+        "images": [
+          "ingredients.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Năng lượng",
+            "value": "75.9 kcal"
+          },
+          {
+            "id": "",
+            "name": "Chất béo",
+            "value": "3.5 g"
+          },
+          {
+            "id": "",
+            "name": "Chất đạm",
+            "value": "3.1 g"
+          },
+          {
+            "id": "",
+            "name": "Hydrat carbon",
+            "value": "8.0 g"
+          },
+          {
+            "id": "",
+            "name": "Vitamin A",
+            "value": "250 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin D",
+            "value": "165 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin C",
+            "value": "6.25 mg"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "110 mg"
+          },
+          {
+            "id": "",
+            "name": "Phốt pho",
+            "value": "90 mg"
+          },
+          {
+            "id": "",
+            "name": "Magiê",
+            "value": "10 mg"
+          },
+          {
+            "id": "",
+            "name": "Selen",
+            "value": "7.6 mcg"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn của Sữa đậu nành Daioni trong tháng 12-2018",
+        "description": "",
+        "images": [
+          "khuyenmai1.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Mua bốn mươi tám (48) hộp Sữa đậu nành Daioni Canxi hoặc Nguyên chất 200ml, được tặng một (01) tô sứ cao cấp hoặc hai (02) chén sứ cao cấp."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn từ Daioni Prevent trong tháng 08/2018",
+        "description": "",
+        "images": [
+          "khuyenmai2.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Khi Người tiêu dùng mua 1 Lon sữa bột Sure Prevent 900gr tặng ngay 2 chai sữa bột pha sẵn Sure Prevent 200ml."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu sữa Daioni hiện bán tại Việt Nam:",
+        "description": "Daioni là nhãn hiệu sữa tươi hữu cơ đạt chứng nhận tiêu chuẩn Organic nổi tiếng của xứ Wales - Anh Quốc. Hiện nay sữa hữu cơ tách béo Daioni đã nhận được sự tin tưởng và tiêu dùng tại nhiều nước trên thế giới, với nhiều loại sản phẩm khác nhau.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Sữa hữu cơ vị dâu 200 ml",
+            "value": "ad4.png"
+          },
+          {
+            "id": "",
+            "name": "Sữa hữu cơ vị chocolate 200 ml",
+            "value": "ad5.png"
+          },
+          {
+            "id": "",
+            "name": "Sữa hữu cơ vị chuối 200 ml",
+            "value": "ad6.png"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "69257FDFF3134A0C9AA1B185354F534F",
+    "name": "Sữa tách béo vị Socola Horizon",
+    "status": 1,
+    "actioncode": 0,
+    "point": 0,
+    "image_ads": "horizon_large.jpg",
+    "image_unit": "horizon.png",
+    "introduction": "Dòng sữa tươi hữu cơ có vị của Horizon là dòng sữa tách béo, chứa ít đường, và chỉ sử dụng màu sắc và hương vị tự nhiên, không có các chất phụ gia nhân tạo hay chất bảo quản. Với bao bì được đóng gói tiên tiến, giữ được vị ngon của sữa cùng với thiết kế nhỏ ngọn, sữa hữu cơ Horizon tiện lợi cho những chuyến tham quan, picnic.",
+    "exp": "2020-04-16",
+    "mfg": "2017-04-16",
+    "lot": "0616LJ16",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Chế biến tại Nhà máy sữa Đồng Nai",
+        "description": "Hệ thống nhà máy sữa chuẩn quốc tế hiện đại bậc nhất mang đến những sản phẩm chất lượng cao.",
+        "location": [
+          10.925249,
+          107.242261
+        ],
+        "location_description": "Xuân Hòa, Thị xã Long Khánh, Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Nguyên liệu tại Nông trại Tây Ninh",
+        "description": "Hệ thống trang trại đạt chuẩn quốc tế GLOBAL G.A.P. với 100% giống bò thuần chủng cao cấp, được nhập khẩu trực tiếp từ Mỹ, Úc & New Zealand, cho nguồn sữa tươi thuần khiết.",
+        "location": [
+          11.348552,
+          106.221356
+        ],
+        "location_description": "Phước Minh, quận Dương Minh Châu , tỉnh Tây Ninh",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Giá trị dinh dưỡng trung bình trong 100ml",
+        "description": "Được bổ sung đầy đủ Vitamin A & D3 tốt cho mắt và xương, Sữa Horizon là sự lựa chọn thông minh và kinh tế, đảm bảo cung cấp các dưỡng chất thiết yếu cho cả gia đình bạn mỗi ngày.",
+        "images": [
+          "ingredients.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Năng lượng",
+            "value": "75.9 kcal"
+          },
+          {
+            "id": "",
+            "name": "Chất béo",
+            "value": "3.5 g"
+          },
+          {
+            "id": "",
+            "name": "Chất đạm",
+            "value": "3.1 g"
+          },
+          {
+            "id": "",
+            "name": "Hydrat carbon",
+            "value": "8.0 g"
+          },
+          {
+            "id": "",
+            "name": "Vitamin A",
+            "value": "250 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin D",
+            "value": "165 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin C",
+            "value": "6.25 mg"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "110 mg"
+          },
+          {
+            "id": "",
+            "name": "Phốt pho",
+            "value": "90 mg"
+          },
+          {
+            "id": "",
+            "name": "Magiê",
+            "value": "10 mg"
+          },
+          {
+            "id": "",
+            "name": "Selen",
+            "value": "7.6 mcg"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn của sữa Horizon trong tháng 12-2018",
+        "description": "",
+        "images": [
+          "khuyenmai1.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Mua bốn mươi tám (48) hộp sữa Horizon 200ml, được tặng một (01) tô sứ cao cấp hoặc hai (02) chén sứ cao cấp."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn từ S26 trong tháng 08/2018",
+        "description": "",
+        "images": [
+          "khuyenmai2.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Khi người tiêu dùng mua 1 Lon sữa bột S26 900gr tặng ngay 2 chai sữa bột pha sẵn S26 200ml."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu sữa Daioni hiện bán tại Việt Nam:",
+        "description": "Daioni là nhãn hiệu sữa tươi hữu cơ đạt chứng nhận tiêu chuẩn Organic nổi tiếng của xứ Wales - Anh Quốc. Hiện nay sữa hữu cơ tách béo Daioni đã nhận được sự tin tưởng và tiêu dùng tại nhiều nước trên thế giới, với nhiều loại sản phẩm khác nhau.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Sữa hữu cơ vị dâu 200 ml",
+            "value": "ad4.png"
+          },
+          {
+            "id": "",
+            "name": "Sữa hữu cơ vị chocolate 200 ml",
+            "value": "ad5.png"
+          },
+          {
+            "id": "",
+            "name": "Sữa hữu cơ vị chuối 200 ml",
+            "value": "ad6.png"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "5E5DEAC3C29F4B17985C163A4A0F5E88",
+    "name": "Thịt heo nạc dăm VietGap",
+    "status": 0,
+    "actioncode": 0,
+    "point": 0,
+    "image_ads": "thitheo_large.jpg",
+    "image_unit": "thitheo.jpg",
+    "introduction": "Thịt nạc dăm thuộc một trong những phần thịt nguyên nạc và hàm lượng mỡ rất ít của thịt heo. Đây là phần thịt với những khối thịt nạc mềm có lẫn những lớp mỡ mỏng không đều nhau  ngay trong khối thịt và được sử dụng rất nhiều trong các nhà hàng cao cấp.",
+    "exp": "2020-04-16",
+    "mfg": "2017-04-16",
+    "lot": "0616LJ16",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Thông tin nhà bán",
+        "description": "Thịt heo tươi EB tại AEON Tân Phú",
+        "location": [
+          10.801878,
+          106.618027
+        ],
+        "location_description": "30 Bờ Bao Tân Thắng, Sơn Ký, Tân Phú, Hồ Chí Minh",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "1",
+        "name": "Thông tin vận chuyển",
+        "description": "Công ty vận chuyển EB",
+        "location": [
+          10.889570,
+          106.910860
+        ],
+        "location_description": "Xã Long An - Huyện Long Thành - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Thông tin giết mổ",
+        "description": "Nhà Máy Giết Mổ Phương Nguyễn",
+        "location": [
+          10.925249,
+          107.242261
+        ],
+        "location_description": "Xã Long An - Huyện Long Thành - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "3",
+        "name": "Thông tin nguyên liệu",
+        "description": "Trang trại nuôi heo KL theo tiêu chuẩn VietGap",
+        "location": [
+          10.919183,
+          107.115462
+        ],
+        "location_description": "Xã Hưng Lộc - Huyện Thống Nhất - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Mã số lô nguyên liệu: HM353040816",
+              "Ngày xuất chuồng: 2019-08-02",
+              "Tình trạng sức khỏe vật nuôi: Tốt",
+              "Số lượng (con bán): 20",
+              "Tổng trọng lượng (kg bán): 200",
+              "Tên thức ăn/ nhãn hiệu: Cám/ Cargill"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Giá trị dinh dưỡng trung bình trong 100g thịt heo",
+        "description": "Thịt heo là một trong 3 loại thịt phổ biến trong bữa ăn hàng ngày của người Việt.",
+        "images": [
+          "ingredient1.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Protein",
+            "value": "22.35g"
+          },
+          {
+            "id": "",
+            "name": "Chất béo",
+            "value": "5.25g"
+          },
+          {
+            "id": "",
+            "name": "Tổng calo",
+            "value": "129"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "24mg"
+          },
+          {
+            "id": "",
+            "name": "Sắt",
+            "value": "2.12mg"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "110 mg"
+          },
+          {
+            "id": "",
+            "name": "Phốt pho",
+            "value": "207mg"
+          },
+          {
+            "id": "",
+            "name": "Magiê",
+            "value": "10 mg"
+          },
+          {
+            "id": "",
+            "name": "Selen",
+            "value": "7.6 mcg"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn trong tháng 12-2018",
+        "description": "",
+        "images": [
+          "km4.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Người tiêu dùng được giảm 30% thịt heo tươi sống tại tất cả các hệ thống siêu thị trong toàn quốc."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn trong tháng 08/2018",
+        "description": "",
+        "images": [
+          "km3.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Người tiêu dùng được giảm 10% thịt heo tươi sống tại tất cả các hệ thống siêu thị trong toàn quốc."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Sản phẩm Heo Iberico hiện bán tại Việt Nam:",
+        "description": "Heo Iberico là một giống bản địa của Tây Ban Nha, màu đen mặt nhọn. giống heo này có cấu tạo gen cho phép tích mỡ đến 49% trọng lượng cơ thể khi được vỗ béo.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thịt Thăn Lưng Trước Heo Đen Iberico Pluma",
+            "value": "ad10.jpg"
+          },
+          {
+            "id": "",
+            "name": "Thịt Xương Cốt Lếch Heo Đen Iberico French Rack (Rack Chop)",
+            "value": "ad11.jpg"
+          },
+          {
+            "id": "",
+            "name": "Thịt Thăn Lưng Trước Heo Đen Iberico Pluma (Túi Hút Chân Không)",
+            "value": "ad12.jpg"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "123456",
+    "name": "Bia Hoegaarden",
+    "status": 0,
+    "actioncode": 1,
+    "point": 10,
+    "image_ads": "hoegaarden_large.jpg",
+    "image_unit": "hoegaarden.jpg",
+    "introduction": "Bia Hoegaarden trắng là sản phẩm bia cao cấp sản xuất tại Bỉ với thành phần chính từ mạch nha, lúa mì, hoa houblon... Đây là loại bia được sản xuất theo quy trình hiện đại với công thức lâu đời, mang đến cho người tiêu dùng những trải nghiệm tuyệt vời khi thưởng thức.",
+    "exp": "2020-04-16",
+    "mfg": "2017-04-16",
+    "lot": "0616LJ16",
+    "company": {
+      "id": "2",
+      "name": "Hoegaarden",
+      "logo": "hoegaardenlogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "2",
+        "name": "Nguyên liệu nhập khẩu từ vương quốc Bỉ",
+        "description": "Sản phẩm được sinh ra từ vương quốc Bỉ - nơi được biết đến với hơn 1000 loại bia khác nhau. Sau nhiều năm nghiên cứu và thử nghiệm không ngừng, cuối cùng họ đã tìm ra một công thức mới lạ khi kết hợp lúa mì ở một vùng quê cùng tên với vỏ cam và rau mùi đến từ thuộc địa Curacao. Nhờ đó cho ra đời một hương vị vô cùng đặc trưng mà chỉ khi bạn được thưởng thức mới cảm nhận hết được.",
+        "location": [
+          50.842620,
+          4.349127
+        ],
+        "location_description": "Rue d'Accolay 15-17, 1000 Bruxelles, Belgium",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Nhập khẩu từ Hoegaarden - vương quốc Bỉ",
+            "content": [
+              "Ngày nhập khẩu: 2019-03-16",
+              "Ngày đóng gói: 2019-03-16",
+              "Phiếu đóng gói hàng hóa: XYZ-123",
+              "Giấy chứng nhận chất lượng: Certified",
+              "Chứng nhận kiểm định: Certified",
+              "Giấy chứng nhận vệ sinh: Certified",
+              "Chứng thư hun trùng: Certified"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Đóng chai tại nhà máy bia Việt Nam",
+        "description": "Đối với các nhà máy bia – nước giải khát, hệ thống dây chuyền chiết rót đóng chai đóng vai trò rất quan trọng. Quá trình chiết rót đóng chai phải đáp ứng các yêu cầu chất lượng nghiêm ngặt nhất.",
+        "location": [
+          21.039664,
+          105.742739
+        ],
+        "location_description": "Xuan Phuong, Từ Liêm, Hanoi",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Thành phần trong bia Hoegaarden",
+        "description": "Bia có một giá trị dinh dưỡng thật sự, không chỉ là nguồn cung cấp năng lượng mà còn là nguồn cung cấp các Vitamin cần thiết thuộc nhóm Vitamin B-complex cho cơ thể.",
+        "images": [
+          "nl1.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Mạch nha",
+            "value": "Lúa đại mạch (Hordeum vulgare)"
+          },
+          {
+            "id": "",
+            "name": "Hoa Houblon",
+            "value": "Hoa bia (Humulus lupulus) từ Bỉ"
+          },
+          {
+            "id": "",
+            "name": "Men bia",
+            "value": "Men ale (Saccharomyces cerevisiae)"
+          },
+          {
+            "id": "",
+            "name": "Gia vị",
+            "value": "Rau mùi và vỏ cam tự nhiên"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn của Hoegaarden trong tháng 12-2018",
+        "description": "",
+        "images": [
+          "km6.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Mua bốn thùng bia Hoegaarden tặng ngay lốc 6 chai bia cùng loại hoặc hai (02) chén ly thủy tinh cao cấp."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn từ Hoegaarden trong tháng 08/2018",
+        "description": "",
+        "images": [
+          "km5.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Tặng 4 ly dát vàng 14K phiên bản giới hạn cho mỗi thùng."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu bia Hoegaarden hiện bán tại Việt Nam:",
+        "description": "Hoegaarden có một hương vị vượt thử thách về thời gian, ngày nay Hoegaarden được biết đến như là một loại bia Bỉ chính hiệu, thương hiệu đã dành được nhiều giải thưởng danh giá, điển hình như là loại bia duy nhất dành 4 huy chương vàng liên tiếp trong giải World Beer Cup được tổ chức định kỳ 2 năm một lờn, một trong những cuộc thi bia uy tín nhất trên thế giới.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Hoegaarden Adam & Eva",
+            "value": "ad1.png"
+          },
+          {
+            "id": "",
+            "name": "Bia Hoegaarden White 4.9%",
+            "value": "ad2.jpg"
+          },
+          {
+            "id": "",
+            "name": "Bia Hoegaarden Rosee 3%",
+            "value": "ad3.jpg"
+          },
+          {
+            "id": "",
+            "name": "Hoegaarden Rosee - 24 X 250ml",
+            "value": "ad3.jpg"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "10ABC123210001",
+    "name": "Thịt bò nạc dăm VietGap",
+    "status": 0,
+    "actioncode": 0,
+    "point": 0,
+    "image_ads": "thitheo_large.jpg",
+    "image_unit": "thitheo.jpg",
+    "introduction": "Thịt nạc dăm thuộc một trong những phần thịt nguyên nạc và hàm lượng mỡ rất ít của thịt bò. Đây là phần thịt với những khối thịt nạc mềm có lẫn những lớp mỡ mỏng không đều nhau  ngay trong khối thịt và được sử dụng rất nhiều trong các nhà hàng cao cấp.",
+    "exp": "2020-04-16",
+    "mfg": "2017-04-16",
+    "lot": "0616LJ16",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Thông tin nhà bán",
+        "description": "Thịt bò tươi EB tại AEON Tân Phú",
+        "location": [
+          10.801878,
+          106.618027
+        ],
+        "location_description": "30 Bờ Bao Tân Thắng, Sơn Ký, Tân Phú, Hồ Chí Minh",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "1",
+        "name": "Thông tin vận chuyển",
+        "description": "Công ty vận chuyển EB",
+        "location": [
+          10.889570,
+          106.910860
+        ],
+        "location_description": "Xã Long An - Huyện Long Thành - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Thông tin giết mổ",
+        "description": "Nhà Máy Giết Mổ Phương Nguyễn",
+        "location": [
+          10.925249,
+          107.242261
+        ],
+        "location_description": "Xã Long An - Huyện Long Thành - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Ngày nhập vào lò giết mổ: 2019-03-17",
+              "Thời điểm giết mổ: 01h30 2019-03-17",
+              "Khối lượng sau giết mổ (kg): 370kg",
+              "Khối lượng giao Ebon (kg): 370kg",
+              "Người thực hiện: Khanh Le"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "3",
+        "name": "Thông tin nguyên liệu",
+        "description": "Trang trại nuôi bò KL theo tiêu chuẩn VietGap",
+        "location": [
+          10.919183,
+          107.115462
+        ],
+        "location_description": "Xã Hưng Lộc - Huyện Thống Nhất - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Giá trị dinh dưỡng trung bình trong 100g thịt bò",
+        "description": "Thịt bò là một trong 3 loại thịt phổ biến trong bữa ăn hàng ngày của người Việt.",
+        "images": [
+          "ingredient1.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Protein",
+            "value": "22.35g"
+          },
+          {
+            "id": "",
+            "name": "Chất béo",
+            "value": "5.25g"
+          },
+          {
+            "id": "",
+            "name": "Tổng calo",
+            "value": "129"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "24mg"
+          },
+          {
+            "id": "",
+            "name": "Sắt",
+            "value": "2.12mg"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "110 mg"
+          },
+          {
+            "id": "",
+            "name": "Phốt pho",
+            "value": "207mg"
+          },
+          {
+            "id": "",
+            "name": "Magiê",
+            "value": "10 mg"
+          },
+          {
+            "id": "",
+            "name": "Selen",
+            "value": "7.6 mcg"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn trong tháng 12-2018",
+        "description": "",
+        "images": [
+          "km4.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Người tiêu dùng được giảm 30% thịt bò tươi sống tại tất cả các hệ thống siêu thị trong toàn quốc."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn trong tháng 08/2018",
+        "description": "",
+        "images": [
+          "km3.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Người tiêu dùng được giảm 10% thịt bò tươi sống tại tất cả các hệ thống siêu thị trong toàn quốc."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Sản phẩm Bò Iberico hiện bán tại Việt Nam:",
+        "description": "Bò Iberico là một giống bản địa của Tây Ban Nha, màu đen mặt nhọn. giống bò này có cấu tạo gen cho phép tích mỡ đến 49% trọng lượng cơ thể khi được vỗ béo.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thịt Thăn Lưng Trước Bò Đen Iberico Pluma",
+            "value": "ad10.jpg"
+          },
+          {
+            "id": "",
+            "name": "Thịt Xương Cốt Lếch Bò Đen Iberico French Rack (Rack Chop)",
+            "value": "ad11.jpg"
+          },
+          {
+            "id": "",
+            "name": "Thịt Thăn Lưng Trước Bò Đen Iberico Pluma (Túi Hút Chân Không)",
+            "value": "ad12.jpg"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "10ABC123210002",
+    "name": "Đậu phụng muối Dan.D pak 150g",
+    "status": 0,
+    "actioncode": 0,
+    "point": 0,
+    "image_ads": "daonbanner.jpg",
+    "image_unit": "PeanutSalted150g.png",
+    "introduction": "Dan On Foods Corporation (DOF) được thành lập tại việt nam từ năm 1999, là một công ty thành viên thuộc tập đoàn Dan-D Foods. Chất lượng sản phẩm được đảm bảo với các hệ thống quản lý chất lượng tích hợp và có trách nhiệm với các bên liên quan bao gồm hệ thống HACCP, BRC, KOSHER, SA8000.",
+    "exp": "2020-04-16",
+    "mfg": "2019-04-16",
+    "lot": "0616LJ17",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Thông tin nhà bán",
+        "description": "Dan D Pak Outlet",
+        "location": [
+          10.771652,
+          106.724202
+        ],
+        "location_description": "74 Nguyễn Cơ Thạch, khu đô thị Sala, Quận 2, Hồ Chí Minh",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Thông tin vận chuyển",
+        "description": "Công ty vận chuyển AB",
+        "location": [
+          10.889570,
+          106.910860
+        ],
+        "location_description": "Xã Long An - Huyện Long Thành - Tỉnh Đồng Nai",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "3",
+        "name": "Chế biến tại Nhà máy Dan On Food",
+        "description": "Nhà máy ở Thành phố Thủ Dầu Một, tỉnh Bình Dương, nằm cách thành phố Hồ Chí Minh khoảng 40 km.",
+        "location": [
+          11.031571,
+          106.629492
+        ],
+        "location_description": "Số 290, Đường Lê Chí Dân, Khu 2, Phường Hiệp An, TP. Thủ Dầu Một, Bình Dương",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "4",
+        "name": "Nguyên liệu tại Nông trại Lâm Đồng",
+        "description": "Hệ thống nông trại đạt chuẩn quốc tế GLOBAL G.A.P.",
+        "location": [
+          11.726208,
+          108.436456
+        ],
+        "location_description": "Cao nguyên Lâm Viên, huyện Đơn Dương, thành phố Đà Lạt, tỉnh Lâm Đồng",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Giá trị dinh dưỡng trung bình trong 30g",
+        "description": "Đậu phộng muối Dan D pak ​được đóng gói kín đáo giúp lưu giữ trọn vẹn hương vị của sản phẩm.",
+        "images": [
+          "ingredient10.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Năng lượng",
+            "value": "75.9 kcal"
+          },
+          {
+            "id": "",
+            "name": "Chất béo",
+            "value": "3.5 g"
+          },
+          {
+            "id": "",
+            "name": "Chất đạm",
+            "value": "3.1 g"
+          },
+          {
+            "id": "",
+            "name": "Hydrat carbon",
+            "value": "8.0 g"
+          },
+          {
+            "id": "",
+            "name": "Vitamin A",
+            "value": "250 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin D",
+            "value": "165 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin C",
+            "value": "6.25 mg"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "110 mg"
+          },
+          {
+            "id": "",
+            "name": "Phốt pho",
+            "value": "90 mg"
+          },
+          {
+            "id": "",
+            "name": "Magiê",
+            "value": "10 mg"
+          },
+          {
+            "id": "",
+            "name": "Selen",
+            "value": "7.6 mcg"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn của các sản phẩm Dan.D pak Food trong tháng 5/2019",
+        "description": "",
+        "images": [
+          "km10.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/05/2019 – 30/06/2019"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Mua 1 hộp đậu phụng muối 1,13 kg, được tặng 1 bịch đậu phụng muối 150g."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu Dan.D pak hiện bán tại Việt Nam:",
+        "description": "Dan On Foods Corporation cung cấp sản phẩm chất lượng cho khách hàng trên toàn thế giới. Chúng tôi cam kết cung cấp cho khách hàng những sản phẩm chất lượng, có giá cạnh tranh bởi dịch vụ đẳng cấp thế giới để đáp ứng mong đợi của khách hàng. Với cam kết như vậy với khách hàng, chúng tôi cung cấp Thực phẩm chất lượng trên toàn cầu.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thập Cẩm Đậu Phộng Crunchy 650g",
+            "value": "CrunchyPeanutsSnaxMix650g.png"
+          },
+          {
+            "id": "",
+            "name": "Đậu Phộng Sấy Không Muối 750g",
+            "value": "PeanutsDryRoastedUnsalted750g.jpg"
+          },
+          {
+            "id": "",
+            "name": "Đậu Phộng Rong Biển 700g",
+            "value": "PeanutsNori700g.png"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "00CC5AD1AC2444369F0E2674F6924231",
+    "name": "Gạch ốp lát AMYGRES",
+    "status": 0,
+    "actioncode": 0,
+    "point": 0,
+    "image_ads": "AMYGRES.jpg",
+    "image_unit": "AMYGRES.png",
+    "introduction": "Sản phẩm gạch Á Mỹ đã khẳng định thế mạnh công nghệ, sức sáng tạo, nỗ lực không ngừng nghỉ của AMY và hệ thống khách hàng. AMY xác định trở thành thương hiệu gạch ốp lát cao cấp tiên phong trong ứng dụng công nghệ hiện đại, đầu tư trang thiết bị bậc nhất, không ngừng nghiên cứu, phát triển các sản phẩm mang tính công nghệ cao.",
+    "exp": "2020-03-15",
+    "mfg": "2017-03-15",
+    "lot": "21.A.275.710-711-712",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Phân phối tại Công ty TNHH Thương Mại Thanh Tung",
+        "description": "Hệ thống phân phối chuẩn quốc tế hiện đại bậc nhất mang đến những sản phẩm chất lượng cao.",
+        "location": [
+          20.536403,
+          105.903525
+        ],
+        "location_description": "Tổ 13 , Phường Lê Hồng Phong, Thành phố Phủ Lý, Hà Nam, Việt Nam",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Sản xuất tại Nhà Máy gốm AMY Thọ Xuân",
+        "description": "Hệ thống nhà máy chuẩn quốc tế hiện đại bậc nhất mang đến những sản phẩm chất lượng cao.",
+        "location": [
+          19.826120,
+          105.768298
+        ],
+        "location_description": "Lô CC3 - 2, KCN Tây Bắc Ga, Phường Đông Thọ, TP Thanh Hóa, Tỉnh Thanh Hóa",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Thành phần cấu tạo",
+        "description": "Sản phẩm với chất liệu xương Ceramic, bề mặt men Sugar, khuôn lục giác, kích thước 250 x 750mm.",
+        "images": [
+          "AMYGRES.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Năng lượng",
+            "value": "75.9 kcal"
+          },
+          {
+            "id": "",
+            "name": "Chất béo",
+            "value": "3.5 g"
+          },
+          {
+            "id": "",
+            "name": "Chất đạm",
+            "value": "3.1 g"
+          },
+          {
+            "id": "",
+            "name": "Hydrat carbon",
+            "value": "8.0 g"
+          },
+          {
+            "id": "",
+            "name": "Vitamin A",
+            "value": "250 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin D",
+            "value": "165 I.U"
+          },
+          {
+            "id": "",
+            "name": "Vitamin C",
+            "value": "6.25 mg"
+          },
+          {
+            "id": "",
+            "name": "Canxi",
+            "value": "110 mg"
+          },
+          {
+            "id": "",
+            "name": "Phốt pho",
+            "value": "90 mg"
+          },
+          {
+            "id": "",
+            "name": "Magiê",
+            "value": "10 mg"
+          },
+          {
+            "id": "",
+            "name": "Selen",
+            "value": "7.6 mcg"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn của AMY trong tháng 8-2019",
+        "description": "",
+        "images": [
+          "amyk1.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2019 – 31/12/2019"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Quý khách sẽ nhận được 01 đồng hồ treo tường cao cấp trị giá 500.000đ khi đặt thành công đơn hàng trị giá 5.000.000đ trên website https://amy.vn."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn của AMY trong tháng 8-2018",
+        "description": "",
+        "images": [
+          "amyk2.jpg"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Khi quý khách đặt hàng thành công đơn hàng trị giá 5.000.000đ trên website https://amy.vn, sẽ nhận được 01 đồng hồ treo tường cao cấp trị giá 500.000đ."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu AMY hiện bán tại Việt Nam:",
+        "description": "Sản phẩm gạch Á Mỹ đã khẳng định thế mạnh công nghệ, sức sáng tạo, nỗ lực không ngừng nghỉ của AMY và hệ thống khách hàng. AMY xác định trở thành thương hiệu gạch ốp lát cao cấp tiên phong trong ứng dụng công nghệ hiện đại, đầu tư trang thiết bị bậc nhất, không ngừng nghiên cứu, phát triển các sản phẩm mang tính công nghệ cao.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "21.A.612.1921",
+            "value": "amy1.png"
+          },
+          {
+            "id": "",
+            "name": "21.A.612.1922",
+            "value": "amy2.png"
+          },
+          {
+            "id": "",
+            "name": "21.A.612.1905",
+            "value": "amy3.png"
+          },
+          {
+            "id": "",
+            "name": "21.A.612.1904",
+            "value": "amy4.png"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "code": "DCM0123456",
+    "name": "URÊ HẠT ĐỤC",
+    "status": 0,
+    "actioncode": 0,
+    "point": 0,
+    "image_ads": "DCM.jpg",
+    "image_unit": "DCM1.png",
+    "introduction": "Sản phẩm Urê hạt đục là sản phẩm duy nhất do Nhà máy Đạm Cà Mau sản xuất với các ưu điểm vượt trội so với các sản phẩm cùng loại trên thị trường, tiếp tục được bà con nông dân và hệ thống phân phối cả nước ghi nhận, đánh giá cao.",
+    "exp": "2020-03-20",
+    "mfg": "2017-01-19",
+    "lot": "21.A.275.710-711-712",
+    "company": {
+      "id": "1",
+      "name": "Vinamilk",
+      "logo": "vinamilklogo.png",
+      "address": "10 Tân Trào, P. Tân Phú, Quận 7, TP. HCM",
+      "tel": "(028) 54 155 555",
+      "email": "vinamilk@vinamilk.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "1",
+        "name": "Phân phối tại Công ty Cổ Phần VBM Việt Nam",
+        "description": "Hệ thống phân phối chuẩn quốc tế hiện đại bậc nhất mang đến những sản phẩm chất lượng cao.",
+        "location": [
+          20.825982,
+          106.714992
+        ],
+        "location_description": "Tổ dân phố 16, P Thành Tô, Q. Hải An, TP Hải Phòng, Việt Nam",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "2",
+        "name": "Sản xuất tại Công Ty Cổ Phần Phân Bón Dầu Khí Cà Mau",
+        "description": "Nhà máy Đạm Cà Mau công suất 800.000 tấn urê/năm được xây dựng trên diện tích 52 ha tại địa bàn xã Khánh An, huyện U Minh, tỉnh Cà Mau, với tổng mức đầu tư 900,2 triệu USD. Công nghệ được áp dụng cho nhà máy đều là các công nghệ tiên tiến và hiện đại nhất hiện nay.",
+        "location": [
+          9.200640,
+          105.128090
+        ],
+        "location_description": "Ngô Quyền, Phường 1, Thành phố Cà Mau, Viet Nam",
+        "attributes": [
+          {
+            "time": "30/10/2019 8:00 AM",
+            "activity": "Vận chuyển đến nhà máy sữa Thống Nhất",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Khối lượng sữa tại lúc vận chuyển: 1000 lít",
+              "Phương tiện vận chuyển: Xe đông lạnh",
+              "Nhiệt độ tại lúc vận chuyển: 0 độ C",
+              "Tài xế xe: Đặng Văn A"
+            ]
+          },
+          {
+            "time": "29/10/2019 12:00 AM",
+            "activity": "Kiểm tra thông tin trữ lạnh sữa bò",
+            "content": [
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh tại thời điểm kiểm tra: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn B"
+            ]
+          },
+          {
+            "time": "28/10/2019 12:00 AM",
+            "activity": "Sơ chế & trữ lạnh sữa bò nguyên liệu",
+            "content": [
+              "Sơ chế tại khu A2",
+              "Trữ lạnh tại khu A3",
+              "Nhiệt độ trữ lạnh: 0 độ C",
+              "Nhân viên kiểm định: Nguyễn Văn A"
+            ]
+          },
+          {
+            "time": "28/10/2019 10:00 AM",
+            "activity": "Vắt sữa bò nguyên liệu",
+            "content": [
+              "Vắt từ bò giống New Zealand",
+              "Số lượng bò vắt: 10 con bò - khu A1",
+              "Khối lượng sữa vắt được: 1000 lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Thành phần cấu tạo",
+        "description": "Tiết kiệm lượng phân bón.\nPhân giải từ từ giúp cân bằng các yếu tố dinh dưỡng.\nDễ phối trộn, dễ bón, hàm lượng chất gây bạc màu (Biurét) thấp.\nThích hợp với các loại đất và cây trồng.",
+        "images": [
+          "DCMCT.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Đạm (N)",
+            "value": "46,3%"
+          },
+          {
+            "id": "",
+            "name": "Biurétx",
+            "value": "0,99%"
+          },
+          {
+            "id": "",
+            "name": "Độ ẩm",
+            "value": "0,5%"
+          }
+        ],
+        "notes": [
+          "Dưỡng chất màu đỏ là cực kỳ quan trọng cho quá trình tăng trưởng và duy trì."
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn của Đạm Cà Mau trong tháng 5-2019",
+        "description": "",
+        "images": [
+          "DCMQC2.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/05/2019 – 01/08/2019"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các đại lý và website trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Quà tặng từ chương trình bao gồm: 24.000 thẻ cào điện thoại, 12.000 thau rải phân, 6.667 mũ bảo hiểm, 3.000 áo mưa với tổng giá trị lên đến hơn 2 tỉ đồng."
+          }
+        ],
+        "notes": []
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn của Đạm Cà Mau trong tháng 8-2019",
+        "description": "",
+        "images": [
+          "DCMQC1.png"
+        ],
+        "attributes": [
+          {
+            "id": "",
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2019 - 31/12/2019"
+          },
+          {
+            "id": "",
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các đại lý bán lẻ trên toàn quốc."
+          },
+          {
+            "id": "",
+            "name": "Thông tin khuyến mãi",
+            "value": "Quà tặng từ chương trình bao gồm: 24.000 thẻ cào điện thoại, 12.000 thau rải phân, 6.667 mũ bảo hiểm, 3.000 áo mưa với tổng giá trị lên đến hơn 2 tỉ đồng."
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu Đạm Cà Mau hiện bán tại Việt Nam:",
+        "description": "Với sứ mệnh cung cấp giải pháp dinh dưỡng cho cây trồng, Đạm Cà Mau không ngừng đầu tư cho công tác nghiên cứu và phát triển các sản phẩm mới hiệu quả cao, thân thiện với môi trường và đã cho ra đời những sản phẩm phân bón cao cấp.",
+        "images": [],
+        "attributes": [
+          {
+            "id": "",
+            "name": "UREA BIO",
+            "value": "DCM2.png"
+          },
+          {
+            "id": "",
+            "name": "N.Humate+TE 28-5",
+            "value": "DCM3.png"
+          },
+          {
+            "id": "",
+            "name": "DAP CÀ MAU 18-46",
+            "value": "DCM4.png"
+          },
+          {
+            "id": "",
+            "name": "URÊ HẠT ĐỤC",
+            "value": "DCM1.png"
+          }
+        ],
+        "notes": []
+      }
+    ]
+  }
+]

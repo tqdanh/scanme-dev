@@ -1,0 +1,97 @@
+.MuiIconButton-root {
+  color: rgba(60, 59, 59, 0.819608);
+}
+.MuiTable-root {
+  table-layout: fixed;
+}
+
+.page-size-selector {
+  width: 100px;
+}
+
+.qrcode {
+  margin: 0 auto;
+}
+
+.generic-data-tables {
+  .MuiToolbar-root {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .MuiTableRow-head {
+    .MuiTableCell-head {
+      color: #546e7a;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: #eaeaea;
+    }
+  }
+
+  .MuiTableCell-root {
+    width: 120px;
+    padding: 14px 40px 14px 16px;
+    font-size: 14px;
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    border-bottom: 1px solid #eeeeee;
+    letter-spacing: -0.05px;
+    vertical-align: inherit;
+  }
+
+  .MuiTableCell-head {
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    position: sticky;
+    background: #fff;
+    padding: 8px;
+  }
+
+  .MuiTableCell-body {
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .MuiTableCell-body:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  .MuiTablePagination-toolbar {
+    color: #212020
+  }
+
+  .MuiTableSortLabel-active {
+    height: unset;
+  }
+}
+
+.text-btn {
+  input: {
+    display: none;
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-group .btn-group-btn {
+  padding: 4px;
+}
+
+.btn-group button > i.material-icons {
+  color: inherit;
+}
+
+.btn-group.child {
+  button {
+    margin: 10px;
+  }
+}

@@ -1,0 +1,143 @@
+/*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+.break {
+    word-break: break-all;
+}
+
+#myInput {
+    background-color: white;
+    border-bottom-color: gainsboro;
+}
+#addMeta {
+    overflow-y: unset !important;
+}
+#autocompleteRow {
+    overflow-y: unset;
+}
+#assetInfor {
+    padding-left: 40%;
+}
+#additionalMeta {
+    width: 80%;
+    padding: 5%;
+}
+#addNewField {
+    float: right;
+}
+#ProductLine {
+    margin-left: 0px;
+}
+
+.text-btn {
+    input: {
+        display: none;
+    }
+}
+
+.MuiFormControl-root {
+    width: 100%;
+}
+
+.overflow-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.source-display-table {
+    .MuiTableCell-root {
+        padding: 8px;
+    }
+}
+
+.addAssetModal .MuiInputBase-input {
+    font-size: 14px;
+}
+.primary-color {
+    color: #2979ff;
+}
+
+/*Add meta data form*/
+input:read-only, input:disabled, select:disabled {
+    color: #0e0d0d !important;
+    background: #afafaf;
+}
+
+.MuiFormLabel-root {
+    color: rgb(49, 47, 47);
+}
+.custom-add-product-card {
+    .MuiCardHeader-root {
+        background: #2979ff;
+    }
+    .MuiCardHeader-content p {
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+.MuiGrid-item.section-border {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+.dialog-icon-success {
+    color: #4caf50;
+    font-size: 48px;
+}
+
+.dialog-icon-fail {
+    color: #d32f2f;
+    font-size: 48px;
+}
+
+.dialog-icon-confirm {
+    color: #2196f3;
+    font-size: 48px;
+}

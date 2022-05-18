@@ -1,0 +1,44 @@
+.img-ad-product {
+  width: 64px;
+  height: auto;
+  padding: 2px;
+  border-radius: 2px;
+
+}
+
+.product-form-table {
+  .MuiTableCell-head {
+
+    &:nth-child(1) {
+      width: 30px;
+    }
+    &:nth-child(2) {
+      width: 40px;
+    }
+    &:nth-child(3) {
+      width: 80px;
+    }
+    &:nth-child(4) {
+      width: 150px;
+    }
+    &:nth-child(5) {
+      width: 100px;
+    }
+    &:nth-child(6) {
+      width: 200px;
+    }
+    &:nth-child(7) {
+      width: 50px;
+    }
+  }
+
+  .MuiTableCell-body {
+
+  }
+}
+
+.product-page-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 16px;
+}

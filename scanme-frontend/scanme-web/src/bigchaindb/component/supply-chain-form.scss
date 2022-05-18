@@ -1,0 +1,55 @@
+.supply-chain-form-table {
+  margin-top: 16px;
+  .MuiTableCell-head {
+
+    &:nth-child(4) {
+      width: 80px;
+    }
+
+    &:nth-child(5) {
+      width: 40px;
+
+      span[role='button'] {
+        justify-content: flex-end;
+      }
+    }
+
+    &:nth-child(6) {
+      width: 90px
+    }
+
+    &:nth-child(7) {
+      width: 90px
+    }
+
+    &:nth-child(8) {
+      width: 120px;
+      padding-right: 0;
+    }
+  }
+
+  .MuiTableCell-body {
+    &:nth-child(8) {
+      width: 120px;
+    }
+
+    &:nth-child(10) {
+      text-align: right;
+    }
+  }
+}
+
+#transition-modal-title {
+  color: #37474F;
+}
+
+#bigChainForm {
+  .MuiGrid-justify-xs-space-around {
+    justify-content: unset;
+  }
+}
+
+.custom-modal > div:nth-child(3) {
+    height: 100vh;
+    width: 70%;
+}

@@ -1,0 +1,166 @@
+.pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #5d5d5d;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 50px;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+}
+
+.pin:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin: 10px 0 0px 10px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.tracing-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  background: rgb(227, 227, 227);
+  flex-grow: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.tracing-card-info {
+  .MuiTypography-displayBlock {
+    display: flex;
+    font-size: 18px;
+    color: #0e0c0c;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .MuiPaper-root.MuiPaper-elevation1.MuiCard-root.MuiPaper-rounded {
+    border: 1px solid #e0e0e0;
+    box-shadow: 4px 3px 18px -8px rgba(0, 0, 0, 0.75);
+  }
+}
+
+.vertical-timeline-element-content.bounce-in {
+  border: 1px solid #2196f3;
+}
+
+.vertical-timeline::before {
+  background: #d60909;
+}
+
+/*
+// .vertical-timeline-element-date {
+//     color: #333;
+//     opacity: 0.7;
+//     font-weight: 400;
+//     font-size: 14px;
+// }
+*/
+
+/*
+.vertical-timeline-element-date::before {
+    // content: 'Provider Address: '
+}
+*/
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid #2196f3;
+}
+
+.vertical-timeline-element-content p {
+  margin: initial;
+  font-weight: initial;
+}
+
+.vertical-timeline-element-title {
+  letter-spacing: -1px;
+}
+
+.vertical-timeline-element-subtitle {
+  letter-spacing: -1px;
+}
+
+.provider-header {
+  padding: 8px;
+  //border-bottom: 1px solid #dadada;
+  text-align: left;
+}
+
+.child-card-header {
+  padding-bottom: 0;
+}
+.MuiCardHeader-root {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+}
+.child-card-header title {
+  text-align: center;
+}
+
+p.child-card-header.title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.child-card-actions {
+  padding: 8px;
+}
+
+.child-card-actions.action-text.time-stamp {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.timestamp-bottom-navigate {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  // visibility: hidden;
+}
+
+.timestamp-bottom-navigate:hover {
+  visibility: visible;
+}
+
+.MuiPaper-root.content-card {
+  background: #d4edf5;
+  color: #100d0d;
+}
+
+.child-card-content {
+  padding-left: 24px;
+}
+
+.child-card-content p {
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.vertical-timeline-element-content.bounce-in {
+  text-align: center;
+}
+
+.child-card-content.list {
+  text-align: left;
+  margin-left: 8px;
+}
+
+.collapse-icon {
+  transform: rotate(180deg);
+}
+.child-card-content {
+  text-align: left;
+}

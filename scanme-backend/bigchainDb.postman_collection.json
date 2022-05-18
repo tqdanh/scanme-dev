@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "bigchainDb",
+		"_postman_id": "9b083fa3-ca2e-3aca-3c49-2820943b9485",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createTransaction",
+			"request": {
+				"url": "http://localhost:8080/createTransaction",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Meat\",\n\t\"weight\" : \"5\",\n\t\"state\"  : \"raw\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

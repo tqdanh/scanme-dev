@@ -1,0 +1,17 @@
+# dependencies
+scanme-frontend/scanme-web/node_modules/
+scanme-backend/node_modules/
+
+# IDE
+scanme-backend/.idea/
+scanme-frontend/scanme-web/.idea/
+scanme-frontend/scanme-mobile/.idea/
+
+# build
+scanme-frontend/scanme-web/build/
+scanme-frontend/scanme-mobile/build/
+
+# misc
+scanme-backend/npm-debug.log*
+scanme-frontend/scanme-web/npm-debug.log*
+scanme-frontend/scanme-mobile/npm-debug.log*

@@ -1,0 +1,14 @@
+.gift-table {
+  .MuiTableCell-head {
+    &:nth-child(1) {
+      width: 50px;
+    }
+    &:nth-child(2) {
+      width: 50px;
+    }
+  }
+
+  .MuiTableCell-body {
+
+  }
+}
