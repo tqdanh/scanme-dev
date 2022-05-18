@@ -133,7 +133,7 @@ export class ProviderEditAddressModal extends React.Component<any, any> {
                 <Grid item xs={12}>
                     <Autocomplete
                         freeSolo
-                        disableOpenOnFocus={false}
+                        // disableOpenOnFocus={false}
                         noOptionsText={''}
                         disableCloseOnSelect={false}
                         getOptionLabel={option => option.place_name}

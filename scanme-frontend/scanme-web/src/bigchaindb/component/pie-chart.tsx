@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Doughnut, Pie } from 'react-chartjs-2';
 import clsx from 'clsx';
 import * as PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
   Card,
   CardContent,
@@ -29,9 +29,9 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     padding: theme.spacing(1)
   },
-  deviceIcon: {
-    color: theme.palette.icon
-  }
+  // deviceIcon: {
+  //   color: theme.palette.icon
+  // }
 }));
 
 const PieChart = props => {
