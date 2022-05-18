@@ -2,7 +2,7 @@
   "name": "bigchaindb-backend",
   "version": "1.0.0",
   "description": "bigchaindb-backend",
-  "main": "dist/server.js",
+  "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "_build:dev": "rm -rf dist && tsc",
@@ -13,8 +13,8 @@
     "devorg": "ts-node src/org-bigchaindb-backend/server",
     "devapp": "ts-node ./src/server",
     "prod": "npm run build && npm run start",
-    "start": "cross-env NODE_ENV=development PORT=30094 nodemon ./dist/server",
-    "server": "nodemon ./dist/server"
+    "start": "cross-env NODE_ENV=development PORT=30094 nodemon ./src/server",
+    "server": "nodemon ./src/server"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",

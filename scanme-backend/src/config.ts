@@ -4,21 +4,21 @@ const env = process.env.NODE_ENV || 'development';
 
 const config = {
     development: {
-        DOMAIN: '192.168.75.88',
+        DOMAIN: '192.168.213.127',
         HTTP_PORT: 8080,
         HTTPS_SECURE: false,
         MONGO: {
-            URL: 'mongodb://192.168.75.88:27017',
+            URL: 'mongodb://192.168.213.127:27017',
             DB: 'supplychain',
             POOL_SIZE: 5,
         },
         BIGCHAIN: {
-            API_PATH: 'http://192.168.75.88:9984/api/v1/',
+            API_PATH: 'http://192.168.213.127:9984/api/v1/',
             APP_ID: '218747a2',
             APP_KEY: '717a15fc4fa5386a15f5ff576e2a9e28',
         },
         REDIS: {
-            URL: 'redis://192.168.75.88:6379'
+            URL: 'redis://192.168.213.127:6379'
         },
         AUTHENTICATION: {
             MAX_PASSWORD_AGE: 90, // day
