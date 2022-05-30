@@ -13,7 +13,7 @@ export class ProductsController {
   }
   private storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '/opt/bigchaindb-backend/public/images');
+      cb(null, '/Company/TMA/Course/Scanme/file-container');
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname );
