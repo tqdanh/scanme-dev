@@ -1,3 +1,4 @@
+// @ts-ignore
 import {Bc} from 'bigchaindb-driver';
 import * as driver from 'bigchaindb-driver';
 import {Identity} from 'org-bigchaindb-backend/model/Identity';

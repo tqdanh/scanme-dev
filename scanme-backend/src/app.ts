@@ -1,10 +1,12 @@
 import * as driver from 'bigchaindb-driver';
+// @ts-ignore
 import {Bc, BigChainClient} from 'bigchaindb-driver';
 import {Db, MongoClient} from 'mongodb';
 import * as redis from 'redis';
 import {Observable, of, zip} from 'rxjs';
 
 import {fromPromise} from 'rxjs/internal-compatibility';
+// import { fromPromise } from 'rxjs/observable/fromPromise';
 import {BigChainDBBackEndRoutes} from './bigchaindb-backend/BigChainDBBackEndRoutes';
 import config from './config';
 import {logger} from './core';
@@ -76,6 +78,7 @@ export class App extends BaseApp {
         // BigChainClient.Conn.Connection(uri, {app_id: bigchainConfig.app_id, app_key: bigchainConfig.app_key}, (err, client: BigChainClient) => {
         logger.info('Connected successfully to BigChain server');
         // const conn: Bc = client;
+        // @ts-ignore
         resolve(conn);
       } catch (err) {
         logger.info(err);
@@ -104,7 +107,10 @@ export class App extends BaseApp {
   }
 
   protected redisSetup(url: string): Observable<redis.RedisClient> {
-    const redisClient = redis.createClient(url);
+    const redisClient = redis.createClient({
+      url,
+      password: "12341234x@@X"
+    });
     redisClient.on('ready', function () {
       logger.info('Connected successfully to Redis server');
     });

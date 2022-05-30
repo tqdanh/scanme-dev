@@ -1,3 +1,4 @@
+// @ts-ignore
 import {Bc, BigChainClient} from 'bigchaindb-driver';
 import {Db} from 'mongodb';
 import {RedisClient} from 'redis';

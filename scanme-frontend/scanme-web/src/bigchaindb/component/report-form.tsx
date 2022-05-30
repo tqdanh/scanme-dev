@@ -230,7 +230,7 @@ export class ReportForm extends React.Component<any, any> {
                                 >
                                     <TileLayer
                                         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
-                                        url='https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZG10aGFuaCIsImEiOiJjazFsdmh0MW4wOWI0M210Y25tM3Q1MGxjIn0.p0jgT4bCU319g6iFZWXldg'
+                                        url='https://api.mapbox.com/styles/v1/tqdanh/cl3ny9cba001j15mmvbw3x67v/tiles/512/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHFkYW5oIiwiYSI6ImNsM254aDY4ajAyOG0zanAxdmg3MmFybDIifQ.mm5g3BEMeR1hV1c5M6sjlg'
                                     />
                                     {this.state.productLocations.map((item: any, idx) => {
                                         const color = this.getProductColor(item.productId);

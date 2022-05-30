@@ -691,7 +691,10 @@ export class ItemList extends SearchComponent<ItemModel, ItemSM, HistoryProps, S
         });
         editItems = editItems.filter(id => !!id);
         if (editItems.length > 0) {
-            this.props.history.push(`/product/${this.productCatId}/item/update`, {data: [...editItems]});
+            const test = [...editItems[0]];
+            const index = test.findIndex(x => React.isValidElement(x));
+            test.splice(index, 1);
+            this.props.history.push(`/product/${this.productCatId}/item/update`, {data: [test]});
         } else {
             this.setState({invalidItems: true});
         }

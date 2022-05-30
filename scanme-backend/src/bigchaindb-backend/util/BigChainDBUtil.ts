@@ -46,6 +46,7 @@ export class BigChainDBUtil {
             // Create a new TRANSFER transaction.
             const transferTransaction = driver.Transaction.makeTransferTransaction(
                 // The previous transaction to be chained upon.
+                // @ts-ignore
                 [{tx: currentTransaction, output_index: outputIndex}],
                 // The (output) condition to be fullfilled in the next transaction.
                 arrOutputs,
@@ -92,6 +93,7 @@ export class BigChainDBUtil {
             // Create a new TRANSFER transaction.
             updateAssetTransaction = driver.Transaction.makeTransferTransaction(
                 // previous transaction.
+                // @ts-ignore
                 [{tx: currentTransaction, output_index: outputIndex}],
                 // Create new output.
                 arrOutputs,

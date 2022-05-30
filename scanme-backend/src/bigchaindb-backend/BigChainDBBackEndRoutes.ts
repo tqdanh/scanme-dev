@@ -1,3 +1,4 @@
+// @ts-ignore
 import {Bc, BigChainClient} from 'bigchaindb-driver';
 import {Application} from 'express';
 import {Db} from 'mongodb';
