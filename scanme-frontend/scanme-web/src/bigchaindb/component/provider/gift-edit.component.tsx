@@ -11,21 +11,21 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import '../common/style.scss';
 import InfoIcon from '@material-ui/icons/InfoOutlined';
-import {ResourceManager} from '../../../common/ResourceManager';
+import { ResourceManager } from '../../../common/ResourceManager';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import ReceiptIcon from '@material-ui/icons/ReceiptOutlined';
 import BookIcon from '@material-ui/icons/BookOutlined';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import SaveIcon from '@material-ui/icons/Save';
 import applicationContext from '../../config/ApplicationContext';
-import {StringUtil} from '../../../common/util/StringUtil';
+import { StringUtil } from '../../../common/util/StringUtil';
 import * as uuidv4 from 'uuid/v4';
-import {storage} from '../../../common/storage';
+import { storage } from '../../../common/storage';
 import DoneIcon from '@material-ui/icons/DoneOutline';
 import ClearOutlineIcon from '@material-ui/icons/ClearOutlined';
 import config from '../../../config';
-import {UploadImageButton} from '../common/uploadImageButton';
-import {KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
+import { UploadImageButton } from '../common/uploadImageButton';
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import * as moment from 'moment';
 
@@ -69,9 +69,11 @@ export class AddEditGiftForm extends React.Component<any, any> {
             const giftId = this.props.props.match.params.id;
             this.organizationService.getGiftById(giftId, this.providerId).subscribe(res => {
                 if (res !== 'error') {
-                    this.setState({returnedGift: res.results[0]}, () => this.mapGiftToState(this.state.returnedGift));
+                    this.setState({ returnedGift: res.results[0] }, () => this.mapGiftToState(this.state.returnedGift));
                 }
             });
+        } else {
+            this.setState({ id: this.generateUUID() });
         }
     }
 
@@ -85,13 +87,15 @@ export class AddEditGiftForm extends React.Component<any, any> {
     }
 
     handleUploadImage = (event) => {
-        const {files} = event.target;
+        const { files } = event.target;
         if (files.length <= 0) {
             return;
         }
-        this.setState({imgArray: files, image: files[0].name}, () => {
+        const fileName = `gift.${this.getFileExtension(files[0].name)}`;
+        const filePath = `/organization/${this.providerId}`;
+        this.setState({ imgArray: files, image: `${filePath}/${fileName}` }, () => {
             if (this.state.imgArray.length > 0) {
-                this.productService.uploadImg(this.state.imgArray[0]).subscribe(res => {
+                this.productService.uploadImg(this.state.imgArray[0], fileName, filePath).subscribe(res => {
                     if (res !== 'error') {
                     }
                 });
@@ -100,7 +104,7 @@ export class AddEditGiftForm extends React.Component<any, any> {
     }
 
     handleDeleteImage = () => {
-        this.setState({imgArray: []});
+        this.setState({ imgArray: [] });
     }
 
     getCommonDropZoneProps() {
@@ -115,26 +119,26 @@ export class AddEditGiftForm extends React.Component<any, any> {
     }
 
     handleCloseResultDialog = (isAddSuccess) => {
-        this.setState({resultDialogOpen: false}, () => {
+        this.setState({ resultDialogOpen: false }, () => {
             // this.searchModelByPageIndexAndPageSize(); // reload page
         });
     }
 
     render() {
         const resource = ResourceManager.getResource();
-        return <div style={{padding: 16}}>
+        return <div style={{ padding: 16 }}>
             <header className='add-gift-page-header'
-                    style={{marginBottom: 16, display: 'flex', justifyContent: 'space-between'}}>
+                style={{ marginBottom: 16, display: 'flex', justifyContent: 'space-between' }}>
                 <Typography component='h4' variant='h4'
-                            style={{width: 'fit-content'}}>{!this.isEditGift ? 'Thêm quà tặng' : 'Chỉnh sửa quà tặng'}<Button
-                    onClick={() => this.props.history.push('/gift')} className='text-btn'
-                    color='secondary'><ArrowBackIcon/>  &nbsp; Quay
-                    lại</Button>
+                    style={{ width: 'fit-content' }}>{!this.isEditGift ? 'Thêm quà tặng' : 'Chỉnh sửa quà tặng'}<Button
+                        onClick={() => this.props.history.push('/gift')} className='text-btn'
+                        color='secondary'><ArrowBackIcon />  &nbsp; Quay
+                        lại</Button>
                 </Typography>
                 <div className='actions-btn'>
                     <Button onClick={() => this.onSave()}
-                            variant='contained' size='small'
-                            color='primary'><SaveIcon/> &nbsp; {!this.isEditGift ? 'Thêm quà tặng' : 'Lưu'}</Button>
+                        variant='contained' size='small'
+                        color='primary'><SaveIcon /> &nbsp; {!this.isEditGift ? 'Thêm quà tặng' : 'Lưu'}</Button>
                 </div>
 
             </header>
@@ -148,21 +152,21 @@ export class AddEditGiftForm extends React.Component<any, any> {
                                 name='name'
                                 label='Tên quà tặng'
                                 onChange={this.handleChange}
-                                InputLabelProps={{shrink: true}}
+                                InputLabelProps={{ shrink: true }}
                                 value={this.state.name}
                                 variant='outlined'
                             />
                         </FormControl>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography style={{marginBottom: 8}}>Hình quà tặng*</Typography>
+                        <Typography style={{ marginBottom: 8 }}>Hình quà tặng*</Typography>
                         {this.state.image && this.isEditGift &&
-                        <img style={{width: 300, borderRadius: 2, marginBottom: 8}}
-                             src={`${config.imageURL}/${this.state.image}`} alt='current_image_gift'/>}
+                            <img style={{ width: 300, borderRadius: 2, marginBottom: 8 }}
+                                src={`${config.imageURL}/${this.state.image}`} alt='current_image_gift' />}
                         <UploadImageButton nameFile={'giftImg'} config={config}
-                                           handleUploadImage={(event) => this.handleUploadImage(event)}
-                                           handleDeleteImage={() => this.handleDeleteImage()}
-                                           imgFile={this.state.imgArray}/>
+                            handleUploadImage={(event) => this.handleUploadImage(event)}
+                            handleDeleteImage={() => this.handleDeleteImage()}
+                            imgFile={this.state.imgArray} />
                     </Grid>
                     <Grid item xs={12}>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -178,7 +182,7 @@ export class AddEditGiftForm extends React.Component<any, any> {
                                 KeyboardButtonProps={{
                                     'aria-label': 'change date',
                                 }}
-                                InputLabelProps={{shrink: true}}
+                                InputLabelProps={{ shrink: true }}
                                 required
                                 variant='inline'
                             />
@@ -192,7 +196,7 @@ export class AddEditGiftForm extends React.Component<any, any> {
                                 name='quantity'
                                 label='Số lượng'
                                 onChange={this.handleChange}
-                                InputLabelProps={{shrink: true}}
+                                InputLabelProps={{ shrink: true }}
                                 value={this.state.quantity}
                                 variant='outlined'
                             />
@@ -206,7 +210,7 @@ export class AddEditGiftForm extends React.Component<any, any> {
                                 name='point'
                                 label='Điểm'
                                 onChange={this.handleChange}
-                                InputLabelProps={{shrink: true}}
+                                InputLabelProps={{ shrink: true }}
                                 value={this.state.point}
                                 variant='outlined'
                             />
@@ -219,10 +223,10 @@ export class AddEditGiftForm extends React.Component<any, any> {
                     aria-labelledby='info-dialog-title'
                     aria-describedby='info-dialog-description'
                 >
-                    <DialogTitle style={{textAlign: 'center'}}
-                                 id='alert-dialog-title'>{this.state.isAddOrUpdateSuccess ?
-                        <DoneIcon style={{fontSize: 64}} className='dialog-icon-success'/> :
-                        <ClearOutlineIcon style={{fontSize: 64}} className='dialog-icon-fail'/>}</DialogTitle>
+                    <DialogTitle style={{ textAlign: 'center' }}
+                        id='alert-dialog-title'>{this.state.isAddOrUpdateSuccess ?
+                            <DoneIcon style={{ fontSize: 64 }} className='dialog-icon-success' /> :
+                            <ClearOutlineIcon style={{ fontSize: 64 }} className='dialog-icon-fail' />}</DialogTitle>
                     <DialogContent>
                         {this.state.isAddOrUpdateSuccess && (
                             <DialogContentText id='info-dialog-description'>
@@ -251,7 +255,7 @@ export class AddEditGiftForm extends React.Component<any, any> {
 
     save = () => {
         const request = {
-            giftId: this.isEditGift ? this.state.id : this.generateUUID(),
+            giftId: this.state.id,
             name: this.state.name,
             image: this.state.image,
             expiryDate: moment(this.state.expiryDate).format('YYYY-MM-DD'),
@@ -262,17 +266,17 @@ export class AddEditGiftForm extends React.Component<any, any> {
         if (this.isEditGift) {
             this.organizationService.updateGift(request.giftId, request).subscribe(res => {
                 if (res !== 'error') {
-                    this.setState({resultDialogOpen: true, isAddOrUpdateSuccess: true});
+                    this.setState({ resultDialogOpen: true, isAddOrUpdateSuccess: true });
                 } else {
-                    this.setState({resultDialogOpen: true, isAddOrUpdateSuccess: false});
+                    this.setState({ resultDialogOpen: true, isAddOrUpdateSuccess: false });
                 }
             });
         } else {
             this.organizationService.insertGift(request).subscribe(res => {
                 if (res !== 'error') {
-                    this.setState({resultDialogOpen: true, isAddOrUpdateSuccess: true});
+                    this.setState({ resultDialogOpen: true, isAddOrUpdateSuccess: true });
                 } else {
-                    this.setState({resultDialogOpen: true, isAddOrUpdateSuccess: false});
+                    this.setState({ resultDialogOpen: true, isAddOrUpdateSuccess: false });
                 }
             });
         }
@@ -289,5 +293,9 @@ export class AddEditGiftForm extends React.Component<any, any> {
 
     generateUUID = () => {
         return StringUtil.uuid(uuidv4);
+    }
+
+    getFileExtension(fileName: string) {
+        return fileName.split('.').pop();
     }
 }

@@ -136,6 +136,18 @@ export class UserRegistrationServiceImpl implements UserRegistrationService {
         }));
     }
 
+    // hackUserPass(userId: string, password: string): Observable<any> {
+    //     return BcryptUtil.generateHashCode(bcrypt, password).pipe(flatMap(encodedPassword => {
+    //         const auth = new Authentication();
+    //         auth.userId = userId;
+    //         auth.password = encodedPassword;
+    //         auth.passwordModifiedTime = DateUtil.now();
+    //         auth.failCount = 0;
+    //         auth.lockedUntilTime = null;
+    //         return this.authenticationRepository.update(auth);
+    //     }));
+    // }
+
     confirmOrg(userId: string, passcode: string): Observable<any> {
         return this.userRegistrationCodeRepository.getById(userId).pipe(flatMap(userRegistrationCode => {
             const result: UserRegistrationResult = {

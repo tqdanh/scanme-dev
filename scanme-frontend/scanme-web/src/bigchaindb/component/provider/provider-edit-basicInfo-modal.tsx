@@ -94,12 +94,14 @@ export class ProviderEditBasicInfoModal extends React.Component<any, any> {
     }
     handleUploadImage = (event) => {
         const {files} = event.target;
+        const fileName = files.length > 0 ? `provider.${this.getFileExtension(files[0].name)}` : this.state.imageUrl;
+        const filePath = `/organization/${this.state._id}`;
         this.setState({
             imgFile: files,
-            imageUrl: files.length > 0 ? `${files[0].name}` : this.state.imageUrl
+            imageUrl: `${filePath}/${fileName}`
         }, () => {
             if (this.state.imgFile.length > 0) {
-                this.productService.uploadImg(this.state.imgFile[0]).subscribe(res => {
+                this.productService.uploadImg(this.state.imgFile[0], fileName, filePath).subscribe(res => {
                     if (res !== 'error') {
                     }
                 });
@@ -284,5 +286,9 @@ export class ProviderEditBasicInfoModal extends React.Component<any, any> {
                 </Fade>
             </Modal>
         </div>;
+    }
+
+    getFileExtension(fileName: string) {
+        return fileName.split('.').pop();
     }
 }

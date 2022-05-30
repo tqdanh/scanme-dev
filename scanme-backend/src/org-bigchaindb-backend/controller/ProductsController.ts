@@ -7,31 +7,67 @@ import {GetOrgModel} from '../model/GetOrgModel';
 import {GetProductsModel} from '../model/GetProductsModel';
 import {OrganizationService} from '../service/OrganizationService';
 import {ProductsService} from '../service/ProductsService';
+import * as fs from 'fs';
 
 export class ProductsController {
   constructor(private productsService: ProductsService) {
   }
-  private storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, '/Company/TMA/Course/Scanme/file-container');
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname );
+  // private storage = multer.diskStorage({
+  //   destination: function (req, file, cb) {
+  //     cb(null, '/Company/TMA/Course/Scanme/file-container');
+  //   },
+  //   filename: function (req, file, cb) {
+  //     cb(null, file.originalname );
+  //   }
+  // });
+
+  // private upload = multer({ storage: this.storage }).single('file');
+
+  uploadImage(req: any, res: Response) {
+    // this.upload(req, res, function (err) {
+    //   if (err instanceof multer.MulterError) {
+    //     return res.status(500).json(err);
+    //   } else if (err) {
+    //     return res.status(500).json(err);
+    //   }
+    //   // @ts-ignore
+    //   return res.status(200).send(req.file);
+    // });
+
+    //////////////////////////////////
+
+    // const storage = multer.diskStorage({
+    //   destination: function(req, file, cb) {
+    //     const destination = req.body.path;
+    //     cb(null, '/Company/TMA/Course/Scanme/file-container' + destination);
+    //   },
+    //   filename: function (req, file, cb) {
+    //     const fileName = req.body.name;
+    //     cb(null, fileName );
+    //   }
+    // });
+
+    // const upload = multer({storage: storage}).single('file');
+
+    // upload(req, res, function (err) {
+    //   if (err instanceof multer.MulterError) {
+    //     return res.status(500).json(err);
+    //   } else if (err) {
+    //     return res.status(500).json(err);
+    //   }
+    //   // @ts-ignore
+    //   return res.status(200).send(req.file);
+    // });
+
+    ////////////////////////////////////
+
+    const destination = `/Company/TMA/Course/Scanme/file-container${req.body.path}`;
+    const fileName = req.body.name;
+
+    if (!fs.existsSync(destination)){
+      fs.mkdirSync(destination, { recursive: true });
     }
-  });
-
-  private upload = multer({ storage: this.storage }).single('file');
-
-  uploadImage(req: Request, res: Response) {
-    this.upload(req, res, function (err) {
-      if (err instanceof multer.MulterError) {
-        return res.status(500).json(err);
-      } else if (err) {
-        return res.status(500).json(err);
-      }
-      // @ts-ignore
-      return res.status(200).send(req.file);
-    });
+    fs.writeFileSync(`${destination}/${fileName}`, req.file.buffer);
   }
 
   private handleError(res: Response, error: Error) {

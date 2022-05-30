@@ -36,10 +36,12 @@ export class ProductServiceImpl implements ProductService {
         const url = `${this.originUrl}product`;
         return WebClientUtil.postObject<StatusCode>(url, model).pipe(catchError(error => of(`error`)));
     }
-    uploadImg(image: any): Observable<any> {
+    uploadImg(image: any, imageName: string, storePath: string): Observable<any> {
         const url = `${config.imageURL}/uploadImage`;
         const body = new FormData();
         body.append('file', image);
+        body.set('name', imageName);
+        body.set('path', storePath);
         return WebClientUtil.postObjectImage<StatusCode>(url, body).pipe(catchError(error => of(`error`)));
     }
     getProduct(productId: string): Observable<any> {

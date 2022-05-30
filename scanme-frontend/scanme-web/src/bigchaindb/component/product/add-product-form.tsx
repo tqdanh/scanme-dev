@@ -120,6 +120,8 @@ export class AddProductForm extends React.Component<any, any> {
                     this.setState({returnProduct: res}, () => this.mapProductToState(this.state.returnProduct));
                 }
             });
+        } else {
+            this.setState({productId: this.generateUUID()});
         }
     }
 
@@ -611,25 +613,33 @@ export class AddProductForm extends React.Component<any, any> {
 
     uploadImage = () => {
         if (this.state.adImg.length > 0) {
-            this.productService.uploadImg(this.state.adImg[0]).subscribe(res => {
+            const fileName = `adImg.${this.getFileExtension(this.state.adImg[0].name)}`;
+            const filePath = `/product/${this.state.productId}`;
+            this.productService.uploadImg(this.state.adImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
             });
         }
         if (this.state.unitImg.length > 0) {
-            this.productService.uploadImg(this.state.unitImg[0]).subscribe(res => {
+            const fileName = `unitImg.${this.getFileExtension(this.state.unitImg[0].name)}`;
+            const filePath = `/product/${this.state.productId}`;
+            this.productService.uploadImg(this.state.unitImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
             });
         }
         if (this.state.introImg.length > 0) {
-            this.productService.uploadImg(this.state.introImg[0]).subscribe(res => {
+            const fileName = `introImg.${this.getFileExtension(this.state.introImg[0].name)}`;
+            const filePath = `/product/${this.state.productId}`;
+            this.productService.uploadImg(this.state.introImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
             });
         }
         if (this.state.ingredientImg.length > 0) {
-            this.productService.uploadImg(this.state.ingredientImg[0]).subscribe(res => {
+            const fileName = `ingredientImg.${this.getFileExtension(this.state.ingredientImg[0].name)}`;
+            const filePath = `/product/${this.state.productId}`;
+            this.productService.uploadImg(this.state.ingredientImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
             });
@@ -639,29 +649,33 @@ export class AddProductForm extends React.Component<any, any> {
     getImagesName(image: string) {
         if (image === 'imgAd') {
             if (this.state.adImg.length > 0) {
-                this.setState({imgAd: `${this.state.adImg[0].name}`});
-                return `${this.state.adImg[0].name}`;
+                const fileName = `/product/${this.state.productId}/adImg.${this.getFileExtension(this.state.adImg[0].name)}`;
+                this.setState({imgAd: fileName});
+                return fileName;
             }
             return this.imgAd;
         }
         if (image === 'imgUnit') {
             if (this.state.unitImg.length > 0) {
-                this.setState({imgUnit: `${this.state.unitImg[0].name}`});
-                return `${this.state.unitImg[0].name}`;
+                const fileName = `/product/${this.state.productId}/unitImg.${this.getFileExtension(this.state.unitImg[0].name)}`;
+                this.setState({imgUnit: fileName});
+                return fileName;
             }
             return this.imgUnit;
         }
         if (image === 'introduction_imgIntro') {
             if (this.state.introImg.length > 0) {
-                this.setState({introduction_imgIntro: `${this.state.introImg[0].name}`});
-                return `${this.state.introImg[0].name}`;
+                const fileName = `/product/${this.state.productId}/introImg.${this.getFileExtension(this.state.introImg[0].name)}`;
+                this.setState({introduction_imgIntro: fileName});
+                return fileName;
             }
             return this.introduction_imgIntro;
         }
         if (image === 'ingredient_image') {
             if (this.state.ingredientImg.length > 0) {
-                this.setState({ingredient_image: `${this.state.ingredientImg[0].name}`});
-                return `${this.state.ingredientImg[0].name}`;
+                const fileName = `/product/${this.state.productId}/ingredientImg.${this.getFileExtension(this.state.ingredientImg[0].name)}`;
+                this.setState({ingredient_image: fileName});
+                return fileName;
             }
             return this.ingredient_image;
         }
@@ -670,7 +684,7 @@ export class AddProductForm extends React.Component<any, any> {
 
     save = () => {
         const request = {
-            productId: this.isEditProduct ? this.state.productId : this.generateUUID(),
+            productId: this.state.productId,
             name: this.state.productName,
             status: +this.state.status,
             imageAds: this.getImagesName('imgAd'),
@@ -714,6 +728,7 @@ export class AddProductForm extends React.Component<any, any> {
             ],
             organizationId: this.providerId
         };
+
         if (this.isEditProduct) {
             this.productService.updateProduct(request).subscribe(res => {
                 if (res !== 'error') {
@@ -734,8 +749,8 @@ export class AddProductForm extends React.Component<any, any> {
     }
     onSave = () => {
         this.validateFields();
-        this.uploadImage();
         this.save();
+        this.uploadImage();
     }
 
     validateFields = () => {
@@ -744,5 +759,9 @@ export class AddProductForm extends React.Component<any, any> {
 
     generateUUID = () => {
         return StringUtil.uuid(uuidv4);
+    }
+
+    getFileExtension(fileName: string) {
+        return fileName.split('.').pop();
     }
 }

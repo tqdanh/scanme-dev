@@ -15,8 +15,8 @@ export class BaseApp {
   }
 
   protected config(): void {
-    this.app.use(bodyParser.json());
-    this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
     // serving static files
     this.app.use(express.static('public'));

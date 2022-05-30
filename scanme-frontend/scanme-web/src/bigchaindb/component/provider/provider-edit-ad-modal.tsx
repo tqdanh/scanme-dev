@@ -90,9 +90,11 @@ export class ProviderEditAdInfoModal extends React.Component<any, any> {
     }
     handleUploadImage = (event) => {
         const {files} = event.target;
-        this.setState({imgFile: files, image: files.length > 0 ? `${files[0].name}` : this.state.image}, () => {
+        const fileName = files.length > 0 ? `ad.${this.getFileExtension(files[0].name)}` : this.state.image;
+        const filePath = `/organization/${this.props.providerData['_id']}`;
+        this.setState({imgFile: files, image: `${filePath}/${fileName}`}, () => {
             if (this.state.imgFile.length > 0) {
-                this.productService.uploadImg(this.state.imgFile[0]).subscribe(res => {
+                this.productService.uploadImg(this.state.imgFile[0], fileName, filePath).subscribe(res => {
                     if (res !== 'error') {
                     }
                 });
@@ -106,7 +108,9 @@ export class ProviderEditAdInfoModal extends React.Component<any, any> {
         const {files} = event.target;
         this.setState({adProductImgFile: files}, () => {
             if (this.state.adProductImgFile.length > 0) {
-                this.productService.uploadImg(this.state.adProductImgFile[0]).subscribe(res => {
+                const fileName = `adProduct.${this.getFileExtension(this.state.adProductImgFile[0].name)}`;
+                const filePath = `/organization/${this.props.providerData['_id']}`;
+                this.productService.uploadImg(this.state.adProductImgFile[0], fileName, filePath).subscribe(res => {
                     if (res !== 'error') {
                     }
                 });
@@ -305,7 +309,8 @@ export class ProviderEditAdInfoModal extends React.Component<any, any> {
         const listAdProducts = [...this.state.listAdProducts];
         const find = listAdProducts.find(item => item.productName === this.state.ad_key);
         if (find) { return; }
-        listAdProducts.push({file: `${this.state.adProductImgFile[0].name}`, productName: this.state.ad_key});
+        const adProductName = `/organization/${this.props.providerData['_id']}/adProduct.${this.getFileExtension(this.state.adProductImgFile[0].name)}`;
+        listAdProducts.push({file: adProductName, productName: this.state.ad_key});
         this.setState({listAdProducts});
     }
 
@@ -313,5 +318,9 @@ export class ProviderEditAdInfoModal extends React.Component<any, any> {
         const listAdProducts = [...this.state.listAdProducts];
         const newArr = listAdProducts.filter(item => item.productName !== itemDelete.productName);
         this.setState({listAdProducts: newArr});
+    }
+
+    getFileExtension(fileName: string) {
+        return fileName.split('.').pop();
     }
 }

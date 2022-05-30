@@ -11,6 +11,7 @@ import {OrganizationController} from './controller/OrganizationController';
 import {OrganizationRegistrationController} from './controller/OrganizationRegistrationController';
 import {ProductsController} from './controller/ProductsController';
 import {UserRegistrationController} from './controller/UserRegistrationController';
+import * as multer from 'multer';
 
 export class OrgBigChainDBBackEndRoutes {
   private readonly applicationContext: ApplicationContext;
@@ -24,6 +25,7 @@ export class OrgBigChainDBBackEndRoutes {
   private readonly loyaltyCardController: LoyaltyCardController;
   private readonly locationProductsController: LocationProductsController;
   private readonly authenticationController: AuthenticationController;
+  private readonly upload: any;
 
   constructor(
     mongoDb: Db,
@@ -63,6 +65,7 @@ export class OrgBigChainDBBackEndRoutes {
     this.giftController = this.applicationContext.getGiftController();
     this.loyaltyCardController = this.applicationContext.getLoyaltyCardController();
     this.locationProductsController = this.applicationContext.getLocationProductsController();
+    this.upload = multer();
   }
 
   routes(app: Application): void {
@@ -81,6 +84,15 @@ export class OrgBigChainDBBackEndRoutes {
     app.route('/authenticate')
         .put(this.authenticationController.authenticate.bind(this.authenticationController));
 
+    // app.route('/hack-user-pass/:userId/:password')
+    //     .get(this.userRegistrationController.hackUserPass.bind(this.userRegistrationController));
+
+    // app.route('/hack-register')
+    //     .get(this.userRegistrationController.hackRegisterUser.bind(this.userRegistrationController));
+
+    // app.route('/generate-test')
+    //     .get(this.userRegistrationController.generateTestTransaction.bind(this.userRegistrationController));
+    
     // /*
     //     app.route('/getOrganizationByName') // Get
     //                 .get(this.authHandler.checkToken.bind(this.authHandler), this.bigChainController.getOrganizationByName.bind(this.bigChainController));
@@ -121,7 +133,7 @@ export class OrgBigChainDBBackEndRoutes {
         .delete(this.productsController.delete.bind(this.productsController));
 
     app.route('/uploadImage') // upload image
-        .post(this.productsController.uploadImage.bind(this.productsController));
+        .post(this.upload.single('file'), this.productsController.uploadImage.bind(this.productsController));
 
     // Item
     app.route('/getItem') // Get

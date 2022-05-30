@@ -7,7 +7,7 @@ export interface ProductService extends GenericSearchService<ProductModel, Produ
     getSearchProduct(productSM: ProductSM, orgId: string, status: string): Observable<any>;
     deleteProduct(productID: string): Observable<any>;
     insertProduct(model: any): Observable<any>;
-    uploadImg(image: any): Observable<any>;
+    uploadImg(image: any, imageName: string, storePath: string): Observable<any>;
     getProduct(productId: string): Observable<any>;
     updateProduct(model: any): Observable<any>;
 }
