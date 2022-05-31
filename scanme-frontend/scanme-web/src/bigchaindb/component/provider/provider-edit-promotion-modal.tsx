@@ -85,7 +85,7 @@ export class ProviderEditPromotionInfoModal extends React.Component<any, any> {
     handleUploadImage = (event) => {
         const {files} = event.target;
         const fileName = files.length > 0 ? `promotion.${this.getFileExtension(files[0].name)}` : this.state.image;
-        const filePath = `/organization/${this.props.providerData['_id']}`;
+        const filePath = `organization/${this.props.providerData['_id']}`;
         this.setState({imgFile: files, image: `${filePath}/${fileName}`}, () => {
             if (this.state.imgFile.length > 0) {
                 this.productService.uploadImg(this.state.imgFile[0], fileName, filePath).subscribe(res => {

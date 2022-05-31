@@ -5,7 +5,7 @@ const localConfigUrl = {
   qrcodeBaseUrl: 'http://localhost:8088', // local network
   reverseGeocodingService: 'https://us1.locationiq.com/v1/reverse.php',
   productServiceUrl: 'http://localhost:8080',
-  imageURL: 'http://localhost:8080',
+  imageURL: 'http://localhost:8080/file',
   itemServiceUrl: 'http://localhost:8080',
   providerServiceUrl: 'http://localhost:8080',
   geoCodingService: 'https://api.mapbox.com/geocoding/v5/mapbox.places'

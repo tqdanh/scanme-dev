@@ -95,7 +95,7 @@ export class ProviderEditBasicInfoModal extends React.Component<any, any> {
     handleUploadImage = (event) => {
         const {files} = event.target;
         const fileName = files.length > 0 ? `provider.${this.getFileExtension(files[0].name)}` : this.state.imageUrl;
-        const filePath = `/organization/${this.state._id}`;
+        const filePath = `organization/${this.state._id}`;
         this.setState({
             imgFile: files,
             imageUrl: `${filePath}/${fileName}`

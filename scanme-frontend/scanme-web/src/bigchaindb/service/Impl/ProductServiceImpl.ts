@@ -37,7 +37,7 @@ export class ProductServiceImpl implements ProductService {
         return WebClientUtil.postObject<StatusCode>(url, model).pipe(catchError(error => of(`error`)));
     }
     uploadImg(image: any, imageName: string, storePath: string): Observable<any> {
-        const url = `${config.imageURL}/uploadImage`;
+        const url = `${config.imageURL}`;
         const body = new FormData();
         body.append('file', image);
         body.set('name', imageName);

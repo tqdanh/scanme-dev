@@ -1,73 +1,40 @@
-import {Request, Response} from 'express';
+import * as fs from 'fs';
 import * as multer from 'multer';
-import {ResponseUtil} from '../../common/controller/util/ResponseUtil';
-import {MetadataUtil} from '../../common/metadata/util/MetadataUtil';
-import {JsonUtil} from '../../common/util/JsonUtil';
+
+import {Request, Response} from 'express';
+
 import {GetOrgModel} from '../model/GetOrgModel';
 import {GetProductsModel} from '../model/GetProductsModel';
+import {JsonUtil} from '../../common/util/JsonUtil';
+import {MetadataUtil} from '../../common/metadata/util/MetadataUtil';
 import {OrganizationService} from '../service/OrganizationService';
 import {ProductsService} from '../service/ProductsService';
-import * as fs from 'fs';
+import {ResponseUtil} from '../../common/controller/util/ResponseUtil';
+import config from '../../config';
 
 export class ProductsController {
   constructor(private productsService: ProductsService) {
   }
-  // private storage = multer.diskStorage({
-  //   destination: function (req, file, cb) {
-  //     cb(null, '/Company/TMA/Course/Scanme/file-container');
-  //   },
-  //   filename: function (req, file, cb) {
-  //     cb(null, file.originalname );
-  //   }
-  // });
-
-  // private upload = multer({ storage: this.storage }).single('file');
 
   uploadImage(req: any, res: Response) {
-    // this.upload(req, res, function (err) {
-    //   if (err instanceof multer.MulterError) {
-    //     return res.status(500).json(err);
-    //   } else if (err) {
-    //     return res.status(500).json(err);
-    //   }
-    //   // @ts-ignore
-    //   return res.status(200).send(req.file);
-    // });
-
-    //////////////////////////////////
-
-    // const storage = multer.diskStorage({
-    //   destination: function(req, file, cb) {
-    //     const destination = req.body.path;
-    //     cb(null, '/Company/TMA/Course/Scanme/file-container' + destination);
-    //   },
-    //   filename: function (req, file, cb) {
-    //     const fileName = req.body.name;
-    //     cb(null, fileName );
-    //   }
-    // });
-
-    // const upload = multer({storage: storage}).single('file');
-
-    // upload(req, res, function (err) {
-    //   if (err instanceof multer.MulterError) {
-    //     return res.status(500).json(err);
-    //   } else if (err) {
-    //     return res.status(500).json(err);
-    //   }
-    //   // @ts-ignore
-    //   return res.status(200).send(req.file);
-    // });
-
-    ////////////////////////////////////
-
-    const destination = `/Company/TMA/Course/Scanme/file-container${req.body.path}`;
+    const destination = `${config.FILE_STORAGE_PATH}/${req.body.path}`;
     const fileName = req.body.name;
 
     if (!fs.existsSync(destination)){
       fs.mkdirSync(destination, { recursive: true });
     }
-    fs.writeFileSync(`${destination}/${fileName}`, req.file.buffer);
+
+    fs.writeFile(`${destination}/${fileName}`, req.file.buffer, err => {
+      if(err){
+        console.log(err);
+      }
+    });
+    res.status(200).json({success: true});
+  }
+
+  downloadImage(req: Request, res: Response) {
+    const file = `${config.FILE_STORAGE_PATH}/${req.params[0]}`;
+    res.download(file);
   }
 
   private handleError(res: Response, error: Error) {
@@ -184,6 +151,12 @@ export class ProductsController {
     if (!id || id === '') {
       res.status(400).end('Id cannot be empty.');
     } else {
+      //@ts-ignore
+      fs.rmdir(`${config.FILE_STORAGE_PATH}/product/${id}`, { recursive: true, force: true }, err => {
+        if (err){
+          console.log(err);
+        }
+      });
       this.productsService.delete(id).subscribe(
           result => {
             JsonUtil.minimizeJson(result);

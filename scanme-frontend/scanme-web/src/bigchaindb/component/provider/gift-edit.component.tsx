@@ -92,7 +92,7 @@ export class AddEditGiftForm extends React.Component<any, any> {
             return;
         }
         const fileName = `gift.${this.getFileExtension(files[0].name)}`;
-        const filePath = `/organization/${this.providerId}`;
+        const filePath = `gift/${this.state.id}`;
         this.setState({ imgArray: files, image: `${filePath}/${fileName}` }, () => {
             if (this.state.imgArray.length > 0) {
                 this.productService.uploadImg(this.state.imgArray[0], fileName, filePath).subscribe(res => {

@@ -10,6 +10,7 @@ import {GiftService} from '../service/GiftService';
 import {ItemService} from '../service/ItemService';
 import {OrganizationService} from '../service/OrganizationService';
 import {ProductsService} from '../service/ProductsService';
+import config from '../../config';
 
 export class GiftController {
   constructor(private giftService: GiftService) {
@@ -130,6 +131,12 @@ export class GiftController {
     if (!id || id === '') {
       res.status(400).end('Id cannot be empty.');
     } else {
+      //@ts-ignore
+      fs.rmdir(`${config.FILE_STORAGE_PATH}/gift/${id}`, { recursive: true, force: true }, err => {
+        if (err){
+          console.log(err);
+        }
+      });
       this.giftService.delete(id).subscribe(
           result => {
             JsonUtil.minimizeJson(result);

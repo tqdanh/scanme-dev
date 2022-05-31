@@ -614,7 +614,7 @@ export class AddProductForm extends React.Component<any, any> {
     uploadImage = () => {
         if (this.state.adImg.length > 0) {
             const fileName = `adImg.${this.getFileExtension(this.state.adImg[0].name)}`;
-            const filePath = `/product/${this.state.productId}`;
+            const filePath = `product/${this.state.productId}`;
             this.productService.uploadImg(this.state.adImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
@@ -622,7 +622,7 @@ export class AddProductForm extends React.Component<any, any> {
         }
         if (this.state.unitImg.length > 0) {
             const fileName = `unitImg.${this.getFileExtension(this.state.unitImg[0].name)}`;
-            const filePath = `/product/${this.state.productId}`;
+            const filePath = `product/${this.state.productId}`;
             this.productService.uploadImg(this.state.unitImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
@@ -630,7 +630,7 @@ export class AddProductForm extends React.Component<any, any> {
         }
         if (this.state.introImg.length > 0) {
             const fileName = `introImg.${this.getFileExtension(this.state.introImg[0].name)}`;
-            const filePath = `/product/${this.state.productId}`;
+            const filePath = `product/${this.state.productId}`;
             this.productService.uploadImg(this.state.introImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
@@ -638,7 +638,7 @@ export class AddProductForm extends React.Component<any, any> {
         }
         if (this.state.ingredientImg.length > 0) {
             const fileName = `ingredientImg.${this.getFileExtension(this.state.ingredientImg[0].name)}`;
-            const filePath = `/product/${this.state.productId}`;
+            const filePath = `product/${this.state.productId}`;
             this.productService.uploadImg(this.state.ingredientImg[0], fileName, filePath).subscribe(res => {
                 if (res !== 'error') {
                 }
@@ -649,7 +649,7 @@ export class AddProductForm extends React.Component<any, any> {
     getImagesName(image: string) {
         if (image === 'imgAd') {
             if (this.state.adImg.length > 0) {
-                const fileName = `/product/${this.state.productId}/adImg.${this.getFileExtension(this.state.adImg[0].name)}`;
+                const fileName = `product/${this.state.productId}/adImg.${this.getFileExtension(this.state.adImg[0].name)}`;
                 this.setState({imgAd: fileName});
                 return fileName;
             }
@@ -657,7 +657,7 @@ export class AddProductForm extends React.Component<any, any> {
         }
         if (image === 'imgUnit') {
             if (this.state.unitImg.length > 0) {
-                const fileName = `/product/${this.state.productId}/unitImg.${this.getFileExtension(this.state.unitImg[0].name)}`;
+                const fileName = `product/${this.state.productId}/unitImg.${this.getFileExtension(this.state.unitImg[0].name)}`;
                 this.setState({imgUnit: fileName});
                 return fileName;
             }
@@ -665,7 +665,7 @@ export class AddProductForm extends React.Component<any, any> {
         }
         if (image === 'introduction_imgIntro') {
             if (this.state.introImg.length > 0) {
-                const fileName = `/product/${this.state.productId}/introImg.${this.getFileExtension(this.state.introImg[0].name)}`;
+                const fileName = `product/${this.state.productId}/introImg.${this.getFileExtension(this.state.introImg[0].name)}`;
                 this.setState({introduction_imgIntro: fileName});
                 return fileName;
             }
@@ -673,7 +673,7 @@ export class AddProductForm extends React.Component<any, any> {
         }
         if (image === 'ingredient_image') {
             if (this.state.ingredientImg.length > 0) {
-                const fileName = `/product/${this.state.productId}/ingredientImg.${this.getFileExtension(this.state.ingredientImg[0].name)}`;
+                const fileName = `product/${this.state.productId}/ingredientImg.${this.getFileExtension(this.state.ingredientImg[0].name)}`;
                 this.setState({ingredient_image: fileName});
                 return fileName;
             }
