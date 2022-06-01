@@ -4,21 +4,21 @@ const env = process.env.NODE_ENV || 'development';
 
 const config = {
     development: {
-        DOMAIN: '172.16.4.214',
+        DOMAIN: '172.16.4.20',
         HTTP_PORT: 8080,
         HTTPS_SECURE: false,
         MONGO: {
-            URL: 'mongodb://172.16.4.214:27017',
+            URL: 'mongodb://172.16.4.20:27017',
             DB: 'supplychain',
             POOL_SIZE: 5,
         },
         BIGCHAIN: {
-            API_PATH: 'http://172.16.4.214:9984/api/v1/',
+            API_PATH: 'http://172.16.4.20:9984/api/v1/',
             APP_ID: '218747a2',
             APP_KEY: '717a15fc4fa5386a15f5ff576e2a9e28',
         },
         REDIS: {
-            URL: 'redis://172.16.4.214:6379'
+            URL: 'redis://172.16.4.20:6379'
         },
         AUTHENTICATION: {
             MAX_PASSWORD_AGE: 90, // day
@@ -36,6 +36,7 @@ const config = {
         PASSCODE_CONFIRM_USER: {
             EXPIRES: 3600 * 24 // 1 day
         },
+        FILE_STORAGE_PATH: '/Workspace/works/trustme/file-container'
     },
     production: {
         DOMAIN: '192.168.75.88',
@@ -71,6 +72,7 @@ const config = {
         PASSCODE_CONFIRM_USER: {
             EXPIRES: 3600 * 24 // 1 day
         },
+        FILE_STORAGE_PATH: '/Workspace/works/trustme/file-container'
     }
 };
 
