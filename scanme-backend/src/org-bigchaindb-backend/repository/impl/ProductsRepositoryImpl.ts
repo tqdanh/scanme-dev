@@ -1,6 +1,6 @@
 import {Db} from 'mongodb';
-import {Observable, of} from 'rxjs';
-import {flatMap, map} from 'rxjs/operators';
+import {forkJoin, Observable, of} from 'rxjs';
+import {flatMap, map, mergeMap} from 'rxjs/operators';
 import {SearchResult} from '../../../common/model/SearchResult';
 import {MongoGenericRepository} from '../../../common/repository/mongo/MongoGenericRepository';
 import {MongoUtil} from '../../../common/util/MongoUtil';
@@ -34,10 +34,14 @@ export class ProductsRepositoryImpl extends MongoGenericRepository<Products> imp
                 [getProductsModel.sortField]: getProductsModel.sortType === 'ASC' ? 1 : -1
             };
         }
-        return MongoUtil.rxFind<Products>(collection, query, sort, getProductsModel.pageSize, (getProductsModel.pageIndex - 1) * getProductsModel.pageSize).pipe(flatMap(result => {
-            const result1: Products[]  = result;
-            searchResult.itemTotal = result.length;
-            searchResult.results = result;
+        
+        return forkJoin({
+            items: MongoUtil.rxFind<Products>(collection, query, sort, getProductsModel.pageSize, (getProductsModel.pageIndex - 1) * getProductsModel.pageSize),
+            totalItems: MongoUtil.rxCount(collection, query)
+        })
+        .pipe(mergeMap(result => {
+            searchResult.results = result.items;
+            searchResult.itemTotal = result.totalItems;
             return of(searchResult);
         }));
     }
