@@ -1,15 +1,16 @@
 import * as fs from 'fs';
 import * as multer from 'multer';
+import * as path from 'path';
 
-import {Request, Response} from 'express';
+import { Request, Response } from 'express';
 
-import {GetOrgModel} from '../model/GetOrgModel';
-import {GetProductsModel} from '../model/GetProductsModel';
-import {JsonUtil} from '../../common/util/JsonUtil';
-import {MetadataUtil} from '../../common/metadata/util/MetadataUtil';
-import {OrganizationService} from '../service/OrganizationService';
-import {ProductsService} from '../service/ProductsService';
-import {ResponseUtil} from '../../common/controller/util/ResponseUtil';
+import { GetOrgModel } from '../model/GetOrgModel';
+import { GetProductsModel } from '../model/GetProductsModel';
+import { JsonUtil } from '../../common/util/JsonUtil';
+import { MetadataUtil } from '../../common/metadata/util/MetadataUtil';
+import { OrganizationService } from '../service/OrganizationService';
+import { ProductsService } from '../service/ProductsService';
+import { ResponseUtil } from '../../common/controller/util/ResponseUtil';
 import config from '../../config';
 
 export class ProductsController {
@@ -17,24 +18,31 @@ export class ProductsController {
   }
 
   uploadImage(req: any, res: Response) {
-    const destination = `${config.FILE_STORAGE_PATH}/${req.body.path}`;
+    const destination = path.join(config.FILE_STORAGE_PATH, req.body.path);
     const fileName = req.body.name;
 
-    if (!fs.existsSync(destination)){
-      fs.mkdirSync(destination, { recursive: true });
-    }
-
-    fs.writeFile(`${destination}/${fileName}`, req.file.buffer, err => {
-      if(err){
+    fs.mkdir(destination, { recursive: true }, (err) => {
+      if (err) {
         console.log(err);
+      } else {
+        fs.writeFile(path.join(destination, fileName), req.file.buffer, err => {
+          if (err) {
+            console.log(err);
+          }
+        });
       }
     });
-    res.status(200).json({success: true});
+
+    res.status(200).json({ success: true });
   }
 
   downloadImage(req: Request, res: Response) {
-    const file = `${config.FILE_STORAGE_PATH}/${req.params[0]}`;
-    res.download(file);
+    const file = path.join(config.FILE_STORAGE_PATH, req.params[0]);
+    res.sendFile(file, err => {
+      if (err) {
+        res.sendStatus(404);
+      }
+    });
   }
 
   private handleError(res: Response, error: Error) {
@@ -61,8 +69,8 @@ export class ProductsController {
     // Call service
     console.log('getProducts: ' + JSON.stringify(getProductsModel));
     return this.productsService.getProducts(getProductsModel, orgId).subscribe(
-        resData => res.status(200).json(resData),
-        err => this.handleError(res, err)
+      resData => res.status(200).json(resData),
+      err => this.handleError(res, err)
     );
   }
 
@@ -86,8 +94,8 @@ export class ProductsController {
     }
     // Call service
     return this.productsService.getProductById(productId).subscribe(
-        resData => res.status(200).json(resData),
-        err => this.handleError(res, err)
+      resData => res.status(200).json(resData),
+      err => this.handleError(res, err)
     );
   }
 
@@ -99,8 +107,8 @@ export class ProductsController {
     }
     // Call service
     return this.productsService.getProductByOrgId(orgId).subscribe(
-        resData => res.status(200).json(resData),
-        err => this.handleError(res, err)
+      resData => res.status(200).json(resData),
+      err => this.handleError(res, err)
     );
   }
 
@@ -110,13 +118,13 @@ export class ProductsController {
       return res.status(400).end('The request body cannot be empty.');
     } else {
       this.productsService.insert(obj).subscribe(
-          result => {
-            JsonUtil.minimizeJson(result);
-            return res.status(200).json(result);
-          },
-          err => {
-            ResponseUtil.error(res, err);
-          }
+        result => {
+          JsonUtil.minimizeJson(result);
+          return res.status(200).json(result);
+        },
+        err => {
+          ResponseUtil.error(res, err);
+        }
       );
     }
   }
@@ -134,13 +142,13 @@ export class ProductsController {
         }
       }
       this.productsService.update(obj).subscribe(
-          result => {
-            JsonUtil.minimizeJson(result);
-            return res.status(200).json(result);
-          },
-          err => {
-            ResponseUtil.error(res, err);
-          }
+        result => {
+          JsonUtil.minimizeJson(result);
+          return res.status(200).json(result);
+        },
+        err => {
+          ResponseUtil.error(res, err);
+        }
       );
     }
   }
@@ -153,18 +161,18 @@ export class ProductsController {
     } else {
       //@ts-ignore
       fs.rmdir(`${config.FILE_STORAGE_PATH}/product/${id}`, { recursive: true, force: true }, err => {
-        if (err){
+        if (err) {
           console.log(err);
         }
       });
       this.productsService.delete(id).subscribe(
-          result => {
-            JsonUtil.minimizeJson(result);
-            res.status(200).json(result);
-          },
-          err => {
-            ResponseUtil.error(res, err);
-          },
+        result => {
+          JsonUtil.minimizeJson(result);
+          res.status(200).json(result);
+        },
+        err => {
+          ResponseUtil.error(res, err);
+        },
       );
     }
   }
