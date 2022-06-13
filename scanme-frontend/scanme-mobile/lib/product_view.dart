@@ -1,8 +1,8 @@
-import 'package:WEtrustScanner/login.dart';
-import 'package:WEtrustScanner/loyalty_details.dart';
-import 'package:WEtrustScanner/models/loyalty.dart';
-import 'package:WEtrustScanner/models/loyalty_factory.dart';
-import 'package:WEtrustScanner/users.dart';
+import 'package:scanme_mobile_temp/login.dart';
+import 'package:scanme_mobile_temp/loyalty_details.dart';
+import 'package:scanme_mobile_temp/models/loyalty.dart';
+import 'package:scanme_mobile_temp/models/loyalty_factory.dart';
+import 'package:scanme_mobile_temp/users.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,7 +16,7 @@ import 'styles.dart';
 import 'constants.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({Key key, this.product, this.code}) : super(key: key);
+  const ProductPage({Key? key, required this.product,required this.code}) : super(key: key);
 
   final Product product;
   final String code;
@@ -34,7 +34,7 @@ class _ProductPageState extends State<ProductPage> {
   double _getAppBarHeight(BuildContext context) =>
       MediaQuery.of(context).size.height * 0.3;
 
-  Product _product;
+  Product _product = Product();
 
   @override
   void initState() {
@@ -58,9 +58,8 @@ class _ProductPageState extends State<ProductPage> {
             right: 0.0,
             height: appBarHeight + kHalfSize,
             child: Hero(
-              tag: _product.code + 'package/${_product.image_ads}',
-              child: Image.network(
-                SERVER_API + '/' + _product.image_ads,
+              tag: '${_product.code} package/${_product.image_ads}',
+              child: Image.network("${SERVER_API}/${_product.image_ads}",
                 fit: BoxFit.cover,
               ),
             ),
@@ -122,8 +121,8 @@ class _ProductPageState extends State<ProductPage> {
                               onPressed: () {
                                 if (widget.product.status ==
                                     PRODUCT_STATUS_BLOCKED) {
-                                  _scaffoldKey.currentState
-                                      .showSnackBar(SnackBar(
+                                  ScaffoldMessenger.maybeOf(context)!
+                                      .showSnackBar(const SnackBar(
                                           content: Text(
                                     "CẢNH BÁO: \nNhà sản xuất có cảnh báo về mã sản phẩm bạn đang quét, xin cân nhắc trước khi mua, hoặc liên hệ với nhà sản xuất. ",
                                     style: TextStyle(
@@ -160,7 +159,7 @@ class _ProductPageState extends State<ProductPage> {
 }
 
 class ProductSheet extends StatefulWidget {
-  const ProductSheet({Key key, this.product, this.code}) : super(key: key);
+  const ProductSheet({Key? key, required this.product, required this.code}) : super(key: key);
 
   final Product product;
   final String code;
@@ -173,7 +172,7 @@ class _ProductSheetState extends State<ProductSheet>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  TabController _tabcontroller;
+  late TabController _tabcontroller;
 
   final TextStyle titleStyle = const ProductStyle(fontSize: 25.0);
   final TextStyle descriptionStyle = const ProductStyle(
@@ -192,14 +191,14 @@ class _ProductSheetState extends State<ProductSheet>
       fontWeight: FontWeight.w500,
       height: 16.0 / 15.0);
 
-  Product product;
-  String code;
+  Product product = Product();
+  String code = '';
 
   @override
   void initState() {
     product = widget.product;
     code = widget.code;
-    _tabcontroller = new TabController(length: 4, vsync: this);
+    _tabcontroller =  TabController(length: 4, vsync: this);
     super.initState();
   }
 
@@ -229,20 +228,20 @@ class _ProductSheetState extends State<ProductSheet>
                       TableCell(
                           verticalAlignment: TableCellVerticalAlignment.middle,
                           child: Image.network(
-                              SERVER_API + '/' + product.image_unit,
+                              SERVER_API + '/' + (product.image_unit ?? ''),
                               width: 40.0,
                               height: 80.0,
                               alignment: Alignment.centerLeft,
                               fit: BoxFit.scaleDown)),
                       TableCell(
                           verticalAlignment: TableCellVerticalAlignment.middle,
-                          child: Text(product.name, style: titleStyle)),
+                          child: Text(product.name ?? '', style: titleStyle)),
                     ]),
                     TableRow(children: <Widget>[
                       const SizedBox(),
                       Padding(
                           padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                          child: Text(product.introduction,
+                          child: Text(product.introduction ?? '',
                               style: descriptionStyle)),
                     ]),
                   ]
@@ -290,22 +289,21 @@ class _ProductSheetState extends State<ProductSheet>
                                 padding: const EdgeInsets.only(bottom: 4.0),
                                 child: Text(
                                     "Ngày sản xuất: " +
-                                        product.mfg +
+                                        (product.mfg ?? '') +
                                         "\n"
                                             "Hạn sử dụng: " +
-                                        product.exp +
+                                        (product.exp ?? '') +
                                         "\n"
                                             "LOT: " +
-                                        product.lot,
+                                        (product.lot ?? '' ),
                                     style: itemStyle)),
                           ])
-                        : TableRow(children: <Widget>[
-                            const SizedBox(),
-                            const SizedBox()
+                        : const TableRow(children: <Widget>[
+                            SizedBox(),
+                            SizedBox()
                           ]))
                     ..add(
-                      (product.actioncode == PRODUCT_ACTION_CODE_ADDPOINTS &&
-                              product.point > 0)
+                      (product.actioncode == PRODUCT_ACTION_CODE_ADDPOINTS && product.point! > 0)
                           ? TableRow(children: <Widget>[
                               Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -370,8 +368,8 @@ class _ProductSheetState extends State<ProductSheet>
                                           onPressed: () {
                                             if (mainuser.userId != null) {
                                               handlePointSelected(
-                                                  product.company,
-                                                  product.point);
+                                                  product.company!,
+                                                  product.point!);
                                             } else {
                                               Navigator.push(
                                                   context,
@@ -399,38 +397,38 @@ class _ProductSheetState extends State<ProductSheet>
                               const SizedBox()
                             ]),
                     )),
-              new Padding(
+               Padding(
                 padding: EdgeInsets.all(10),
               ),
-              new Container(
-                decoration: new BoxDecoration(color: Colors.blue),
-                child: new TabBar(
+               Container(
+                decoration:  BoxDecoration(color: Colors.blue),
+                child:  TabBar(
                   controller: _tabcontroller,
                   isScrollable: true,
                   indicator: UnderlineTabIndicator(),
                   tabs: [
-                    new Tab(
+                     Tab(
                       icon: const Icon(Icons.home),
                       text: 'Truy xuất nguồn gốc',
                     ),
-                    new Tab(
+                     Tab(
                       icon: const Icon(Icons.room_service),
                       text: 'Thành phần dinh dưỡng',
                     ),
-                    new Tab(
+                     Tab(
                       icon: const Icon(Icons.card_giftcard),
                       text: 'Thông tin khuyến mãi',
                     ),
-                    new Tab(
+                     Tab(
                       icon: const Icon(Icons.store),
                       text: 'Sản phẩm khác',
                     ),
                   ],
                 ),
               ),
-              new Container(
+               Container(
                 height: 1680.0,
-                child: new TabBarView(
+                child:  TabBarView(
                   controller: _tabcontroller,
                   children: <Widget>[
                     ProductMap(
@@ -454,7 +452,7 @@ class _ProductSheetState extends State<ProductSheet>
   }
 
   void handlePointSelected(Company company, int point) async {
-    Loyalty card;
+    Loyalty card = Loyalty(id: '', owner: 'owner', cardnumber: 'cardnumber', type: 0, point: point, company: company);
     if (point > 0) {
       for (Loyalty c in loyaltyCardFactory.loyaltycards) {
         if (c.company.id == company.id) {
@@ -463,18 +461,16 @@ class _ProductSheetState extends State<ProductSheet>
           break;
         }
       }
-      if (card != null) {
-        setState(() {
-          product.actioncode = PRODUCT_ACTION_CODE_VIEWINFOR;
-          product.point = 0;
-        });
-      }
+      setState(() {
+        product.actioncode = PRODUCT_ACTION_CODE_VIEWINFOR;
+        product.point = 0;
+      });
     }
 
     bool accepted = await showDialog(
       context: context,
-      builder: (context) => new AlertDialog(
-        title: new Text(
+      builder: (context) =>  AlertDialog(
+        title: const Text(
           'Khách hàng thân thiết',
           style: TextStyle(color: Colors.teal),
         ),
@@ -490,13 +486,13 @@ class _ProductSheetState extends State<ProductSheet>
                   company.name)),
             ]),
         actions: <Widget>[
-          FlatButton(
+          ElevatedButton(
               child: Text('XEM ĐIỂM TÍCH LŨY',
                   style: TextStyle(color: Colors.teal)),
               onPressed: () {
                 Navigator.of(context).pop(true);
               }),
-          FlatButton(
+          ElevatedButton(
               child: Text('ĐÓNG', style: TextStyle(color: Colors.teal)),
               onPressed: () {
                 Navigator.of(context).pop(false);
@@ -504,15 +500,14 @@ class _ProductSheetState extends State<ProductSheet>
         ],
       ),
     );
-    if (accepted && card != null) {
+    if (accepted) {
+      // ignore: use_build_context_synchronously
       Navigator.push(
           context,
           MaterialPageRoute<void>(
             settings: const RouteSettings(name: '/loyalty/detail'),
             builder: (BuildContext context) {
-              return LoyaltyDetails(
-                card: card,
-              );
+              return LoyaltyDetails(card: card);
             },
           ));
     }

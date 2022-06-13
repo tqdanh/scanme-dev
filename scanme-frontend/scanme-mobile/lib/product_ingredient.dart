@@ -4,7 +4,7 @@ import 'models/products.dart';
 import 'styles.dart';
 
 class ProductIngredient extends StatefulWidget {
-  ProductIngredient({Key key, this.product}) : super(key: key);
+  ProductIngredient({Key? key, required this.product}) : super(key: key);
 
   final Product product;
 
@@ -30,7 +30,7 @@ class _ProductIngredientState extends State<ProductIngredient> {
       fontWeight: FontWeight.w500,
       height: 16.0 / 15.0);
 
-  Product _product;
+  Product _product = Product();
 
   @override
   void initState() {
@@ -41,16 +41,17 @@ class _ProductIngredientState extends State<ProductIngredient> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> allingredients = List<Widget>();
+    List<Widget> allingredients = <Widget>[];
 
-    _product.ingredient_descriptions
-        .forEach((ingre) => {allingredients.addAll(_buildIngredient(ingre))});
+    for (var ingre in _product.ingredient_descriptions!) {
+      allingredients.addAll(_buildIngredient(ingre));
+    }
 
     return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(10),
           )
         ]..addAll(allingredients));
@@ -60,22 +61,22 @@ class _ProductIngredientState extends State<ProductIngredient> {
     return <Widget>[
       Padding(
         padding: const EdgeInsets.only(top: 0, bottom: 4.0),
-        child: Text(ingredient.description, style: descriptionStyle),
+        child: Text(ingredient.description ?? '', style: descriptionStyle),
       ),
       Container(
         padding: EdgeInsets.all(10),
-        child: Image.asset('images/' + ingredient.images[0], fit: BoxFit.cover),
+        child: Image.asset('images/' + ingredient.images![0], fit: BoxFit.cover),
       ),
       Padding(
         padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-        child: Text(ingredient.title, style: headingStyle),
+        child: Text(ingredient.title ?? '', style: headingStyle),
       ),
       Table(
           columnWidths: const <int, TableColumnWidth>{
             0: FixedColumnWidth(200.0)
           },
           children: <TableRow>[]
-            ..addAll(ingredient.attributes.map<TableRow>((Attribute att) {
+            ..addAll(ingredient.attributes!.map<TableRow>((Attribute att) {
               return _buildIngredientAttribute(att);
             }))),
     ];
@@ -86,11 +87,11 @@ class _ProductIngredientState extends State<ProductIngredient> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(attribute.name, style: itemAmountStyle),
+          child: Text(attribute.name ?? '', style: itemAmountStyle),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: Text(attribute.value, style: itemStyle),
+          child: Text(attribute.value ?? '', style: itemStyle),
         ),
       ],
     );

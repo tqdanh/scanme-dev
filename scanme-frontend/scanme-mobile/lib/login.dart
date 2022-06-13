@@ -1,19 +1,19 @@
 import 'dart:io';
-import 'package:WEtrustScanner/constants.dart';
-import 'package:WEtrustScanner/contact.dart';
-import 'package:WEtrustScanner/users.dart';
+import 'package:firebase_auth/firebase_auth.dart' as fireb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:scanme_mobile_temp/constants.dart';
+import 'package:scanme_mobile_temp/contact.dart';
+import 'package:scanme_mobile_temp/users.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:scanme_mobile_temp/users.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'authentication.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
-GoogleSignInAccount googleAccount;
-FacebookLogin faceBookAccount;
-FirebaseUser fireBaseAcoount;
+late GoogleSignInAccount googleAccount;
+late FacebookLogin faceBookAccount;
+late fireb.User fireBaseAcoount;
 
 class Login extends StatefulWidget {
   @override
@@ -21,8 +21,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final GoogleSignIn googleSignIn = new GoogleSignIn();
-  File _image = null;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+  late File _image;
 
   @override
   Widget build(BuildContext context) {
@@ -36,55 +36,57 @@ class _LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(20),
               ),
-              Text("Xin hãy đăng nhập với tài khoản"),
-              Text("Google hoặc Facebook."),
-              Padding(
+              const Text("Xin hãy đăng nhập với tài khoản"),
+              const Text("Google hoặc Facebook."),
+              const Padding(
                 padding: EdgeInsets.all(10),
               ),
-              RaisedButton(
-                  onPressed: () => signInWithGoogle(context: context),
-                  padding: EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
-                  color: const Color(0xFFFFFFFF),
-                  child: new Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      new Image.asset(
-                        'images/google_button.jpg',
-                        height: 40.0,
-                      ),
-                      new Container(
-                          padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                          child: new Text(
-                            "Đăng nhập với tài khoản Google",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          ))
-                    ],
-                  )),
               Padding(
+                padding: const EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
+                child: ElevatedButton(
+                    onPressed: () => signInWithGoogle(context: context),
+                    child:  Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                         Image.asset(
+                          'images/google_button.jpg',
+                          height: 40.0,
+                        ),
+                         Container(
+                            padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                            child: const Text(
+                              "Đăng nhập với tài khoản Google",
+                              style: TextStyle(fontWeight: FontWeight.normal),
+                            ))
+                      ],
+                    )),
+              ),
+              const Padding(
                 padding: EdgeInsets.all(10),
               ),
-              RaisedButton(
-                  onPressed: () => signInWithFacebook(context: context),
-                  padding: EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
-                  color: const Color(0xFFFFFFFF),
-                  child: new Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      new Image.asset(
-                        'images/facebook_logo.png',
-                        height: 40.0,
-                      ),
-                      new Container(
-                          padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                          child: new Text(
-                            "Đăng nhập với tài khoản Facebook",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          ))
-                    ],
-                  )),
+              Padding(
+                padding: const EdgeInsets.only(top: 3.0, bottom: 3.0, left: 3.0),
+                child: ElevatedButton(
+                    onPressed: () => signInWithFacebook(context: context),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Image.asset(
+                          'images/facebook_logo.png',
+                          height: 40.0,
+                        ),
+                        Container(
+                            padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                            child: const Text(
+                              "Đăng nhập với tài khoản Facebook",
+                              style: TextStyle(fontWeight: FontWeight.normal),
+                            ))
+                      ],
+                    )),
+              ),
             ],
           ),
         ),
@@ -97,7 +99,7 @@ class _LoginState extends State<Login> {
     try {
       if (mainuser.userId != null && mainuser.imagePath != '') {
         _image = File(mainuser.imagePath);
-        if (!_image.existsSync()) _image = null;
+        if (!_image.existsSync()) _image;
       }
     } catch (e) {
       print(e.toString());
@@ -151,9 +153,11 @@ class _LoginState extends State<Login> {
                 icon: Icons.contact_mail,
                 children: <Widget>[
                   ContactItem(
+                    icon: Icons.ac_unit,
+                    tooltip: '',
                     onPressed: () {},
                     lines: <String>[
-                      mainuser.name,
+                      mainuser.name ?? '',
                       'Họ và Tên',
                     ],
                   ),
@@ -161,11 +165,11 @@ class _LoginState extends State<Login> {
                     icon: Icons.email,
                     tooltip: 'Send e-mail',
                     onPressed: () {
-                      if (mainuser.email != null && mainuser.email.length > 0)
-                        _launchEmail(mainuser.email);
+                      if (mainuser.email != null && mainuser.email!.length > 0)
+                        _launchEmail(mainuser.email ?? '');
                     },
                     lines: <String>[
-                      mainuser.email,
+                      mainuser.email ?? '',
                       'Email',
                     ],
                   ),
@@ -174,7 +178,7 @@ class _LoginState extends State<Login> {
                     tooltip: 'Địa Chỉ',
                     onPressed: updateAddress,
                     lines: <String>[
-                      mainuser.address != null ? mainuser.address : "",
+                      mainuser.address ?? "",
                       'Địa Chỉ',
                     ],
                   ),
@@ -184,7 +188,7 @@ class _LoginState extends State<Login> {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 14.0),
               child: DefaultTextStyle(
-                style: Theme.of(context).textTheme.subhead,
+                style: Theme.of(context).textTheme.headlineMedium ?? const TextStyle(),
                 child: SafeArea(
                   top: false,
                   bottom: false,
@@ -194,7 +198,7 @@ class _LoginState extends State<Login> {
                       Container(
                           padding: const EdgeInsets.symmetric(vertical: 7.0),
                           width: 72.0,
-                          child: Icon(
+                          child: const  Icon(
                             Icons.input,
                             color: Colors.blue,
                           )),
@@ -203,9 +207,8 @@ class _LoginState extends State<Login> {
                         children: <Widget>[
                           Align(
                               alignment: Alignment.centerLeft,
-                              child: FlatButton(
-                                color: Colors.blue,
-                                child: Text(
+                              child: ElevatedButton(
+                                child: const  Text(
                                   'Đăng xuất',
                                   style: TextStyle(
                                       color: Colors.white,
@@ -229,26 +232,26 @@ class _LoginState extends State<Login> {
     ]));
   }
 
-  Future<Null> signInWithGoogle({BuildContext context}) async {
+  Future<void> signInWithGoogle({required BuildContext context}) async {
     Auth auth = Auth();
     try {
       if (googleAccount == null) {
-        googleAccount = await googleSignIn.signIn();
+        googleAccount = (await googleSignIn.signIn())!;
       }
       auth.signInWithGoogle(googleAccount).then((uid) {
         auth.getCurrentUser().then((firebaseUser) {
-          List<UserInfo> infos = firebaseUser.providerData;
-          UserInfo user;
-          for (UserInfo ui in infos) {
+          List<fireb.UserInfo> infos = firebaseUser!.providerData;
+          fireb.UserInfo? user;
+          for (fireb.UserInfo ui in infos) {
             if (ui.providerId == "google.com") {
               user = ui;
               break;
             }
           }
           setState(() {
-            mainuser.userId = user.uid;
-            mainuser.name = user.displayName;
-            mainuser.email = user.email;
+            mainuser.userId = user!.uid ?? '';
+            mainuser.name = user.displayName!;
+            mainuser.email = user.email!;
             mainuser.sso = SSO_GOOGLE;
             mainuser.saveUser();
           });
@@ -263,11 +266,11 @@ class _LoginState extends State<Login> {
     }
   }
 
-  Future<Null> signInWithFacebook({BuildContext context}) async {
+  Future<void> signInWithFacebook({required BuildContext context}) async {
     Auth auth = Auth();
 
     try {
-      FacebookLogin facebookLogin = new FacebookLogin();
+      FacebookLogin facebookLogin = FacebookLogin();
       FacebookLoginResult result = await facebookLogin
           .logIn(['email', 'public_profile']).catchError((onError) {
         print("Error: $onError");
@@ -278,19 +281,19 @@ class _LoginState extends State<Login> {
           try {
             auth.signInWithFacebook(result.accessToken.token).then((uid) {
               auth.getCurrentUser().then((firebaseUser) {
-                fireBaseAcoount = firebaseUser;
-                List<UserInfo> infos = firebaseUser.providerData;
-                UserInfo user;
-                for (UserInfo ui in infos) {
+                fireBaseAcoount = firebaseUser!;
+                List<fireb.UserInfo> infos = firebaseUser.providerData;
+                fireb.UserInfo? user;
+                for (fireb.UserInfo ui in infos) {
                   if (ui.providerId == "facebook.com") {
                     user = ui;
                     break;
                   }
                 }
                 setState(() {
-                  mainuser.userId = user.uid;
-                  mainuser.name = user.displayName;
-                  mainuser.email = user.email;
+                  mainuser.userId = user?.uid ?? '';
+                  mainuser.name = user?.displayName ?? '';
+                  mainuser.email = user?.email ?? '';
                   mainuser.sso = SSO_FACEBOOK;
                   mainuser.saveUser();
                 });
@@ -318,7 +321,7 @@ class _LoginState extends State<Login> {
     Auth().signOut();
     if (mainuser.sso == SSO_GOOGLE) {
       googleSignIn.signOut();
-      googleAccount = null;
+      googleAccount = {} as GoogleSignInAccount;
     }
 
     if (mainuser.sso == SSO_FACEBOOK) {
@@ -326,9 +329,9 @@ class _LoginState extends State<Login> {
     }
 
     setState(() {
-      mainuser.userId = null;
-      mainuser.name = null;
-      mainuser.email = null;
+      mainuser.userId = '';
+      mainuser.name = '';
+      mainuser.email = '';
       mainuser.sso = 0;
     });
 
@@ -338,21 +341,21 @@ class _LoginState extends State<Login> {
 
   Future<void> signOutFB() async {
     faceBookAccount.logOut();
-    fireBaseAcoount = null;
-    faceBookAccount = null;
+    fireBaseAcoount = '' as fireb.User;
+    faceBookAccount = '' as FacebookLogin;
   }
 
 
   Future getProfileImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _image = image;
-    });
+    // var image = (await ImagePicker.pickImage(source: ImageSource.gallery));
+    // setState(() {
+    //   _image = image as File;
+    // });
 
-    if (image != null && image.path != null) {
-      mainuser.imagePath = image.path;
-      mainuser.saveImagePath();
-    }
+    // if (image != null && image.path != null) {
+    //   mainuser.imagePath = image.path;
+    //   mainuser.saveImagePath();
+    // }
   }
 
   void updateAddress() {
@@ -381,22 +384,18 @@ class _LoginState extends State<Login> {
                           labelText: 'Địa chỉ *',
                           fillColor: Colors.white12,
                         ),
-                        onSaved: (String value) {
-                          print("SAVE" + address);
-                          address = value;
-                        },
                       ))),
               actions: <Widget>[
-                FlatButton(
+                ElevatedButton(
                     child: Text('HỦY', style: TextStyle(color: Colors.teal)),
                     onPressed: () {
                       Navigator.pop(context, false);
                     }),
-                FlatButton(
+                ElevatedButton(
                     child: Text('LƯU', style: TextStyle(color: Colors.teal)),
                     onPressed: () {
-                      final FormState form = _formKey.currentState;
-                      form.save();
+                      final FormState? form = _formKey.currentState;
+                      form?.save();
                       if (address != "") {
                         setState(() {
                           mainuser.address = address;

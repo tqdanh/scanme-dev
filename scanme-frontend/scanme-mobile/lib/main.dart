@@ -1,14 +1,14 @@
 import 'dart:math';
-
-import 'package:WEtrustScanner/constants.dart';
-import 'package:WEtrustScanner/gift_view.dart';
-import 'package:WEtrustScanner/loyalty_view.dart';
-import 'package:WEtrustScanner/models/gift_factory.dart';
-import 'package:WEtrustScanner/models/location_factory.dart';
-import 'package:WEtrustScanner/users.dart';
+import 'package:barcode_scan2/model/scan_result.dart';
+import 'package:barcode_scan2/platform_wrapper.dart';
+import 'package:scanme_mobile_temp/constants.dart';
+import 'package:scanme_mobile_temp/gift_view.dart';
+import 'package:scanme_mobile_temp/loyalty_view.dart';
+import 'package:scanme_mobile_temp/models/gift_factory.dart';
+import 'package:scanme_mobile_temp/models/location_factory.dart';
+import 'package:scanme_mobile_temp/users.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:barcode_scan/barcode_scan.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
@@ -30,7 +30,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Force the layout to Portrait mode
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  await mainuser.loadUser();
+  mainuser.loadUser();
   await loadProducts();
   await loadLoyaltyCards();
   await loadGifts();
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -73,10 +73,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  GoogleSignInAccount googleAccount;
-  final GoogleSignIn googleSignIn = new GoogleSignIn();
+  late GoogleSignInAccount googleAccount;
+  final GoogleSignIn googleSignIn =  GoogleSignIn();
 
-  bool _autovalidate = false;
+  AutovalidateMode _autovalidate = AutovalidateMode.always;
 
   String _appTitle = "ScanME Scanner";
   String barcode = "";
@@ -89,14 +89,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     curve: Curves.fastOutSlowIn,
   ));
 
-  AnimationController _controller;
-  Animation<double> _drawerContentsOpacity;
-  Animation<Offset> _drawerDetailsPosition;
+  late AnimationController _controller;
+  late Animation<double> _drawerContentsOpacity;
+  late Animation<Offset> _drawerDetailsPosition;
 
   int _currentDrawerMenuIndex = 100;
 
   //all menu items
-  List<String> _drawerContents = <String>[
+  final List<String> _drawerContents = <String>[
     '0 Tài khoản',
     '1 Khách hàng thân thiết',
     '2 Quà tặng của bạn',
@@ -109,18 +109,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     '9 Thông tin ứng dụng',
   ];
 
-  List<Icon> _menuIcons = <Icon>[
-    Icon(Icons.camera_roll),
-    Icon(Icons.loyalty),
-    Icon(Icons.card_giftcard),
-    Icon(Icons.verified_user),
-    Icon(Icons.person), // nothing
-    Icon(Icons.settings),
-    Icon(Icons.help),
-    Icon(Icons.assignment_returned),
-    Icon(Icons.phone),
-    Icon(Icons.info),
-    Icon(Icons.input),
+  final List<Icon> _menuIcons = <Icon>[
+    const Icon(Icons.camera_roll),
+    const Icon(Icons.loyalty),
+    const Icon(Icons.card_giftcard),
+    const Icon(Icons.verified_user),
+    const Icon(Icons.person), // nothing
+    const Icon(Icons.settings),
+    const Icon(Icons.help),
+    const Icon(Icons.assignment_returned),
+    const Icon(Icons.phone),
+    const Icon(Icons.info),
+    const Icon(Icons.input),
   ];
 
   @override
@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return new WillPopScope(
+    return  WillPopScope(
         onWillPop: onWillPopScope,
         child: Scaffold(
           key: _scaffoldKey,
@@ -200,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               icon: Icon(Icons.menu),
               alignment: Alignment.centerLeft,
               onPressed: () {
-                _scaffoldKey.currentState.openDrawer();
+                _scaffoldKey.currentState?.openDrawer();
               },
             ),
           ),
@@ -214,12 +214,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           bottomNavigationBar: BottomAppBar(
             shape: CircularNotchedRectangle(),
             notchMargin: 4.0,
-            child: new Row(
+            child:  Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.menu,
                     color: Colors.white,
                   ),
@@ -268,7 +268,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: _drawerContents.map<Widget>((String id) {
                               if (id.endsWith('-'))
-                                return new Divider(color: Colors.grey);
+                                return  Divider(color: Colors.grey);
 
                               return ListTile(
                                 leading:
@@ -300,8 +300,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   Future barcodeScanning() async {
     try {
-      String barcode = await BarcodeScanner.scan();
-      setState(() => this.barcode = barcode);
+      ScanResult barcode = await BarcodeScanner.scan();
+      setState(() => this.barcode = barcode.toString());
       Product p;
       // HACK CODE for hard coded products
       if (this.barcode == "00CC5AD1AC2444369F0E0090F6925B2B" ||
@@ -316,7 +316,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         p = getProductFromCode(this.barcode);
       } else {
         isHardCodedData = false;
-        p = await fetchProduct(barcode);
+        p = await fetchProduct(barcode.toString());
 
         for (int i = 0; i < myProducts.products.length; i++) {
           if (myProducts.products.elementAt(i).code == p.code) {
@@ -328,30 +328,28 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       }
 
       if (p != null) {
-        List<String> temps = barcode.split("currentTransId=");
-        if (temps.length >= 2) barcode = temps[1];
-        int countLocation = await countScanLocation(barcode);
-        _scaffoldKey.currentState.showSnackBar(
+        List<String> temps = barcode.toString().split("currentTransId=");
+        if (temps.length >= 2) barcode = temps[1] as ScanResult;
+        int countLocation = await countScanLocation(barcode.toString());
+        ScaffoldMessenger.maybeOf(context)!.showSnackBar(
           SnackBar(
-            content: Text('This transaction Id is scanned: ' +
-                countLocation.toString() +
-                ' times'),
+            content: Text('This transaction Id is scanned: ${countLocation.toString()} times'),
             backgroundColor: Colors.blue,
           ),
         );
         Navigator.of(context)
-            .push(new MaterialPageRoute<Null>(builder: (BuildContext context) {
-          return new ProductPage(product: p, code: this.barcode);
+            .push( MaterialPageRoute<Null>(builder: (BuildContext context) {
+          return  ProductPage(product: p, code: this.barcode);
         }));
       } else {
-        _scaffoldKey.currentState.showSnackBar(
+        ScaffoldMessenger.maybeOf(context)!.showSnackBar(
           SnackBar(
             content: Text('Không tìm thấy mã sản phẩm: ' + this.barcode),
           ),
         );
       }
     } on PlatformException catch (e) {
-      if (e.code == BarcodeScanner.CameraAccessDenied) {
+      if (e.code == BarcodeScanner.cameraAccessDenied) {
         setState(() {
           this.barcode = 'No camera permission!';
         });
@@ -376,8 +374,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   style: TextStyle(color: Colors.teal)),
               content: Form(
                   key: _formKey,
-                  autovalidate: _autovalidate,
-                  child: new Container(
+                  autovalidateMode: _autovalidate,
+                  child:  SizedBox(
                       width: 100,
                       child: TextFormField(
                         style: TextStyle(color: Colors.black),
@@ -392,20 +390,19 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                           labelText: 'Mã sản phẩm *',
                           fillColor: Colors.white12,
                         ),
-                        onSaved: (String value) {
-                          _inputcode = value;
+                        onSaved: (String? value) {
+                          _inputcode = value ?? '';
                         },
-                        validator: _validateCode,
                       ))),
               actions: <Widget>[
-                FlatButton(
+                ElevatedButton(
                     child:
                         const Text('HỦY', style: TextStyle(color: Colors.teal)),
                     onPressed: () {
                       _inputcode = "";
                       Navigator.pop(context, DialogAction.discard);
                     }),
-                FlatButton(
+                ElevatedButton(
                     child: const Text('ĐỒNG Ý',
                         style: TextStyle(color: Colors.teal)),
                     onPressed: () {
@@ -416,9 +413,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   }
 
   void _saveProductCode() async {
-    final FormState form = _formKey.currentState;
-    if (!form.validate()) {
-      _autovalidate = true; // Start validating on every change.
+    final FormState? form = _formKey.currentState;
+    if (!form!.validate()) {
+      _autovalidate = AutovalidateMode.always; // Start validating on every change.
     } else {
       Navigator.pop(context, DialogAction.agree);
       form.save();
@@ -435,11 +432,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
       if (p != null) {
         Navigator.of(context)
-            .push(new MaterialPageRoute<Null>(builder: (BuildContext context) {
-          return new ProductPage(product: p, code: this.barcode);
+            .push( MaterialPageRoute<Null>(builder: (BuildContext context) {
+          return  ProductPage(product: p, code: this.barcode);
         }));
       } else {
-        _scaffoldKey.currentState.showSnackBar(
+        ScaffoldMessenger.maybeOf(context)!.showSnackBar(
           SnackBar(
             content: Text('Không tìm thấy mã sản phẩm: ' + this.barcode),
           ),
@@ -448,35 +445,35 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     }
   }
 
-  String _validateCode(String value) {
+  Future<String> _validateCode(String value) async{
     if (value.isEmpty) return 'Xin nhập mã sản phẩm.';
     final RegExp nameExp = RegExp(r'^[A-Za-z0-9 ]+$');
     if (!nameExp.hasMatch(value))
       return 'Mã sản phẩm chỉ bao gồm các kí tự và số';
 
-    return null;
+    return '';
   }
 
   Future<Null> signInWithGoogle() async {
     Auth auth = Auth();
     try {
       if (googleAccount == null) {
-        googleAccount = await googleSignIn.signIn();
+        googleAccount = (await googleSignIn.signIn())!;
       }
       auth.signInWithGoogle(googleAccount).then((uid) {
         auth.getCurrentUser().then((firebaseUser) {
-          List<UserInfo> infos = firebaseUser.providerData;
-          UserInfo user;
-          for (UserInfo ui in infos) {
+          List<UserInfo>? infos = firebaseUser?.providerData;
+          late UserInfo user;
+          for (UserInfo ui in infos!) {
             if (ui.providerId == "google.com") {
               user = ui;
               break;
             }
           }
           setState(() {
-            mainuser.userId = user.uid;
-            mainuser.name = user.displayName;
-            mainuser.email = user.email;
+            mainuser.userId = user.uid ?? '';
+            mainuser.name = user.displayName ?? '';
+            mainuser.email = user.email ?? '';
             mainuser.sso = SSO_GOOGLE;
             mainuser.saveUser();
           });
@@ -495,7 +492,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     Auth auth = Auth();
 
     try {
-      FacebookLogin facebookLogin = new FacebookLogin();
+      FacebookLogin facebookLogin =  FacebookLogin();
       FacebookLoginResult result = await facebookLogin
           .logIn(['email', 'public_profile']).catchError((onError) {
         print("Error: $onError");
@@ -505,9 +502,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           try {
             auth.signInWithFacebook(result.accessToken.token).then((uid) {
               auth.getCurrentUser().then((firebaseUser) {
-                List<UserInfo> infos = firebaseUser.providerData;
-                UserInfo user;
-                for (UserInfo ui in infos) {
+                List<UserInfo>? infos = firebaseUser?.providerData;
+                late UserInfo user;
+                for (UserInfo ui in infos!) {
                   if (ui.providerId == "facebook.com") {
                     user = ui;
                     break;
@@ -540,28 +537,27 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     }
   }
 
-  Future<bool> onWillPopScope() {
-    return showDialog(
+  Future<bool> onWillPopScope() async{
+    return await showDialog(
           context: context,
-          builder: (context) => new AlertDialog(
-            title: new Text('Xin xác nhận lại'),
-            content: new Text('Bạn muốn đóng ứng dụng ScanME?'),
+          builder: (context) =>  AlertDialog(
+            title: const Text('Xin xác nhận lại'),
+            content: const Text('Bạn muốn đóng ứng dụng ScanME?'),
             actions: <Widget>[
-              FlatButton(
-                  child: Text('HỦY', style: TextStyle(color: Colors.teal)),
+              ElevatedButton(
+                  child: const Text('HỦY', style: TextStyle(color: Colors.teal)),
                   onPressed: () {
                     Navigator.of(context).pop(false);
                   }),
               Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                  child: FlatButton(
-                      child: Text('ĐÓNG', style: TextStyle(color: Colors.teal)),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: ElevatedButton(
+                      child: const Text('ĐÓNG', style: TextStyle(color: Colors.teal)),
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       })),
             ],
           ),
-        ) ??
-        false;
+        ) ?? false;
   }
 }

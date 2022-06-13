@@ -1,20 +1,20 @@
 import 'dart:convert';
-import 'package:WEtrustScanner/constants.dart';
+import 'package:scanme_mobile_temp/constants.dart';
 import 'package:flutter/services.dart';
 import 'loyalty.dart';
 import 'package:http/http.dart' as http;
 
-LoyaltyFactory loyaltyCardFactory;
+LoyaltyFactory loyaltyCardFactory = LoyaltyFactory(loyaltycards: []);
 
 class LoyaltyFactory {
   final List<Loyalty> loyaltycards;
 
   LoyaltyFactory({
-    this.loyaltycards,
+    required this.loyaltycards,
   });
 
   factory LoyaltyFactory.fromJson(List<dynamic> parsedJson) {
-    List<Loyalty> loyaltycards = new List<Loyalty>();
+    List<Loyalty> loyaltycards = <Loyalty>[];
     loyaltycards = parsedJson.map((i) => Loyalty.fromJson(i)).toList();
     return new LoyaltyFactory(loyaltycards: loyaltycards);
   }
@@ -31,9 +31,9 @@ Future loadLoyaltyCards() async {
 }
 
 Future<List<Loyalty>> fetchLoyaltyCards(String userid) async {
-  final response = await http.get(SERVER_API +
+  final response = await http.get(Uri.parse(SERVER_API +
       '/getLoyaltyCardByOwnerIdMobile?ownerId=' +
-      userid.toString());
+      userid.toString()));
 
   if (response.statusCode == 200) {
     // If the call to the server was successful, parse the JSON.

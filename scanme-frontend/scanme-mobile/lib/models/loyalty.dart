@@ -1,13 +1,13 @@
-import 'package:WEtrustScanner/models/company.dart';
+import 'package:scanme_mobile_temp/models/company.dart';
 
 class Loyalty {
   Loyalty({
-    this.id,
-    this.owner,
-    this.cardnumber,
-    this.type,
-    this.point,
-    this.company,
+    required this.id,
+    required this.owner,
+    required this.cardnumber,
+    required this.type,
+    required this.point,
+    required this.company,
   });
 
   final String id;
@@ -43,5 +43,4 @@ class Loyalty {
         return "";
     }
   }
-
 }

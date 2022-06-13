@@ -1,4 +1,4 @@
-import 'package:WEtrustScanner/location_view.dart';
+import 'package:scanme_mobile_temp/location_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart' as LocationManager;
@@ -16,7 +16,7 @@ class _MapColor {
 }
 
 class ProductMap extends StatefulWidget {
-  ProductMap({Key key, this.product}) : super(key: key);
+  ProductMap({Key? key, required this.product}) : super(key: key);
 
   final Product product;
 
@@ -25,7 +25,7 @@ class ProductMap extends StatefulWidget {
 }
 
 class _ProductMapState extends State<ProductMap> {
-  List<_MapColor> _MapColors = <_MapColor>[
+  final List<_MapColor> _MapColors = <_MapColor>[
     _MapColor("", Colors.orange, BitmapDescriptor.hueOrange),
     _MapColor("", Colors.purple, BitmapDescriptor.hueViolet),
     _MapColor("", Colors.blue, BitmapDescriptor.hueBlue),
@@ -54,8 +54,8 @@ class _ProductMapState extends State<ProductMap> {
       fontWeight: FontWeight.w500,
       height: 16.0 / 15.0);
 
-  GoogleMapController mapController;
-  Product _product;
+  late GoogleMapController mapController;
+  Product _product = Product();
 
   @override
   void initState() {
@@ -70,12 +70,12 @@ class _ProductMapState extends State<ProductMap> {
         initialData: Container(),
         future: buildMap(),
         builder: (BuildContext context, AsyncSnapshot<Widget> widget) {
-          return widget.data;
+          return widget.data ?? Container();
         });
   }
 
   Future<Widget> buildMap() async {
-    await addMarkers();
+    addMarkers();
     return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,8 +107,8 @@ class _ProductMapState extends State<ProductMap> {
                       onTap: () {
                         zoom();
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 4.0),
                         child: Icon(Icons.location_on,
                             color: Colors.red, size: 40),
                       ),
@@ -129,7 +129,7 @@ class _ProductMapState extends State<ProductMap> {
                     )
                   ],
                 ),
-              ]..addAll(_product.traceability_locations
+              ]..addAll(_product.traceability_locations!
                     .map<TableRow>((MapLocation location) {
                   return _buildLocations(location);
                 }))),
@@ -143,7 +143,7 @@ class _ProductMapState extends State<ProductMap> {
         target: center == null ? LatLng(0, 0) : center, zoom: 6.5)));
   }
 
-  void zoom({LatLng point}) async {
+  void zoom({LatLng? point}) async {
     if (point == null) point = await getUserLocation();
 
     mapController.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
@@ -155,14 +155,14 @@ class _ProductMapState extends State<ProductMap> {
     refresh();
   }
 
-  Future<LatLng> getUserLocation() async {
-    LocationData currentLocation;
+  Future<LatLng?> getUserLocation() async {
+    LocationData? currentLocation;
     final location = LocationManager.Location();
     try {
       currentLocation = await location.getLocation();
       final lat = currentLocation.latitude;
       final lng = currentLocation.longitude;
-      final center = LatLng(lat, lng);
+      final center = LatLng(lat!, lng!);
       return center;
     } on Exception {
       currentLocation = null;
@@ -171,17 +171,17 @@ class _ProductMapState extends State<ProductMap> {
   }
 
   void addMarkers() async {
-    List<MarkerId> idList = List<MarkerId>();
-    List<Marker> markerList = List<Marker>();
+    List<MarkerId> idList = <MarkerId>[];
+    List<Marker> markerList = <Marker>[];
 
-    final center = await getUserLocation();
+    LatLng? center = await getUserLocation();
 
     String markerIdValue1 = "Vị trí quét";
-    MarkerId markerId1 = new MarkerId(markerIdValue1);
-    Marker marker1 = new Marker(
+    MarkerId markerId1 =  MarkerId(markerIdValue1);
+    Marker marker1 =  Marker(
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       markerId: markerId1,
-      position: center,
+      position: center!,
       visible: true,
       infoWindow: InfoWindow(title: markerIdValue1, snippet: ''),
     );
@@ -189,16 +189,16 @@ class _ProductMapState extends State<ProductMap> {
     markerList.add(marker1);
     markers[markerId1] = marker1;
 
-    for (int i = 0; i < _product.traceability_locations.length; i++) {
-      String markerIdValue = _product.traceability_locations[i].name;
-      MarkerId markerId = new MarkerId(markerIdValue);
-      Marker marker = new Marker(
+    for (int i = 0; i < _product.traceability_locations!.length; i++) {
+      String? markerIdValue = _product.traceability_locations![i].name;
+      MarkerId markerId =  MarkerId(markerIdValue?? '');
+      Marker marker =  Marker(
         icon: BitmapDescriptor.defaultMarkerWithHue((i < _MapColors.length - 1)
             ? _MapColors[i].bitmapDescriptor
             : BitmapDescriptor.hueRed),
         markerId: markerId,
-        position: LatLng(_product.traceability_locations[i].location[0],
-            _product.traceability_locations[i].location[1]),
+        position: LatLng(_product.traceability_locations![i].location![0],
+            _product.traceability_locations![i].location![1]),
         visible: true,
         infoWindow: InfoWindow(title: markerIdValue, snippet: ''),
       );
@@ -207,25 +207,25 @@ class _ProductMapState extends State<ProductMap> {
       markerList.add(marker);
       markers[markerId] = marker;
       if (i < _MapColors.length - 1) {
-        _MapColors[i].locationName = markerIdValue;
+        _MapColors[i].locationName = markerIdValue!;
       }
     }
   }
 
   TableRow _buildLocations(MapLocation location) {
     String attributes = "";
-    if (location.attributes.length == 1)
+    if (location.attributes!.length == 1)
       attributes =
-          location.attributes[0].time + ": " + location.attributes[0].activity;
+          location.attributes![0].time + ": " + location.attributes![0].activity;
     else {
-      attributes = location.attributes[0].time +
+      attributes = location.attributes![0].time +
           ": " +
-          location.attributes[0].activity +
+          location.attributes![0].activity +
           "\n";
       attributes = attributes +
-          location.attributes[location.attributes.length - 1].time +
+          location.attributes![location.attributes!.length - 1].time +
           ": " +
-          location.attributes[location.attributes.length - 1].activity;
+          location.attributes![location.attributes!.length - 1].activity;
     }
     // location.attributes.forEach(
     //     (a) => {attributes = attributes + a.time + ": " + a.activity + "\n"});
@@ -234,14 +234,14 @@ class _ProductMapState extends State<ProductMap> {
     Color color = Colors.red;
     _MapColor mapColor = _MapColors.firstWhere(
         (c) => c.locationName == location.name,
-        orElse: () => null);
+        );
     if (mapColor != null) color = mapColor.color;
 
     return TableRow(
       children: <Widget>[
         GestureDetector(
           onTap: () {
-            zoom(point: LatLng(location.location[0], location.location[1]));
+            zoom(point: LatLng(location.location![0], location.location![1]));
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -269,10 +269,10 @@ class _ProductMapState extends State<ProductMap> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Text(location.name, style: headingStyle),
-                      Text(location.location_description,
+                      Text(location.name ?? '', style: headingStyle),
+                      Text(location.location_description ?? '',
                           style: itemAmountStyle),
-                      Text(location.description, style: descriptionStyle),
+                      Text(location.description ?? '', style: descriptionStyle),
                       Text(attributes, style: itemStyle),
                     ]))),
       ],

@@ -1,13 +1,13 @@
-import 'package:WEtrustScanner/models/loyalty.dart';
-import 'package:WEtrustScanner/users.dart';
+import 'package:scanme_mobile_temp/users.dart';
 import 'package:flutter/material.dart';
+import 'package:scanme_mobile_temp/models/loyalty.dart';
 import 'fancycard.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class LoyaltyCard extends StatelessWidget {
   const LoyaltyCard(
-      {Key key, this.card, this.isGiftAvailable = false, this.onTap})
+      {Key? key, required this.card, this.isGiftAvailable = false, required this.onTap})
       : super(key: key);
   final Loyalty card;
   final bool isGiftAvailable;
@@ -39,9 +39,9 @@ class LoyaltyCard extends StatelessWidget {
                             child: QrImage(
                           data: card.company.name +
                               "." +
-                              mainuser.userId +
+                              mainuser.userId! +
                               "." +
-                              mainuser.email,
+                              mainuser.email!,
                           version: QrVersions.auto,
                           size: 200,
                           gapless: false,

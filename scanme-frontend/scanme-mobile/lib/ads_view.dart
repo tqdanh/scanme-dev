@@ -5,7 +5,7 @@ import 'models/products.dart';
 import 'styles.dart';
 
 class AdsPage extends StatefulWidget {
-  const AdsPage({Key key, this.product, this.code, this.attribute})
+  const AdsPage({Key? key, required this.product,required this.code,required this.attribute})
       : super(key: key);
 
   final Product product;
@@ -19,14 +19,14 @@ class AdsPage extends StatefulWidget {
 class _AdsPageState extends State<AdsPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final TextStyle menuItemStyle = const ProductStyle(
+  final TextStyle menuItemStyle = ProductStyle(
       fontSize: 15.0, color: Colors.black54, height: 24.0 / 15.0);
 
   double _getAppBarHeight(BuildContext context) =>
       MediaQuery.of(context).size.height * 0.3;
 
-  Product _product;
-  Attribute _attribute;
+  Product _product = Product();
+  Attribute _attribute = Attribute();
 
   @override
   void initState() {
@@ -53,7 +53,7 @@ class _AdsPageState extends State<AdsPage> {
             child: Hero(
               tag: 'package/${_product.image_ads}',
               child: Image.asset(
-                "images/" + _attribute.value,
+                "images/ + ${_attribute.value}" ,
                 fit: BoxFit.cover,
               ),
             ),
@@ -96,7 +96,7 @@ class _AdsPageState extends State<AdsPage> {
 }
 
 class ProductSheet extends StatefulWidget {
-  const ProductSheet({Key key, this.product, this.code, this.attribute}) : super(key: key);
+  const ProductSheet({Key? key, required this.product, required this.code, required this.attribute}) : super(key: key);
 
   final Product product;
   final Attribute attribute;
@@ -111,26 +111,26 @@ class _ProductSheetState extends State<ProductSheet>
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 
-  final TextStyle titleStyle = const ProductStyle(fontSize: 25.0);
-  final TextStyle descriptionStyle = const ProductStyle(
+  TextStyle titleStyle = ProductStyle(fontSize: 25.0);
+  TextStyle descriptionStyle =  ProductStyle(
       fontSize: 15.0, color: Colors.black54, height: 20.0 / 15.0);
-  final TextStyle errorStyle = const ProductStyle(
+  TextStyle errorStyle =  ProductStyle(
       fontSize: 15.0, color: Colors.red, height: 20.0 / 15.0);
-  final TextStyle itemStyle =
-      const ProductStyle(fontSize: 15.0, height: 24.0 / 15.0);
-  final TextStyle itemAmountStyle = ProductStyle(
+  TextStyle itemStyle =
+       ProductStyle(fontSize: 15.0, height: 24.0 / 15.0);
+  TextStyle itemAmountStyle = ProductStyle(
       fontSize: 15.0, color: kTheme.primaryColor, height: 24.0 / 15.0);
-  final TextStyle headingStyle = const ProductStyle(
+  TextStyle headingStyle =  ProductStyle(
       fontSize: 16.0, fontWeight: FontWeight.bold, height: 24.0 / 15.0);
-  final TextStyle alertStyle = const ProductStyle(
+  TextStyle alertStyle = ProductStyle(
       fontSize: 15.0,
       color: Colors.red,
       fontWeight: FontWeight.w500,
       height: 16.0 / 15.0);
 
-  Product product;
-  Attribute attribute;
-  String code;
+  Product? product;
+  Attribute? attribute;
+  String? code;
 
   @override
   void initState() {
@@ -159,24 +159,24 @@ class _ProductSheetState extends State<ProductSheet>
                     TableRow(children: <Widget>[
                       TableCell(
                           verticalAlignment: TableCellVerticalAlignment.middle,
-                          child: Image.asset("images/" + attribute.value,
+                          child: Image.asset("images/ + ${attribute?.value}",
                               width: 40.0,
                               height: 80.0,
                               alignment: Alignment.centerLeft,
                               fit: BoxFit.scaleDown)),
                       TableCell(
                           verticalAlignment: TableCellVerticalAlignment.middle,
-                          child: Text(product.name, style: titleStyle)),
+                          child: Text(product?.name ?? '', style: titleStyle)),
                     ]),
                     TableRow(children: <Widget>[
                       const SizedBox(),
                       Padding(
                           padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                          child: Text(product.introduction,
+                          child: Text(product?.introduction ?? '',
                               style: descriptionStyle)),
                     ]),
                   ]),
-              new Padding(
+              const Padding(
                 padding: EdgeInsets.all(10),
               ),
             ])),

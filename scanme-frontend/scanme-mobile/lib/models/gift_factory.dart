@@ -1,20 +1,20 @@
 import 'dart:convert';
-import 'package:WEtrustScanner/constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'gift.dart';
+import 'package:scanme_mobile_temp/constants.dart';
 
-GiftFactory giftFactory;
+GiftFactory giftFactory = GiftFactory(gifts: []);
 
 class GiftFactory {
   final List<Gift> gifts;
 
   GiftFactory({
-    this.gifts,
+    required this.gifts,
   });
 
   factory GiftFactory.fromJson(List<dynamic> parsedJson) {
-    List<Gift> allgifts = new List<Gift>();
+    List<Gift> allgifts = <Gift>[];
     allgifts = parsedJson.map((i) => Gift.fromJson(i)).toList();
     giftFactory = new GiftFactory(gifts: allgifts);
     return giftFactory;
@@ -33,7 +33,7 @@ Future loadGifts() async {
 
 Future<List<Gift>> fetchGifts(String orgid) async {
   final response =
-      await http.get(SERVER_API + "/getGiftByOrgId?orgId=" + orgid);
+      await http.get(Uri.parse(SERVER_API + "/getGiftByOrgId?orgId=" + orgid));
   // final response = await http.get("https://reqres.in/api/users?page=2");
   // print(response.body);
 

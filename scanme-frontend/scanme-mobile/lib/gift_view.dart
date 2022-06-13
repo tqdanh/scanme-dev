@@ -1,5 +1,5 @@
-import 'package:WEtrustScanner/models/gift_factory.dart';
 import 'package:flutter/material.dart';
+import 'package:scanme_mobile_temp/models/gift_factory.dart';
 import 'constants.dart';
 import 'models/gift.dart';
 
@@ -9,8 +9,8 @@ class GiftView extends StatefulWidget {
 }
 
 class _GiftViewState extends State<GiftView> {
-  List<Gift> gifts;
-  Future<List<Gift>> futuregifts;
+  List<Gift> gifts = <Gift>[];
+  late Future<List<Gift>> futuregifts;
 
   @override
   void initState() {
@@ -93,9 +93,9 @@ class _GiftViewState extends State<GiftView> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-                  itemCount: snapshot.data.length,
+                  itemCount: snapshot.data?.length,
                   itemBuilder: (BuildContext context, int index) {
-                    Gift item = snapshot.data[index];
+                    Gift item = snapshot.data![index];
                     return ListTile(
                       leading: CircleAvatar(
                           radius: 25,

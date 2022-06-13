@@ -1,10 +1,10 @@
-import 'package:WEtrustScanner/loyalty_details.dart';
-import 'package:WEtrustScanner/models/loyalty.dart';
-import 'package:WEtrustScanner/models/loyalty_factory.dart';
+import 'package:scanme_mobile_temp/loyalty_details.dart';
+import 'package:scanme_mobile_temp/models/loyalty.dart';
+import 'package:scanme_mobile_temp/models/loyalty_factory.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'loyalty_card.dart';
-import 'package:WEtrustScanner/users.dart';
+import 'package:scanme_mobile_temp/users.dart';
 
 class LoyaltyView extends StatefulWidget {
   @override
@@ -12,8 +12,8 @@ class LoyaltyView extends StatefulWidget {
 }
 
 class _LoyaltyViewState extends State<LoyaltyView> {
-  List<Loyalty> cards;
-  Future<List<Loyalty>> futurecards;
+  List<Loyalty> cards = <Loyalty>[];
+  late Future<List<Loyalty>> futurecards;
 
   @override
   void initState() {
@@ -21,7 +21,7 @@ class _LoyaltyViewState extends State<LoyaltyView> {
     if (isHardCodedData) {
       cards = loyaltyCardFactory.loyaltycards;
     } else {
-      futurecards = fetchLoyaltyCards(mainuser.userId);
+      futurecards = fetchLoyaltyCards(mainuser.userId!);
     }
   }
 
@@ -39,9 +39,9 @@ class _LoyaltyViewState extends State<LoyaltyView> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return CustomScrollView(
-                  semanticChildCount: snapshot.data.length,
+                  semanticChildCount: snapshot.data?.length,
                   slivers: <Widget>[
-                    buildLoyaltyCards(snapshot.data, context),
+                    buildLoyaltyCards(snapshot.data!, context),
                   ]);
             }
             return CircularProgressIndicator();

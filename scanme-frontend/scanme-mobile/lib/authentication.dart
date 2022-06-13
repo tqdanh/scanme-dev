@@ -3,12 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class BaseAuth {
-  Future<FirebaseUser> signInWithGoogle(
+  Future<User?> signInWithGoogle(
       GoogleSignInAccount googleSignInAccount);
 
-  Future<UserInfo> signInWithFacebook(String accessToken);
+  Future<UserInfo?> signInWithFacebook(String accessToken);
 
-  Future<FirebaseUser> getCurrentUser();
+  Future<User?> getCurrentUser();
 
   Future<void> signOut();
 }
@@ -16,32 +16,30 @@ abstract class BaseAuth {
 class Auth implements BaseAuth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  Future<FirebaseUser> signInWithGoogle(
+  @override
+  Future<User?> signInWithGoogle(
       GoogleSignInAccount googleSignInAccount) async {
     GoogleSignInAuthentication googleAuth =
         await googleSignInAccount.authentication;
     print(googleAuth.accessToken);
 
-    final AuthCredential credential = GoogleAuthProvider.getCredential(
+    final AuthCredential credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
 
-    final FirebaseUser user =
+    User? user =
         (await _firebaseAuth.signInWithCredential(credential)).user;
-    print("signed in " + user.displayName);
     return user;
   }
-
-  Future<UserInfo> signInWithFacebook(String accessToken) async {
-    final AuthCredential credential = FacebookAuthProvider.getCredential(
-      accessToken: accessToken,
-    );
-    final FirebaseUser user =
+  @override
+  Future<UserInfo?> signInWithFacebook(String accessToken) async {
+    final AuthCredential credential = FacebookAuthProvider.credential(accessToken);
+    final User? user =
         (await _firebaseAuth.signInWithCredential(credential)).user;
 
-    List<UserInfo> infos = user.providerData;
-    UserInfo userInfo;
+    List<UserInfo> infos = user!.providerData;
+    UserInfo userInfo = UserInfo({});
     for (UserInfo ui in infos) {
       if (ui.providerId == "facebook.com") {
         userInfo = ui;
@@ -53,13 +51,14 @@ class Auth implements BaseAuth {
     assert(!user.isAnonymous);
     assert(await user.getIdToken() != null);
 
-    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+    User? currentUser = _firebaseAuth.currentUser!;
     assert(user.uid == currentUser.uid);
     return userInfo;
   }
 
-  Future<FirebaseUser> getCurrentUser() async {
-    FirebaseUser user = await _firebaseAuth.currentUser();
+  @override
+  Future<User?> getCurrentUser() async {
+    User? user = _firebaseAuth.currentUser!;
     return user;
   }
 

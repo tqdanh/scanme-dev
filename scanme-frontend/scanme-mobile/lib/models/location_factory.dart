@@ -2,20 +2,21 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'location_activity.dart';
+import 'package:scanme_mobile_temp/constants.dart';
 
-LocationActivityFactory locationActivityFactory;
+LocationActivityFactory locationActivityFactory = LocationActivityFactory(activities: []);
 
 class LocationActivityFactory {
   final List<LocationActivity> activities;
 
   LocationActivityFactory({
-    this.activities,
+    required this.activities,
   });
 
   factory LocationActivityFactory.fromJson(List<dynamic> parsedJson) {
-    List<LocationActivity> acts = new List<LocationActivity>();
+    List<LocationActivity> acts = <LocationActivity>[];
     acts = parsedJson.map((i) => LocationActivity.fromJson(i)).toList();
-    return new LocationActivityFactory(activities: acts);
+    return LocationActivityFactory(activities: acts);
   }
 }
 
@@ -31,7 +32,7 @@ Future loadLocationActivities() async {
 
 Future<List<LocationActivity>> fetchLocationActivities() async {
   final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts/1'));
 
   if (response.statusCode == 200) {
     // If the call to the server was successful, parse the JSON.

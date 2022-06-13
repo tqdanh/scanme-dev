@@ -1,14 +1,13 @@
-import 'package:WEtrustScanner/models/location_activity.dart';
-import 'package:WEtrustScanner/models/location_factory.dart';
-import 'package:WEtrustScanner/product_view.dart';
 import 'package:flutter/material.dart';
+import 'package:scanme_mobile_temp/models/location_activity.dart';
+import 'package:scanme_mobile_temp/product_view.dart';
 import 'dart:convert';
 import 'constants.dart';
 import 'models/products.dart';
 import 'custom_dialog.dart' as customDialog;
 
 class LocationView extends StatefulWidget {
-  const LocationView({Key key, this.location, this.product}) : super(key: key);
+  const LocationView({Key? key, required this.location,required this.product}) : super(key: key);
   final MapLocation location;
   final Product product;
   @override
@@ -16,12 +15,12 @@ class LocationView extends StatefulWidget {
 }
 
 class _LocationViewState extends State<LocationView> {
-  List<LocationActivity> activities;
-  Future<List<LocationActivity>> futureactivities;
+  List<LocationActivity> activities = <LocationActivity>[];
+  late Future<List<LocationActivity>> futureactivities;
 
   @override
   void initState() {
-    activities = widget.location.attributes;
+    activities = widget.location.attributes!;
     super.initState();
   }
 
@@ -29,7 +28,7 @@ class _LocationViewState extends State<LocationView> {
   build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          title: Text(widget.location.name),
+          title: Text(widget.location.name!),
         ),
         body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -37,16 +36,16 @@ class _LocationViewState extends State<LocationView> {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Padding(
-                  padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
+                  padding: const EdgeInsets.fromLTRB(15, 15, 0, 15),
                   child: Text(
-                    widget.location.description,
-                    style: TextStyle(
+                    widget.location.description!,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
                   )),
-              Image.asset("images/" + widget.location.logo),
-              Padding(
+              Image.asset("images/ + ${widget.location.logo}"),
+              const Padding(
                   padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
                   child: Center(
                       child: Text(
@@ -72,12 +71,14 @@ class _LocationViewState extends State<LocationView> {
           });
         },
         children: activities.map<ExpansionPanel>((LocationActivity item) {
-          List<Widget> contents = List<Widget>();
+          List<Widget> contents = <Widget>[];
           item.content.forEach((t) => contents.add(Text(t)));
           if (item.sources != null) {
-            contents.add(Text("\nNguyên liệu:", style: TextStyle(fontSize: 16)));
+            contents.add(const Text("\nNguyên liệu:", style: TextStyle(fontSize: 16)));
             List<Object> objects = item.sources;
-            objects.forEach((t) => contents.add(_getSources(context, Source.fromJson(t))));
+            for (var t in objects) {
+              contents.add(_getSources(context, Source.fromJson(t as Map<String, dynamic>)));
+            }
 
           }
           return ExpansionPanel(
@@ -92,7 +93,7 @@ class _LocationViewState extends State<LocationView> {
                           onTap: () {
                             _getTransaction(context, item.transactionId);
                           },
-                          child: Text('Mã blockchain: ' + item.transactionId, style: TextStyle(fontSize: 14, color: Colors.blueAccent),)
+                          child: Text('Mã blockchain:  + ${item.transactionId}', style:const TextStyle(fontSize: 14, color: Colors.blueAccent),)
                       )],
                   )
                 );
@@ -114,16 +115,16 @@ class _LocationViewState extends State<LocationView> {
         child: GestureDetector(
             onTap: () {
               // print("abc");
-              _getProductFromCode(context, source.transactionId);
+              _getProductFromCode(context, source.transactionId ?? '');
             },
-            child: Text(source.productLine, style: TextStyle(fontSize: 14, color: Colors.blueAccent),)
+            child: Text(source.productLine ?? '', style: const TextStyle(fontSize: 14, color: Colors.blueAccent),)
         ),
       ),
     );
   }
 
   void _getProductFromCode(BuildContext context, String transId) async{
-    List<MapLocation> mapLocation = await getMapLocation(transId);
+    List<MapLocation>? mapLocation = await getMapLocation(transId);
     if (mapLocation != null) {
       Product p = widget.product;
       p.traceability_locations = mapLocation;
@@ -132,22 +133,22 @@ class _LocationViewState extends State<LocationView> {
           MaterialPageRoute<void>(
             settings: const RouteSettings(),
             builder: (BuildContext context) {
-              return ProductPage(product: p, code: p.code);
+              return ProductPage(product: p, code: p.code ?? '');
             },
           ));
     }
   }
 
   void _getTransaction(BuildContext context, String transId) async{
-    Object transactionRaw = await getTransaction(transId);
-    var object = json.decode(transactionRaw);
+    Object? transactionRaw = await getTransaction(transId);
+    var object = json.decode(transactionRaw.toString());
     var transaction = JsonEncoder.withIndent('  ').convert(object);
     if (transaction != null) {
       customDialog.showDialog(
         context: context,
         builder: (BuildContext context) {
           // return object of type Dialog
-          return customDialog.AlertDialog(
+          return AlertDialog(
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
@@ -168,12 +169,10 @@ class _LocationViewState extends State<LocationView> {
                   child: ButtonTheme(
                     minWidth: 50.0,
                     height: 50,
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      color: Colors.lightBlue,
-                      textColor: Colors.white,
                       child: Text("OK", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     ),
                   ),
@@ -181,7 +180,7 @@ class _LocationViewState extends State<LocationView> {
               ],
             ),
           );
-        },
+        }, child: Container(),
       );
     }
   }

@@ -50,6 +50,8 @@ class Hotline extends StatelessWidget {
                     icon: Icons.account_box,
                     children: <Widget>[
                       ContactItem(
+                        icon: Icons.golf_course,
+                        tooltip: '',
                         onPressed: () {
                         },
                         lines: const <String>[
@@ -59,6 +61,7 @@ class Hotline extends StatelessWidget {
                       ),
                       ContactItem(
                         icon: Icons.call,
+                        tooltip: '',
                         onPressed: () {
                         },
                         lines: const <String>[
@@ -83,6 +86,8 @@ class Hotline extends StatelessWidget {
                   icon: Icons.contact_mail,
                   children: <Widget>[
                       ContactItem(
+                        icon: Icons.cabin,
+                        tooltip: '',
                         onPressed: () {
                         },
                         lines: const <String>[

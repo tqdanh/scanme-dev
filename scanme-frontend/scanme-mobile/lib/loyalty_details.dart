@@ -1,14 +1,14 @@
-import 'package:WEtrustScanner/gift_view.dart';
-import 'package:WEtrustScanner/models/gift.dart';
-import 'package:WEtrustScanner/models/gift_factory.dart';
-import 'package:WEtrustScanner/models/loyalty.dart';
+import 'package:scanme_mobile_temp/gift_view.dart';
+import 'package:scanme_mobile_temp/models/gift.dart';
+import 'package:scanme_mobile_temp/models/gift_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:scanme_mobile_temp/models/loyalty.dart';
 import 'constants.dart';
 import 'loyalty_card.dart';
 
 class LoyaltyDetails extends StatefulWidget {
-  const LoyaltyDetails({Key key, this.card}) : super(key: key);
+  const LoyaltyDetails({Key? key, required this.card}) : super(key: key);
 
   final Loyalty card;
   @override
@@ -16,9 +16,9 @@ class LoyaltyDetails extends StatefulWidget {
 }
 
 class _LoyaltyDetailsState extends State<LoyaltyDetails> {
-  List<Gift> gifts = new List<Gift>();
-  Future<List<Gift>> futuregifts;
-  Gift selected;
+  List<Gift> gifts = <Gift>[];
+  late Future<List<Gift>> futuregifts;
+  late Gift selected;
   @override
   void initState() {
     gifts.addAll(giftFactory.gifts);
@@ -38,22 +38,22 @@ class _LoyaltyDetailsState extends State<LoyaltyDetails> {
             card: widget.card,
             onTap: () {},
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(5),
           ),
-          Text(
+          const Text(
             "ĐỔI ĐIỂM LẤY QUÀ",
             style: TextStyle(
               fontSize: 20,
               color: Colors.teal,
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8),
           ),
           Expanded(
               child: isHardCodedData
-                  ? new Swiper(
+                  ?  Swiper(
                       onIndexChanged: (int index) {
                         setState(() {
                           selected = gifts[index];
@@ -78,32 +78,32 @@ class _LoyaltyDetailsState extends State<LoyaltyDetails> {
                       future: futuregifts,
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
-                          return new Swiper(
+                          return  Swiper(
                             onIndexChanged: (int index) {
                               setState(() {
-                                selected = snapshot.data[index];
+                                selected = snapshot.data![index];
                               });
                             },
                             onTap: (int index) {
                               setState(() {
-                                selected = snapshot.data[index];
+                                selected = snapshot.data![index];
                               });
                               handleGiftSelected(selected);
                             },
                             itemHeight: 300,
                             itemBuilder: (BuildContext context, int index) {
                               return Image.asset(
-                                  "images/" + snapshot.data[index].image,
+                                  "images/ + ${snapshot.data![index].image}",
                                   fit: BoxFit.fitHeight);
                             },
-                            itemCount: snapshot.data.length,
+                            itemCount: snapshot.data?.length,
                             viewportFraction: 0.8,
                             scale: 0.9,
                           );
                         }
                         return CircularProgressIndicator();
                       })),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(5),
           ),
           selected != null
@@ -137,7 +137,7 @@ class _LoyaltyDetailsState extends State<LoyaltyDetails> {
                   ));
             },
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(15),
           ),
         ]));
@@ -146,8 +146,8 @@ class _LoyaltyDetailsState extends State<LoyaltyDetails> {
   void handleGiftSelected(Gift gift) async {
     bool accepted = await showDialog(
       context: context,
-      builder: (context) => new AlertDialog(
-        title: new Text(
+      builder: (context) => AlertDialog(
+        title: const Text(
           'Xin xác nhận lại',
           style: TextStyle(color: Colors.teal),
         ),
@@ -156,24 +156,22 @@ class _LoyaltyDetailsState extends State<LoyaltyDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text(('Bạn đồng ý đổi ' +
-                  gift.point.toString() +
-                  " điểm lấy quà tặng?")),
+              Text(('Bạn đồng ý đổi ${gift.point.toString()} điểm lấy quà tặng?')),
               Expanded(child: Padding(
                   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Image.asset("images/" + gift.image, fit: BoxFit.fill))),
               Text(gift.name),
             ]),
         actions: <Widget>[
-          FlatButton(
-              child: Text('KHÔNG', style: TextStyle(color: Colors.teal)),
+          ElevatedButton(
+              child: const Text('KHÔNG', style: TextStyle(color: Colors.teal)),
               onPressed: () {
                 Navigator.of(context).pop(false);
               }),
           Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-              child: FlatButton(
-                  child: Text('ĐỒNG Ý', style: TextStyle(color: Colors.teal)),
+              child: ElevatedButton(
+                  child: const Text('ĐỒNG Ý', style: TextStyle(color: Colors.teal)),
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   })),

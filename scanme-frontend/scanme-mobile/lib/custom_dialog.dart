@@ -39,13 +39,13 @@ class CusTomDialog extends StatelessWidget {
   ///
   /// Typically used in conjunction with [showDialog].
   const CusTomDialog({
-    Key key,
-    this.backgroundColor,
-    this.elevation,
+    Key? key,
+    required this.backgroundColor,
+    required this.elevation,
     this.insetAnimationDuration = const Duration(milliseconds: 100),
     this.insetAnimationCurve = Curves.decelerate,
-    this.shape,
-    this.child,
+    required this.shape,
+    required this.child,
   }) : super(key: key);
 
   /// {@template flutter.material.dialog.backgroundColor}
@@ -199,18 +199,18 @@ class AlertDialog extends StatelessWidget {
   /// null, which implies a default that depends on the values of the other
   /// properties. See the documentation of [titlePadding] for details.
   const AlertDialog({
-    Key key,
-    this.title,
-    this.titlePadding,
-    this.titleTextStyle,
-    this.content,
+    Key? key,
+    required this.title,
+    required this.titlePadding,
+    required this.titleTextStyle,
+    required this.content,
     this.contentPadding = const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
-    this.contentTextStyle,
-    this.actions,
-    this.backgroundColor,
-    this.elevation,
-    this.semanticLabel,
-    this.shape,
+    required this.contentTextStyle,
+    required this.actions,
+    required this.backgroundColor,
+    required this.elevation,
+    required this.semanticLabel,
+    required this.shape,
   }) : assert(contentPadding != null),
        super(key: key);
 
@@ -309,7 +309,7 @@ class AlertDialog extends StatelessWidget {
       children.add(Padding(
         padding: titlePadding ?? EdgeInsets.fromLTRB(24.0, 24.0, 24.0, content == null ? 20.0 : 0.0),
         child: DefaultTextStyle(
-          style: titleTextStyle ?? dialogTheme.titleTextStyle ?? theme.textTheme.title,
+          style: (titleTextStyle ?? dialogTheme.titleTextStyle ?? theme.textTheme.titleMedium) ?? const TextStyle(),
           child: Semantics(
             child: title,
             namesRoute: true,
@@ -324,7 +324,7 @@ class AlertDialog extends StatelessWidget {
           break;
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
-          label = semanticLabel ?? MaterialLocalizations.of(context)?.alertDialogLabel;
+          label = (semanticLabel ?? MaterialLocalizations.of(context)?.alertDialogLabel) ?? '';
       }
     }
 
@@ -333,7 +333,7 @@ class AlertDialog extends StatelessWidget {
         child: Padding(
           padding: contentPadding,
           child: DefaultTextStyle(
-            style: contentTextStyle ?? dialogTheme.contentTextStyle ?? theme.textTheme.subhead,
+            style: contentTextStyle ?? dialogTheme.contentTextStyle ?? theme.textTheme.headlineMedium ?? const TextStyle(),
             child: content,
           ),
         ),
@@ -341,7 +341,7 @@ class AlertDialog extends StatelessWidget {
     }
 
     if (actions != null) {
-      children.add(ButtonTheme.bar(
+      children.add(ButtonTheme(
         child: ButtonBar(
           children: actions,
         ),
@@ -405,9 +405,9 @@ class AlertDialog extends StatelessWidget {
 class SimpleDialogOption extends StatelessWidget {
   /// Creates an option for a [SimpleDialog].
   const SimpleDialogOption({
-    Key key,
-    this.onPressed,
-    this.child,
+    Key? key,
+    required this.onPressed,
+    required this.child,
   }) : super(key: key);
 
   /// The callback that is called when this option is selected.
@@ -509,15 +509,15 @@ class SimpleDialog extends StatelessWidget {
   ///
   /// The [titlePadding] and [contentPadding] arguments must not be null.
   const SimpleDialog({
-    Key key,
-    this.title,
+    Key? key,
+    required this.title,
     this.titlePadding = const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
-    this.children,
+    required this.children,
     this.contentPadding = const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 16.0),
-    this.backgroundColor,
-    this.elevation,
-    this.semanticLabel,
-    this.shape,
+    required this.backgroundColor,
+    required this.elevation,
+    required this.semanticLabel,
+    required this.shape,
   }) : assert(titlePadding != null),
        assert(contentPadding != null),
        super(key: key);
@@ -592,7 +592,7 @@ class SimpleDialog extends StatelessWidget {
       body.add(Padding(
         padding: titlePadding,
         child: DefaultTextStyle(
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).textTheme.titleMedium ?? const TextStyle(),
           child: Semantics(namesRoute: true, child: title),
         ),
       ));
@@ -603,7 +603,7 @@ class SimpleDialog extends StatelessWidget {
           break;
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
-          label = semanticLabel ?? MaterialLocalizations.of(context)?.dialogLabel;
+          label = semanticLabel ?? MaterialLocalizations.of(context)?.dialogLabel ?? '';
       }
     }
 
@@ -686,20 +686,20 @@ Widget _buildMaterialDialogTransitions(BuildContext context, Animation<double> a
 ///  * [showCupertinoDialog], which displays an iOS-style dialog.
 ///  * [showGeneralDialog], which allows for customization of the dialog popup.
 ///  * <https://material.io/design/components/dialogs.html>
-Future<T> showDialog<T>({
-  @required BuildContext context,
+Future<Object?> showDialog<T> ({
+  required BuildContext context,
   bool barrierDismissible = true,
   @Deprecated(
     'Instead of using the "child" argument, return the child from a closure '
     'provided to the "builder" argument. This will ensure that the BuildContext '
     'is appropriate for widgets built in the dialog.'
-  ) Widget child,
-  WidgetBuilder builder,
+  ) required Widget child,
+  required WidgetBuilder builder,
 }) {
   assert(child == null || builder == null);
   assert(debugCheckHasMaterialLocalizations(context));
 
-  final ThemeData theme = Theme.of(context, shadowThemeOnly: true);
+  final ThemeData theme = Theme.of(context);
   return showGeneralDialog(
     context: context,
     pageBuilder: (BuildContext buildContext, Animation<double> animation, Animation<double> secondaryAnimation) {

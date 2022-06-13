@@ -1,5 +1,11 @@
 class Company {
-  Company({this.id, this.name, this.logo, this.address, this.tel, this.email});
+  Company(
+      {required this.id,
+      required this.name,
+      required this.logo,
+      required this.address,
+      required this.tel,
+      required this.email});
 
   final String id;
   final String name;

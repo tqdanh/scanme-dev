@@ -1,17 +1,17 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class User {
-  String userId;
-  String name;
-  String email;
+  String? userId;
+  String? name;
+  String? email;
   String imagePath = "";
-  int sso;
-  String address;
+  int? sso;
+  String? address;
 
   void loadUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    userId = (prefs.getString('userId') ?? null);
+    userId = (prefs.getString('userId') ?? "");
     name = (prefs.getString('name') ?? "");
     email = (prefs.getString('email') ?? "");
     imagePath = (prefs.getString('imagePath') ?? "");
@@ -24,11 +24,11 @@ class User {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     // prefs.setString('userId', userId);
-    prefs.setString('name', name);
-    prefs.setString('email', email);
+    prefs.setString('name', name ?? '');
+    prefs.setString('email', email ?? '');
     prefs.setString('imagePath', imagePath);
-    prefs.setInt('sso', sso);
-    prefs.setString('address', address);
+    prefs.setInt('sso', sso ?? 0);
+    prefs.setString('address', address ?? '');
   }
 
   void saveImagePath() async {
@@ -38,7 +38,7 @@ class User {
 
   void saveAddress() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('address', address);
+    prefs.setString('address', address ?? '');
   }
 }
 // Global Variable

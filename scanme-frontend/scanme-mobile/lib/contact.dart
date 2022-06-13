@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class ContactCategory extends StatelessWidget {
-  const ContactCategory({Key key, this.icon, this.children}) : super(key: key);
+  const ContactCategory({Key? key, required this.icon, required this.children}) : super(key: key);
 
   final IconData icon;
   final List<Widget> children;
@@ -15,7 +15,7 @@ class ContactCategory extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: themeData.dividerColor))),
       child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.subhead,
+        style: Theme.of(context).textTheme.headlineMedium ?? const TextStyle(),
         child: SafeArea(
           top: false,
           bottom: false,
@@ -36,7 +36,7 @@ class ContactCategory extends StatelessWidget {
 }
 
 class ContactItem extends StatelessWidget {
-  ContactItem({Key key, this.icon, this.lines, this.tooltip, this.onPressed})
+  ContactItem({Key? key, required this.icon,required this.lines,required this.tooltip,required this.onPressed})
       : assert(lines.length > 1),
         super(key: key);
 

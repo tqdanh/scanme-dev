@@ -13,10 +13,10 @@ final ThemeData kTheme = ThemeData(
 class ProductStyle extends TextStyle {
   const ProductStyle({
     double fontSize = 14.0,
-    FontWeight fontWeight,
+    FontWeight? fontWeight,
     Color color = Colors.black87,
-    double letterSpacing,
-    double height,
+    double? letterSpacing,
+    double? height,
   }) : super(
           inherit: false,
           color: color,

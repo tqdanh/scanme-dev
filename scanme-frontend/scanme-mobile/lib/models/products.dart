@@ -1,69 +1,70 @@
 import 'dart:async' show Future;
-import 'package:WEtrustScanner/models/company.dart';
-import 'package:WEtrustScanner/models/location_activity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:scanme_mobile_temp/models/company.dart';
+import 'package:scanme_mobile_temp/models/location_activity.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
-import 'package:connectivity/connectivity.dart';
 import '../constants.dart';
 import '../login.dart';
-import 'package:WEtrustScanner/users.dart';
+import 'package:scanme_mobile_temp/users.dart';
 
-Products myProducts;
+Products myProducts = Products(products: []);
 
 class Products {
   List<Product> products;
 
   Products({
-    this.products,
+    required this.products,
   });
 
   factory Products.fromJson(List<dynamic> parsedJson) {
-    List<Product> _products = new List<Product>();
+    List<Product> _products = <Product>[];
     _products = parsedJson.map((i) => Product.fromJson(i)).toList();
 
-    return new Products(products: _products);
+    return Products(products: _products);
   }
 }
 
 class Product {
   Product(
-      {this.code,
-      this.name,
-      this.status,
-      this.actioncode,
-      this.point,
-      this.image_ads,
-      this.image_unit,
-      this.introduction,
-      this.exp,
-      this.mfg,
-      this.lot,
-      this.company,
-      this.traceability_locations,
-      this.ingredient_descriptions,
-      this.promotion_descriptions,
-      this.ads_descriptions});
+      {
+       this.code,
+       this.name,
+       this.status,
+       this.actioncode,
+       this.point,
+       this.image_ads,
+       this.image_unit,
+       this.introduction,
+       this.exp,
+       this.mfg,
+       this.lot,
+       this.company,
+       this.traceability_locations,
+       this.ingredient_descriptions,
+       this.promotion_descriptions,
+       this.ads_descriptions});
 
-  String code;
-  String name;
-  int status;
-  int actioncode;
-  int point;
-  String image_ads;
-  String image_unit;
-  String introduction;
-  String exp;
-  String mfg;
-  String lot;
-  Company company;
-  List<MapLocation> traceability_locations;
-  List<Description> ingredient_descriptions;
-  List<Description> promotion_descriptions;
-  List<Description> ads_descriptions;
+  String? code;
+  String? name;
+  int? status;
+  int? actioncode;
+  int? point;
+  String? image_ads;
+  String? image_unit;
+  String? introduction;
+  String? exp;
+  String? mfg;
+  String? lot;
+  Company? company;
+  List<MapLocation>? traceability_locations;
+  List<Description>? ingredient_descriptions;
+  List<Description>? promotion_descriptions;
+  List<Description>? ads_descriptions;
 
-  String get tag => code; // Assuming that all asset names are unique.
+  String get tag => code ?? ''; // Assuming that all asset names are unique.
   bool get isValid => code != null && name != null;
 
   factory Product.fromJson(Map<String, dynamic> parsedJson) {
@@ -120,7 +121,7 @@ Future loadProducts() async {
 }
 
 Product getProductFromCode(String code) {
-  Product _product;
+  Product _product = Product();
   myProducts.products.forEach((p) {
     if (p.code == code) {
       _product = p;
@@ -129,7 +130,7 @@ Product getProductFromCode(String code) {
   if (_product != null)
     return _product;
   else
-    return null;
+    return Product();
 }
 
 Future<Product> fetchProduct(String code) async {
@@ -139,8 +140,7 @@ Future<Product> fetchProduct(String code) async {
   List<String> temps = code.split("currentTransId=");
   if (temps.length >= 2) code = temps[1];
 
-  currentLocation = await Geolocator()
-      .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  currentLocation = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
 
   if (mainuser.userId == null) {
     bodycontain = json.encode({
@@ -164,8 +164,8 @@ Future<Product> fetchProduct(String code) async {
 
   final response =
       // await http.get(SERVER_API + '/traceProduct?currentTransId=' + code);
-      await http.put(
-    SERVER_API + '/traceProduct?currentTransId=' + code,
+      await http.put(Uri.parse(
+    SERVER_API + '/traceProduct?currentTransId=' + code),
     body: bodycontain,
     headers: {'Content-type': 'application/json', 'Accept': 'application/json'},
   );
@@ -184,9 +184,9 @@ Future<int> countScanLocation(String transactionId) async {
   String body = "0";
   if (connectivityResult == ConnectivityResult.mobile ||
       connectivityResult == ConnectivityResult.wifi) {
-    final response = await http.get(SERVER_API +
+    final response = await http.get(Uri.parse(SERVER_API +
         "/countLocationProductsByTxId?transactionId=" +
-        transactionId);
+        transactionId));
     if (response.statusCode == 200) {
       body = response.body.toString();
     } else {
@@ -196,14 +196,14 @@ Future<int> countScanLocation(String transactionId) async {
   return int.parse(body);
 }
 
-Future<List<MapLocation>> getMapLocation(String transactionId) async {
+Future<List<MapLocation>?> getMapLocation(String transactionId) async {
     var connectivityResult = await (Connectivity().checkConnectivity());
     MapLocation myMapLocation;
     String body;
     if (connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi) {
-      final response = await http.get(SERVER_API +
-          "/traceSource?currentTransId=" + transactionId);
+      final response = await http.get(Uri.parse(SERVER_API +
+          "/traceSource?currentTransId=" + transactionId));
       if (response.statusCode == 200) {
         Map<String, dynamic> map = json.decode(response.body);
         var traceabilityLocationsfromJson = map['traceability_locations'] as List;
@@ -220,12 +220,12 @@ Future<List<MapLocation>> getMapLocation(String transactionId) async {
     }
 }
 
-Future<Object> getTransaction(String transactionId) async {
+Future<String?> getTransaction(String transactionId) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
   if (connectivityResult == ConnectivityResult.mobile ||
       connectivityResult == ConnectivityResult.wifi) {
-    final response = await http.get(SERVER_API +
-        "/getTransaction?transactionId=" + transactionId);
+    final response = await http.get(Uri.parse(SERVER_API +
+        "/getTransaction?transactionId=" + transactionId));
     if (response.statusCode == 200) {
       return response.body;
     } else {
@@ -237,13 +237,13 @@ Future<Object> getTransaction(String transactionId) async {
 }
 
 class MapLocation {
-  String companyid;
-  String name;
-  String description;
-  String logo;
-  List<double> location;
-  String location_description;
-  List<LocationActivity> attributes;
+  String? companyid;
+  String? name;
+  String? description;
+  String? logo;
+  List<double>? location;
+  String? location_description;
+  List<LocationActivity>? attributes;
 
   MapLocation(
       {this.companyid,
@@ -275,11 +275,11 @@ class MapLocation {
 }
 
 class Description {
-  String title;
-  String description;
-  List<String> images;
-  List<String> notes;
-  List<Attribute> attributes;
+  String? title;
+  String? description;
+  List<String>? images;
+  List<String>? notes;
+  List<Attribute>? attributes;
 
   Description(
       {this.title, this.description, this.images, this.attributes, this.notes});
@@ -306,9 +306,9 @@ class Description {
 }
 
 class Attribute {
-  String id;
-  String name;
-  String value;
+  String? id;
+  String? name;
+  String? value;
 
   Attribute({this.id, this.name, this.value});
 
@@ -329,9 +329,9 @@ class Source {
     this.outputIndex
   });
 
-  String productLine;
-  String transactionId;
-  String outputIndex;
+  String? productLine;
+  String? transactionId;
+  String? outputIndex;
 
   factory Source.fromJson(Map<String, dynamic> parsedJson) {
     return Source(

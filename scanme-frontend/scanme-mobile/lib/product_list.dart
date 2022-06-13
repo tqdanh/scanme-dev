@@ -1,4 +1,4 @@
-import 'package:WEtrustScanner/constants.dart';
+import 'package:scanme_mobile_temp/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:collection/collection.dart' show lowerBound;
@@ -13,13 +13,12 @@ enum DialogAction {
 }
 
 class ProductListView {
-
-  List<LeaveBehindItem> _names = new List<LeaveBehindItem>();
-  BuildContext _context;
+  final List<LeaveBehindItem> _names = <LeaveBehindItem>[];
+  late BuildContext _context;
 
   ProductListView(BuildContext context, List<Product> products) {
-    products.forEach((p) => this._names.add(
-        new LeaveBehindItem(code: p.code, name: p.name, image: p.image_unit)));
+    products.forEach((p) => this._names.add(LeaveBehindItem(
+        code: p.code ?? '', name: p.name ?? '', image: p.image_unit ?? '')));
 
     this._context = context;
   }
@@ -54,7 +53,7 @@ class ProductListView {
     Scaffold.of(_context).setState(() {
       _names.remove(item);
     });
-    Scaffold.of(_context).showSnackBar(SnackBar(
+    ScaffoldMessenger.maybeOf(_context)!.showSnackBar(SnackBar(
         content: Text('You rejected item ${item.code}'),
         action: SnackBarAction(
             label: 'UNDO',
@@ -69,8 +68,8 @@ class ProductListView {
         _context,
         MaterialPageRoute<void>(
           settings: const RouteSettings(name: '/product/detail'),
-          builder: (BuildContext context) {            
-            return ProductPage(product: getProductFromCode(item.code));
+          builder: (BuildContext context) {
+            return ProductPage(product: getProductFromCode(item.code), code: '',);
           },
         ));
   }
@@ -79,7 +78,7 @@ class ProductListView {
     Scaffold.of(_context).setState(() {
       _names.remove(item);
     });
-    Scaffold.of(_context).showSnackBar(SnackBar(
+    ScaffoldMessenger.maybeOf(_context)!.showSnackBar(SnackBar(
         content: Text('You deleted item ${item.code}'),
         action: SnackBarAction(
             label: 'UNDO',
@@ -90,7 +89,8 @@ class ProductListView {
 }
 
 class LeaveBehindItem implements Comparable<LeaveBehindItem> {
-  LeaveBehindItem({this.code, this.name, this.image});
+  LeaveBehindItem(
+      {required this.code, required this.name, required this.image});
 
   LeaveBehindItem.from(LeaveBehindItem item)
       : code = item.code,
@@ -107,11 +107,11 @@ class LeaveBehindItem implements Comparable<LeaveBehindItem> {
 
 class _LeaveBehindListItem extends StatelessWidget {
   const _LeaveBehindListItem({
-    Key key,
-    @required this.item,
-    @required this.onArchive,
-    @required this.onDelete,
-    @required this.onTap,
+    Key? key,
+    required this.item,
+    required this.onArchive,
+    required this.onDelete,
+    required this.onTap,
   }) : super(key: key);
 
   final LeaveBehindItem item;
@@ -160,8 +160,8 @@ class _LeaveBehindListItem extends StatelessWidget {
                     Icon(Icons.delete, color: Colors.redAccent, size: 36.0))),
         secondaryBackground: Container(
             color: theme.primaryColor,
-            child: ListTile(
-                title: new Align(
+            child: const ListTile(
+                title: Align(
                     alignment: Alignment.centerRight,
                     child: Text('Reject',
                         style: TextStyle(
@@ -173,14 +173,17 @@ class _LeaveBehindListItem extends StatelessWidget {
         child: Container(
           child: MergeSemantics(
               child: ListTile(
-            onTap: _handleTapped,
-            leading: ExcludeSemantics(
-                child: CircleAvatar(
-                    radius: 25, backgroundImage: AssetImage("images/"+item.image))),
-            title: Text(item.name),
-            subtitle: Text(item.code, style: TextStyle(fontSize: 12),),
-            isThreeLine: true
-          )),
+                  onTap: _handleTapped,
+                  leading: ExcludeSemantics(
+                      child: CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage("images/${item.image}"))),
+                  title: Text(item.name),
+                  subtitle: Text(
+                    item.code,
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                  isThreeLine: true)),
         ),
       ),
     );

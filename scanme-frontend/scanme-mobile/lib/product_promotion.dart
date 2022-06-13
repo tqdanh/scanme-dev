@@ -4,7 +4,7 @@ import 'models/products.dart';
 import 'styles.dart';
 
 class ProductPromotion extends StatefulWidget {
-  ProductPromotion({Key key, this.product}) : super(key: key);
+  ProductPromotion({Key? key, required this.product}) : super(key: key);
 
   final Product product;
 
@@ -15,7 +15,7 @@ class ProductPromotion extends StatefulWidget {
 class _ProductPromotionState extends State<ProductPromotion> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  Product _product;
+  Product _product = Product();
 
   @override
   void initState() {
@@ -29,15 +29,15 @@ class _ProductPromotionState extends State<ProductPromotion> {
     return _buildPromotion(_product.promotion_descriptions);
   }
 
-  Widget _buildPromotion(List<Description> promotions) {
-    List<Widget> allpromotions = List<Widget>();
+  Widget _buildPromotion(List<Description>? promotions) {
+    List<Widget> allpromotions = <Widget>[];
 
-    _product.promotion_descriptions.forEach((pro) => {
-          allpromotions.add(PromotionCard(
-            promotion: pro,
-            onTap: () {},
-          ))
-        });
+    for (var pro in _product.promotion_descriptions!) {
+      allpromotions.add(PromotionCard(
+        promotion: pro,
+        onTap: () {},
+      ));
+    }
 
     return Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -51,7 +51,8 @@ class _ProductPromotionState extends State<ProductPromotion> {
 }
 
 class PromotionCard extends StatelessWidget {
-  PromotionCard({Key key, this.promotion, this.onTap}) : super(key: key);
+  PromotionCard({Key? key, required this.promotion, required this.onTap})
+      : super(key: key);
 
   TextStyle get titleStyle =>
       const ProductStyle(fontSize: 16.0, fontWeight: FontWeight.w500);
@@ -65,13 +66,11 @@ class PromotionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> allattribute = <Widget>[];
 
-    List<Widget> allattribute = List<Widget>();
-
-    promotion.attributes
-        .forEach((att) => {allattribute.addAll(_buildPromotionAttribute(att))});
-
-
+    for (var att in promotion.attributes!) {
+      allattribute.addAll(_buildPromotionAttribute(att));
+    }
     return GestureDetector(
       onTap: onTap,
       child: Card(
@@ -79,11 +78,11 @@ class PromotionCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Hero(
-              tag: 'packages/${promotion.images[0]}',
+              tag: 'packages/${promotion.images![0]}',
               child: AspectRatio(
                 aspectRatio: 3.0 / 2.0,
                 child: Image.asset(
-                  "images/" + promotion.images[0],
+                  "images/" + promotion.images![0],
                   fit: BoxFit.cover,
                   semanticLabel: promotion.title,
                 ),
@@ -91,10 +90,13 @@ class PromotionCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 15.0, 8.0, 4.0),
-              child: Text(promotion.title, style: titleStyle),
+              child: Text(promotion.title ?? '', style: titleStyle),
             ),
-          ]..addAll(allattribute)
-          ..add(Padding(padding: EdgeInsets.all(10),)),          
+          ]
+            ..addAll(allattribute)
+            ..add(Padding(
+              padding: EdgeInsets.all(10),
+            )),
         ),
       ),
     );
@@ -104,11 +106,11 @@ class PromotionCard extends StatelessWidget {
     return <Widget>[
       Padding(
         padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
-        child: Text(attribute.name+":", style: itemStyle),
+        child: Text("${attribute.name}:", style: itemStyle),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 8),
-        child: Text(attribute.value, style: descriptionStyle),
+        child: Text(attribute.value ?? '', style: descriptionStyle),
       ),
     ];
   }

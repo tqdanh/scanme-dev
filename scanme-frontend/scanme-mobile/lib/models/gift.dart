@@ -1,7 +1,7 @@
-import 'package:WEtrustScanner/models/company.dart';
+import 'package:scanme_mobile_temp/models/company.dart';
 
 class Gift {
-  Gift({this.id,this.name, this.image, this.expirydate, this.quantity, this.point, this.company});
+  Gift({required this.id, required this.name,required this.image,required this.expirydate,required this.quantity,required this.point,required this.company});
 
   final String id;
   final String name;

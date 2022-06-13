@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:simple_animations/simple_animations.dart';
 
 class FancyCard extends StatefulWidget {
-  const FancyCard({this.data, Key key}) : super(key: key);
+  const FancyCard({required this.data, Key? key}) : super(key: key);
   final Widget data;
 
   @override
@@ -26,13 +26,13 @@ class _FancyCardState extends State<FancyCard> {
 }
 
 class FancyBackgroundApp extends StatelessWidget {
-  const FancyBackgroundApp({this.data, Key key}) : super(key: key);
+  const FancyBackgroundApp({required this.data, Key? key}) : super(key: key);
   final Widget data;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Positioned.fill(child: AnimatedBackground()),
+        Positioned.fill(child: Container()),
         onBottom(AnimatedWave(
           height: 180,
           speed: 1.0,
@@ -65,7 +65,7 @@ class AnimatedWave extends StatelessWidget {
   final double speed;
   final double offset;
 
-  AnimatedWave({this.height, this.speed, this.offset = 0.0});
+  AnimatedWave({Key? key, required this.height,required  this.speed, this.offset = 0.0}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,11 +73,10 @@ class AnimatedWave extends StatelessWidget {
       return Container(
         height: height,
         width: constraints.biggest.width,
-        child: ControlledAnimation(
-            playback: Playback.LOOP,
+        child: PlayAnimation (
             duration: Duration(milliseconds: (5000 / speed).round()),
             tween: Tween(begin: 0.0, end: 2 * pi),
-            builder: (context, value) {
+            builder: (context, child, value) {
               return CustomPaint(
                 foregroundPainter: CurvePainter(value + offset),
               );
@@ -120,45 +119,44 @@ class CurvePainter extends CustomPainter {
   }
 }
 
-class AnimatedBackground extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final tween = MultiTrackTween([
-      Track("color1").add(Duration(seconds: 3),
-          ColorTween(begin: Color(0xffD38312), end: Colors.teal)),
-      Track("color2").add(Duration(seconds: 3),
-          ColorTween(begin: Color(0xffA83279), end: Colors.teal[900]))
-    ]);
+// class AnimatedBackground extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     final tween = AnimatedBackground([
+//       Track("color1").add(Duration(seconds: 3),
+//           ColorTween(begin: Color(0xffD38312), end: Colors.teal)),
+//       Track("color2").add(Duration(seconds: 3),
+//           ColorTween(begin: Color(0xffA83279), end: Colors.teal[900]))
+//     ]);
 
-    return ControlledAnimation(
-      playback: Playback.MIRROR,
-      tween: tween,
-      duration: tween.duration,
-      builder: (context, animation) {
-        return Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [animation["color1"], animation["color2"]])),
-        );
-      },
-    );
-  }
-}
+//     return PlayAnimation(
+//       tween: tween,
+//       duration: tween.duration,
+//       builder: (context, child, List<Color> animation) {
+//         return Container(
+//           decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                   begin: Alignment.topCenter,
+//                   end: Alignment.bottomCenter,
+//                   colors: animation)),
+//         );
+//       },
+//     );
+//   }
+// }
 
 class CenteredText extends StatelessWidget {
   final Widget builder;
 
   const CenteredText(
     this.builder, {
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+        padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
         child: Column(
             children: <Widget>[Expanded(child: Center(child: builder))]));
   }
