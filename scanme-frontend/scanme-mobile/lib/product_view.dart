@@ -16,7 +16,8 @@ import 'styles.dart';
 import 'constants.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({Key? key, required this.product,required this.code}) : super(key: key);
+  const ProductPage({Key? key, required this.product, required this.code})
+      : super(key: key);
 
   final Product product;
   final String code;
@@ -59,7 +60,8 @@ class _ProductPageState extends State<ProductPage> {
             height: appBarHeight + kHalfSize,
             child: Hero(
               tag: '${_product.code} package/${_product.image_ads}',
-              child: Image.network("${SERVER_API}/${_product.image_ads}",
+              child: Image.network(
+                "${SERVER_API}/file/${_product.image_ads}",
                 fit: BoxFit.cover,
               ),
             ),
@@ -159,7 +161,8 @@ class _ProductPageState extends State<ProductPage> {
 }
 
 class ProductSheet extends StatefulWidget {
-  const ProductSheet({Key? key, required this.product, required this.code}) : super(key: key);
+  const ProductSheet({Key? key, required this.product, required this.code})
+      : super(key: key);
 
   final Product product;
   final String code;
@@ -198,7 +201,7 @@ class _ProductSheetState extends State<ProductSheet>
   void initState() {
     product = widget.product;
     code = widget.code;
-    _tabcontroller =  TabController(length: 4, vsync: this);
+    _tabcontroller = TabController(length: 4, vsync: this);
     super.initState();
   }
 
@@ -228,7 +231,9 @@ class _ProductSheetState extends State<ProductSheet>
                       TableCell(
                           verticalAlignment: TableCellVerticalAlignment.middle,
                           child: Image.network(
-                              SERVER_API + '/' + (product.image_unit ?? ''),
+                              SERVER_API +
+                                  '/file/' +
+                                  (product.image_unit ?? ''),
                               width: 40.0,
                               height: 80.0,
                               alignment: Alignment.centerLeft,
@@ -295,15 +300,14 @@ class _ProductSheetState extends State<ProductSheet>
                                         (product.exp ?? '') +
                                         "\n"
                                             "LOT: " +
-                                        (product.lot ?? '' ),
+                                        (product.lot ?? ''),
                                     style: itemStyle)),
                           ])
-                        : const TableRow(children: <Widget>[
-                            SizedBox(),
-                            SizedBox()
-                          ]))
+                        : const TableRow(
+                            children: <Widget>[SizedBox(), SizedBox()]))
                     ..add(
-                      (product.actioncode == PRODUCT_ACTION_CODE_ADDPOINTS && product.point! > 0)
+                      (product.actioncode == PRODUCT_ACTION_CODE_ADDPOINTS &&
+                              product.point! > 0)
                           ? TableRow(children: <Widget>[
                               Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -397,38 +401,38 @@ class _ProductSheetState extends State<ProductSheet>
                               const SizedBox()
                             ]),
                     )),
-               Padding(
+              Padding(
                 padding: EdgeInsets.all(10),
               ),
-               Container(
-                decoration:  BoxDecoration(color: Colors.blue),
-                child:  TabBar(
+              Container(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: TabBar(
                   controller: _tabcontroller,
                   isScrollable: true,
                   indicator: UnderlineTabIndicator(),
                   tabs: [
-                     Tab(
+                    Tab(
                       icon: const Icon(Icons.home),
                       text: 'Truy xuất nguồn gốc',
                     ),
-                     Tab(
+                    Tab(
                       icon: const Icon(Icons.room_service),
                       text: 'Thành phần dinh dưỡng',
                     ),
-                     Tab(
+                    Tab(
                       icon: const Icon(Icons.card_giftcard),
                       text: 'Thông tin khuyến mãi',
                     ),
-                     Tab(
+                    Tab(
                       icon: const Icon(Icons.store),
                       text: 'Sản phẩm khác',
                     ),
                   ],
                 ),
               ),
-               Container(
+              Container(
                 height: 1680.0,
-                child:  TabBarView(
+                child: TabBarView(
                   controller: _tabcontroller,
                   children: <Widget>[
                     ProductMap(
@@ -452,7 +456,13 @@ class _ProductSheetState extends State<ProductSheet>
   }
 
   void handlePointSelected(Company company, int point) async {
-    Loyalty card = Loyalty(id: '', owner: 'owner', cardnumber: 'cardnumber', type: 0, point: point, company: company);
+    Loyalty card = Loyalty(
+        id: '',
+        owner: 'owner',
+        cardnumber: 'cardnumber',
+        type: 0,
+        point: point,
+        company: company);
     if (point > 0) {
       for (Loyalty c in loyaltyCardFactory.loyaltycards) {
         if (c.company.id == company.id) {
@@ -469,7 +479,7 @@ class _ProductSheetState extends State<ProductSheet>
 
     bool accepted = await showDialog(
       context: context,
-      builder: (context) =>  AlertDialog(
+      builder: (context) => AlertDialog(
         title: const Text(
           'Khách hàng thân thiết',
           style: TextStyle(color: Colors.teal),

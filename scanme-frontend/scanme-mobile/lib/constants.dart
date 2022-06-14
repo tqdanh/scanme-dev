@@ -14,7 +14,7 @@ bool isHardCodedData = false;
 // const SERVER_API = "http://10.1.0.109:8080";
 
 // IP Local
-// const SERVER_API = "http://192.168.75.19:8080";
+const SERVER_API = "http://localhost:8080";
 
 // IP Public
-const SERVER_API = "http://103.199.6.149:8080";
+// const SERVER_API = "http://103.199.6.149:8080";
