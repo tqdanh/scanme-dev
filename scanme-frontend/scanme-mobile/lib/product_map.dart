@@ -5,6 +5,7 @@ import 'package:location/location.dart' as LocationManager;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/foundation.dart';
 import 'package:location/location.dart';
+import 'package:collection/collection.dart';
 import 'models/products.dart';
 import 'styles.dart';
 
@@ -177,8 +178,8 @@ class _ProductMapState extends State<ProductMap> {
     LatLng? center = await getUserLocation();
 
     String markerIdValue1 = "Vị trí quét";
-    MarkerId markerId1 =  MarkerId(markerIdValue1);
-    Marker marker1 =  Marker(
+    MarkerId markerId1 = MarkerId(markerIdValue1);
+    Marker marker1 = Marker(
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       markerId: markerId1,
       position: center!,
@@ -191,8 +192,8 @@ class _ProductMapState extends State<ProductMap> {
 
     for (int i = 0; i < _product.traceability_locations!.length; i++) {
       String? markerIdValue = _product.traceability_locations![i].name;
-      MarkerId markerId =  MarkerId(markerIdValue?? '');
-      Marker marker =  Marker(
+      MarkerId markerId = MarkerId(markerIdValue ?? '');
+      Marker marker = Marker(
         icon: BitmapDescriptor.defaultMarkerWithHue((i < _MapColors.length - 1)
             ? _MapColors[i].bitmapDescriptor
             : BitmapDescriptor.hueRed),
@@ -215,8 +216,9 @@ class _ProductMapState extends State<ProductMap> {
   TableRow _buildLocations(MapLocation location) {
     String attributes = "";
     if (location.attributes!.length == 1)
-      attributes =
-          location.attributes![0].time + ": " + location.attributes![0].activity;
+      attributes = location.attributes![0].time +
+          ": " +
+          location.attributes![0].activity;
     else {
       attributes = location.attributes![0].time +
           ": " +
@@ -232,9 +234,9 @@ class _ProductMapState extends State<ProductMap> {
     // attributes = attributes.substring(0, attributes.length - 1);
 
     Color color = Colors.red;
-    _MapColor mapColor = _MapColors.firstWhere(
-        (c) => c.locationName == location.name,
-        );
+    _MapColor? mapColor = _MapColors.firstWhereOrNull(
+      (c) => c.locationName == location.name,
+    );
     if (mapColor != null) color = mapColor.color;
 
     return TableRow(
@@ -257,9 +259,7 @@ class _ProductMapState extends State<ProductMap> {
                         const RouteSettings(name: '/product/locationdetail'),
                     builder: (BuildContext context) {
                       return LocationView(
-                        location: location,
-                        product: _product
-                      );
+                          location: location, product: _product);
                     },
                   ));
             },
@@ -278,5 +278,4 @@ class _ProductMapState extends State<ProductMap> {
       ],
     );
   }
-
 }

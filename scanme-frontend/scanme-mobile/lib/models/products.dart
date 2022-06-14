@@ -29,23 +29,22 @@ class Products {
 
 class Product {
   Product(
-      {
-       this.code,
-       this.name,
-       this.status,
-       this.actioncode,
-       this.point,
-       this.image_ads,
-       this.image_unit,
-       this.introduction,
-       this.exp,
-       this.mfg,
-       this.lot,
-       this.company,
-       this.traceability_locations,
-       this.ingredient_descriptions,
-       this.promotion_descriptions,
-       this.ads_descriptions});
+      {this.code,
+      this.name,
+      this.status,
+      this.actioncode,
+      this.point,
+      this.image_ads,
+      this.image_unit,
+      this.introduction,
+      this.exp,
+      this.mfg,
+      this.lot,
+      this.company,
+      this.traceability_locations,
+      this.ingredient_descriptions,
+      this.promotion_descriptions,
+      this.ads_descriptions});
 
   String? code;
   String? name;
@@ -140,7 +139,8 @@ Future<Product> fetchProduct(String code) async {
   List<String> temps = code.split("currentTransId=");
   if (temps.length >= 2) code = temps[1];
 
-  currentLocation = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  currentLocation = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high);
 
   if (mainuser.userId == null) {
     bodycontain = json.encode({
@@ -154,7 +154,7 @@ Future<Product> fetchProduct(String code) async {
       "userId": mainuser.userId,
       "name": mainuser.name,
       "email": mainuser.email,
-      "sso": mainuser.sso == SSO_GOOGLE? "SSO_GOOGLE" : "SSO_FACEBOOK",
+      "sso": mainuser.sso == SSO_GOOGLE ? "SSO_GOOGLE" : "SSO_FACEBOOK",
       "location": [
         currentLocation.latitude.toString(),
         currentLocation.longitude.toString()
@@ -164,8 +164,8 @@ Future<Product> fetchProduct(String code) async {
 
   final response =
       // await http.get(SERVER_API + '/traceProduct?currentTransId=' + code);
-      await http.put(Uri.parse(
-    SERVER_API + '/traceProduct?currentTransId=' + code),
+      await http.put(
+    Uri.parse(SERVER_API + '/traceProduct?currentTransId=' + code),
     body: bodycontain,
     headers: {'Content-type': 'application/json', 'Accept': 'application/json'},
   );
@@ -197,35 +197,35 @@ Future<int> countScanLocation(String transactionId) async {
 }
 
 Future<List<MapLocation>?> getMapLocation(String transactionId) async {
-    var connectivityResult = await (Connectivity().checkConnectivity());
-    MapLocation myMapLocation;
-    String body;
-    if (connectivityResult == ConnectivityResult.mobile ||
-        connectivityResult == ConnectivityResult.wifi) {
-      final response = await http.get(Uri.parse(SERVER_API +
-          "/traceSource?currentTransId=" + transactionId));
-      if (response.statusCode == 200) {
-        Map<String, dynamic> map = json.decode(response.body);
-        var traceabilityLocationsfromJson = map['traceability_locations'] as List;
-        List<MapLocation> _traceability_locations = traceabilityLocationsfromJson
-            .map((i) => MapLocation.fromJson(i))
-            .toList();
-          return _traceability_locations;
+  var connectivityResult = await (Connectivity().checkConnectivity());
+  MapLocation myMapLocation;
+  String body;
+  if (connectivityResult == ConnectivityResult.mobile ||
+      connectivityResult == ConnectivityResult.wifi) {
+    final response = await http.get(
+        Uri.parse(SERVER_API + "/traceSource?currentTransId=" + transactionId));
+    if (response.statusCode == 200) {
+      Map<String, dynamic> map = json.decode(response.body);
+      var traceabilityLocationsfromJson = map['traceability_locations'] as List;
+      List<MapLocation> _traceability_locations = traceabilityLocationsfromJson
+          .map((i) => MapLocation.fromJson(i))
+          .toList();
+      return _traceability_locations;
     } else {
       return null;
       // body = await rootBundle.loadString('jsons/assets.json');
     }
   } else {
-      return null;
-    }
+    return null;
+  }
 }
 
 Future<String?> getTransaction(String transactionId) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
   if (connectivityResult == ConnectivityResult.mobile ||
       connectivityResult == ConnectivityResult.wifi) {
-    final response = await http.get(Uri.parse(SERVER_API +
-        "/getTransaction?transactionId=" + transactionId));
+    final response = await http.get(Uri.parse(
+        SERVER_API + "/getTransaction?transactionId=" + transactionId));
     if (response.statusCode == 200) {
       return response.body;
     } else {
@@ -322,12 +322,7 @@ class Attribute {
 }
 
 class Source {
-
-  Source({
-    this.productLine,
-    this.transactionId,
-    this.outputIndex
-  });
+  Source({this.productLine, this.transactionId, this.outputIndex});
 
   String? productLine;
   String? transactionId;
@@ -337,7 +332,6 @@ class Source {
     return Source(
         productLine: parsedJson['productLine'],
         transactionId: parsedJson['transactionId'],
-        outputIndex: parsedJson['outputIndex']
-    );
+        outputIndex: parsedJson['outputIndex']);
   }
 }

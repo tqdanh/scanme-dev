@@ -38,7 +38,7 @@ export class ProductsController {
 
   downloadImage(req: Request, res: Response) {
     const file = path.join(config.FILE_STORAGE_PATH, req.params[0]);
-    res.sendFile(file, err => {
+    res.download(file, err => {
       if (err) {
         res.sendStatus(404);
       }

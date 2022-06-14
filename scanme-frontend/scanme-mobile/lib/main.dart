@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late GoogleSignInAccount googleAccount;
-  final GoogleSignIn googleSignIn =  GoogleSignIn();
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   AutovalidateMode _autovalidate = AutovalidateMode.always;
 
@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return  WillPopScope(
+    return WillPopScope(
         onWillPop: onWillPopScope,
         child: Scaffold(
           key: _scaffoldKey,
@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           bottomNavigationBar: BottomAppBar(
             shape: CircularNotchedRectangle(),
             notchMargin: 4.0,
-            child:  Row(
+            child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -268,7 +268,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: _drawerContents.map<Widget>((String id) {
                               if (id.endsWith('-'))
-                                return  Divider(color: Colors.grey);
+                                return Divider(color: Colors.grey);
 
                               return ListTile(
                                 leading:
@@ -301,7 +301,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   Future barcodeScanning() async {
     try {
       ScanResult barcode = await BarcodeScanner.scan();
-      setState(() => this.barcode = barcode.toString());
+      setState(() => this.barcode = barcode.rawContent);
       Product p;
       // HACK CODE for hard coded products
       if (this.barcode == "00CC5AD1AC2444369F0E0090F6925B2B" ||
@@ -316,7 +316,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         p = getProductFromCode(this.barcode);
       } else {
         isHardCodedData = false;
-        p = await fetchProduct(barcode.toString());
+        p = await fetchProduct(barcode.rawContent);
 
         for (int i = 0; i < myProducts.products.length; i++) {
           if (myProducts.products.elementAt(i).code == p.code) {
@@ -328,18 +328,19 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       }
 
       if (p != null) {
-        List<String> temps = barcode.toString().split("currentTransId=");
-        if (temps.length >= 2) barcode = temps[1] as ScanResult;
-        int countLocation = await countScanLocation(barcode.toString());
+        // List<String> temps = barcode.rawContent.split("currentTransId=");
+        // if (temps.length >= 2) barcode = temps[1] as ScanResult;
+        int countLocation = await countScanLocation(barcode.rawContent);
         ScaffoldMessenger.maybeOf(context)!.showSnackBar(
           SnackBar(
-            content: Text('This transaction Id is scanned: ${countLocation.toString()} times'),
+            content: Text(
+                'This transaction Id is scanned: ${countLocation.toString()} times'),
             backgroundColor: Colors.blue,
           ),
         );
         Navigator.of(context)
-            .push( MaterialPageRoute<Null>(builder: (BuildContext context) {
-          return  ProductPage(product: p, code: this.barcode);
+            .push(MaterialPageRoute<Null>(builder: (BuildContext context) {
+          return ProductPage(product: p, code: this.barcode);
         }));
       } else {
         ScaffoldMessenger.maybeOf(context)!.showSnackBar(
@@ -354,12 +355,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           this.barcode = 'No camera permission!';
         });
       } else {
-        setState(() => this.barcode = 'Unknown error: $e');
+        setState(() => this.barcode = 'Unknown error: ${e.message}');
       }
     } on FormatException {
       setState(() => this.barcode = 'Nothing captured.');
     } catch (e) {
-      setState(() => this.barcode = 'Unknown error: $e');
+      setState(() => this.barcode = 'Unknown error: ${e.toString()}');
     }
   }
 
@@ -375,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               content: Form(
                   key: _formKey,
                   autovalidateMode: _autovalidate,
-                  child:  SizedBox(
+                  child: SizedBox(
                       width: 100,
                       child: TextFormField(
                         style: TextStyle(color: Colors.black),
@@ -415,7 +416,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   void _saveProductCode() async {
     final FormState? form = _formKey.currentState;
     if (!form!.validate()) {
-      _autovalidate = AutovalidateMode.always; // Start validating on every change.
+      _autovalidate =
+          AutovalidateMode.always; // Start validating on every change.
     } else {
       Navigator.pop(context, DialogAction.agree);
       form.save();
@@ -424,16 +426,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         return;
       }
       // setState(() => this.barcode = _inputcode); // For dev
-      setState(() => this.barcode = '037fa997ee35abddd88d4e91c31103c396a8203281f90c5d6b63a5fb5b132524');
+      setState(() => this.barcode =
+          '037fa997ee35abddd88d4e91c31103c396a8203281f90c5d6b63a5fb5b132524');
       // Product p = getProductFromCode(this.barcode); // For dev
       isHardCodedData = false; // For dev
       Product p = await fetchProduct(this.barcode); // For dev
 
-
       if (p != null) {
         Navigator.of(context)
-            .push( MaterialPageRoute<Null>(builder: (BuildContext context) {
-          return  ProductPage(product: p, code: this.barcode);
+            .push(MaterialPageRoute<Null>(builder: (BuildContext context) {
+          return ProductPage(product: p, code: this.barcode);
         }));
       } else {
         ScaffoldMessenger.maybeOf(context)!.showSnackBar(
@@ -445,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     }
   }
 
-  Future<String> _validateCode(String value) async{
+  Future<String> _validateCode(String value) async {
     if (value.isEmpty) return 'Xin nhập mã sản phẩm.';
     final RegExp nameExp = RegExp(r'^[A-Za-z0-9 ]+$');
     if (!nameExp.hasMatch(value))
@@ -492,7 +494,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     Auth auth = Auth();
 
     try {
-      FacebookLogin facebookLogin =  FacebookLogin();
+      FacebookLogin facebookLogin = FacebookLogin();
       FacebookLoginResult result = await facebookLogin
           .logIn(['email', 'public_profile']).catchError((onError) {
         print("Error: $onError");
@@ -537,27 +539,30 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     }
   }
 
-  Future<bool> onWillPopScope() async{
+  Future<bool> onWillPopScope() async {
     return await showDialog(
           context: context,
-          builder: (context) =>  AlertDialog(
+          builder: (context) => AlertDialog(
             title: const Text('Xin xác nhận lại'),
             content: const Text('Bạn muốn đóng ứng dụng ScanME?'),
             actions: <Widget>[
               ElevatedButton(
-                  child: const Text('HỦY', style: TextStyle(color: Colors.teal)),
+                  child:
+                      const Text('HỦY', style: TextStyle(color: Colors.teal)),
                   onPressed: () {
                     Navigator.of(context).pop(false);
                   }),
               Padding(
                   padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                   child: ElevatedButton(
-                      child: const Text('ĐÓNG', style: TextStyle(color: Colors.teal)),
+                      child: const Text('ĐÓNG',
+                          style: TextStyle(color: Colors.teal)),
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       })),
             ],
           ),
-        ) ?? false;
+        ) ??
+        false;
   }
 }
