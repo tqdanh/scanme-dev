@@ -1,0 +1,339 @@
+[
+  {
+    "code": "f27cf9f38e54f3854aee5b9ae5ed86e7c0e65631b956a39328d7e0cd1ee998c7",
+    "name": "Bình rượu Sâm Ngọc Linh",
+    "status": 0,
+    "actioncode": 0,
+    "point": 10,
+    "image_ads": "binhruousam.png",
+    "image_unit": "binhruousam1l.png",
+    "introduction": "Giúp cho cơ thể tăng thích nghi với điều kiện sống, kích thích chuyển hóa của hệ thần kinh trung ương, não bộ, mạch máu, tăng cường thể chất và tinh thần, hệ thống miễn dịch, chống viêm nhiễm, stress và suy nhược cơ thể.",
+    "exp": "2030-01-01",
+    "mfg": "2019-01-01",
+    "lot": "0516LJ14",
+    "company": {
+      "id": "06b6ced1fc354591881d317539cd7bc4",
+      "name": "Công ty CP Thương mại Dược Sâm Ngọc Linh Quảng Nam",
+      "logo": "provider1.jpg",
+      "address": "Phan Rang-Tháp Chàm, Ninh Thuận, Vietnam",
+      "tel": "10868 5058 39",
+      "email": "info@quasapharco.com.vn"
+    },
+    "traceability_locations": [
+      {
+        "companyid": "7c045aaedda144ddb990c09fa5cd3c02",
+        "name": "Showroom sâm Ngọc Linh Quảng Nam",
+        "logo": "showroomsamngoclinh.png",
+        "description": "Chuyên bán các mặt hàng chế biến từ sâm tươi Ngọc Linh của Cty Quasapharco.",
+        "location": [
+          "10.781622",
+          "106.67051"
+        ],
+        "location_description": "93 Tô Hiến Thành, Phường 13, Quận 10, TP. HCM",
+        "attributes": [
+          {
+            "time": "2019-11-21T09:00:53.394Z",
+            "activity": "Bán bình sâm Ngọc Linh cho Consummer",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "af5eab94d78340a988c5c78dcf9b9fe2",
+        "name": "Trung Tâm Thực Phẩm Chức Năng",
+        "logo": "tttpchucnang.png",
+        "description": "Chuyên cung cấp các thực phẩm chức năng chính hãng bảo đảm an toàn về sức khỏe. Các sản phẩm có giấy tờ chứng từ rõ ràng và được kiểm duyệt nghiêm ngặt.",
+        "location": [
+          "10.780210",
+          "106.669600"
+        ],
+        "location_description": "200 Tô Hiến Thành, Phường 15, Quận 10, TP. HCM",
+        "attributes": [
+          {
+            "time": "2019-11-21T08:58:16.972Z",
+            "activity": "Vận chuyển và Phân phối cho Showroom sâm Ngọc Linh Quảng Nam",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Phương tiện vận chuyển: Xe lạnh",
+              "Nhiệt độ lưu trữ: 22 độ C"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "06b6ced1fc354591881d317539cd7bc4",
+        "name": "Công ty CP Thương mại Dược Sâm Ngọc Linh Quảng Nam",
+        "logo": "download5.png",
+        "description": "Công ty được Bộ y tế cho phép xuất nhập khẩu trực tiếp. Công ty đã quan hệ với trên 40 hãng sản xuất thuốc nước ngoài để nhập khẩu phục vụ nhu cầu của khách hàng. Với thế mạnh là công nghệ nuôi trồng – thu hoạch dược liệu, hệ thống máy móc trang thiết bị hiện đại sẵn có và đặc biệt là khả năng nghiên cứu của một công ty dược lâu đời. Các sản phẩm được chiết xuất từ sâm Ngọc Linh của Quasapharco rất phong phú về mặt hàng, đảm bảo an toàn vệ sinh thực phẩm cũng như đạt được uy tín tuyệt đối về nguồn gốc của củ sâm.",
+        "location": [
+          "11.57",
+          "108.99"
+        ],
+        "location_description": "Phan Rang-Tháp Chàm, Ninh Thuận, Vietnam",
+        "attributes": [
+          {
+            "time": "2019-11-21T08:55:53.685Z",
+            "activity": "Vận chuyển và Phân phối cho TTTP chức năng TP.HCM",
+            "content": [
+              "Vận chuyển và bảo quản: Tốt",
+              "Phương tiện vận chuyển: Xe lạnh",
+              "Nhiệt độ lưu trữ: 22 độ C"
+            ]
+          },
+          {
+            "time": "2019-11-21T08:54:14.836Z",
+            "activity": "Sản xuất Bình rượu sâm Ngọc Linh",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21T08:52:24.619Z",
+            "activity": "Divide asset",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21T08:47:27.021Z",
+            "activity": "Phân tích thành phần sâm tươi",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          }
+        ]
+      },
+      {
+        "companyid": "3345a9ee4466460ebf4b16ba4426ae84",
+        "name": "Nông trường sâm Ngọc Linh Nam Trà My",
+        "logo": "namtramy.png",
+        "description": "Huyện Nam Trà My tỉnh Quảng Nam là vùng đất đại ngàn được bao phủ bởi rừng nguyên sinh nằm dưới chân dãy núi Ngọc Linh cao 2.598 mét. Đây là vùng đất hoang sơ có khí hậu mát mẽ, nhiệt độ trung bình khoảng 26 độC, riêng xã Trà Linh nơi có cây sâm Ngọc Linh thì nhiệt độ trung bình khoảng 17 độ C. Cây Sâm Ngọc Linh chỉ sống được ở vùng lõi của khu rừng già nguyên sinh, nên nó có tác dụng  bảo vệ rừng , bảo vệ môi trường xanh thân thiện với cuộc sống con người. Cây sâm Ngọc Linh là một cây đặc hữu của vùng núi Ngọc Linh, là cây thuốc quý hiếm của tỉnh Quảng Nam và của Quốc gia.",
+        "location": [
+          "15.058810",
+          "108.090759"
+        ],
+        "location_description": "huyện Nam Trà My, tỉnh Quảng Nam",
+        "attributes": [
+          {
+            "time": "2019-11-21T08:44:44.321Z",
+            "activity": "Vận chuyển và Bán cho Cty QUASAPHARCO",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21T08:41:54.452Z",
+            "activity": "Thêm thông tin của sâm",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          },
+          {
+            "time": "2019-11-21T08:41:54.452Z",
+            "activity": "Thu hoạch sâm tươi",
+            "content": [
+              "Tên sản phẩm: Bình Sâm Ngọc Linh KG13",
+              "itemId: 5d79eec8abcc3d43300bbe9d",
+              "productCatId: 5d6e1894a1dcaf3774c4f4f7",
+              "size: 5.7lít"
+            ]
+          }
+        ]
+      }
+    ],
+    "ingredient_descriptions": [
+      {
+        "title": "Thành phần",
+        "description": "Đây là cây thuốc quý hiếm. Trong đó, về mặt hóa học, thân và rễ củ Sâm Ngọc Linh đã phân lập được 52 saponin, trong đó có 26 saponin thường thấy ở sâm Triều Tiên, sâm Mỹ, sâm Nhật, đại diện chính của Sâm Ngọc Linh là Ginsenoside - Rb1, Ginsenosid - Rg1, Ginsenosid - Rd, majonosid-R1, majonosid-R2. Đặt biệt majonosid-R2 chiếm 50% hàm lượng saponin toàn phần của sâm Ngọc Linh. Cùng với các đặc điểm này, trong lá và cọng lá của Sâm Ngọc Linh các nhà khoa học còn phân lập được 19 saponin dammaran; trong đó có 8 saponin có cấu trúc mới. Ngoài thành phần chính là saponin, lá và cọng lá Sâm Ngọc Linh còn xác định có 17 acid amin, 20 chất khoáng vi lượng và hàm lượng glucid tinh dầu là 0,1%.",
+        "images": [
+          "thanhphansam.png"
+        ],
+        "attributes": [
+          {
+            "name": "20(S) PPD",
+            "value": "3.1"
+          },
+          {
+            "name": "20(S) PPT",
+            "value": "2"
+          },
+          {
+            "name": "Ocotilol",
+            "value": "5.6"
+          },
+          {
+            "name": "Thu suất toàn phần",
+            "value": "10.8"
+          },
+          {
+            "name": "Aleanolic axít",
+            "value": "0.09"
+          }
+        ],
+        "notes": [
+          ""
+        ]
+      }
+    ],
+    "promotion_descriptions": [
+      {
+        "title": "Khuyến mãi hấp dẫn trong tháng 01-2020",
+        "description": "Cơ hội duy nhất chỉ có 1 lần",
+        "images": [
+          "product10.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "Thời gian",
+            "value": "1/12/2019 - 31/12/2019"
+          }
+        ],
+        "notes": [
+          "*Số lượng có hạn"
+        ]
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn của Sữa đậu nành Daioni trong tháng 12-2018",
+        "description": "Sữa đậu nành Daioni ",
+        "images": [
+          "product10.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "Thời gian khuyến mãi",
+            "value": "01/12/2018 – 31/12/2018"
+          },
+          {
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ, siêu thị và website trên toàn quốc"
+          },
+          {
+            "name": "Thông tin khuyến mãi",
+            "value": "\"Mua bốn mươi tám (48) hộp Sữa đậu nành Daioni Canxi hoặc Nguyên chất 200ml, được tặng một (01) tô sứ cao cấp hoặc hai (02) chén sứ cao cấp."
+          }
+        ],
+        "notes": [
+          "note Daioni "
+        ]
+      },
+      {
+        "title": "Khuyến mãi hấp dẫn từ Daioni Prevent trong tháng 08/2018",
+        "description": "Daioni Prevent",
+        "images": [
+          "product12.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "Thời gian khuyến mãi",
+            "value": "01/08/2018 - 31/08/2018"
+          },
+          {
+            "name": "Phạm vi khuyến mãi",
+            "value": "Áp dụng tại các cửa hàng bán lẻ trên toàn quốc."
+          },
+          {
+            "name": "Thông tin khuyến mãi",
+            "value": "Khi Người tiêu dùng mua 1 Lon sữa bột Sure Prevent 900gr tặng ngay 2 chai sữa bột pha sẵn Sure Prevent 200ml."
+          }
+        ],
+        "notes": [
+          "note Daioni Prevent"
+        ]
+      }
+    ],
+    "ads_descriptions": [
+      {
+        "title": "Nhãn hiệu hiện bán tại Việt Nam",
+        "description": "Là nhãn hiệu đạt chứng nhận tiêu chuẩn Organic nổi tiếng của Anh Quốc, nhận được sự tin tưởng và tiêu dùng tại nhiều nước trên thế giới, với nhiều loại sản phẩm khác nhau.",
+        "images": [
+          "product12.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "test2",
+            "value": "product11.jpg"
+          },
+          {
+            "name": "test3",
+            "value": "product9.jpg"
+          },
+          {
+            "name": "dfsdf",
+            "value": "download5.png"
+          }
+        ],
+        "notes": [
+          "GHI CHU"
+        ]
+      },
+      {
+        "title": "Thức uống giàu năng lượng cho cở thể",
+        "description": "Red bull...",
+        "images": [
+          "product5.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "readbull nuoc ngoai",
+            "value": "product6.jpg"
+          }
+        ],
+        "notes": [
+          "note"
+        ]
+      },
+      {
+        "title": "Sửa đậu nành tốt cho sức khỏe",
+        "description": "Sửa đậu nành nguyên chất",
+        "images": [
+          "product7.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "suadaunanh2",
+            "value": "product9.jpg"
+          }
+        ],
+        "notes": [
+          "*note"
+        ]
+      },
+      {
+        "title": "Sữa tươi nguyên chất 100%",
+        "description": "Sữa tươi thu hoạch từ trang trại",
+        "images": [
+          "product10.jpg"
+        ],
+        "attributes": [
+          {
+            "name": "suatuoi",
+            "value": "product11.jpg"
+          }
+        ],
+        "notes": [
+          "*note"
+        ]
+      }
+    ]
+  }
+]

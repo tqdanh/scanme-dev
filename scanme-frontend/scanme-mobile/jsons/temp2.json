@@ -1,0 +1,62 @@
+[
+    {
+        "_id": "5dca535ccd653543c0eb3229",
+        "owner": "LÊ CẢNH KHÁNH",
+        "cardnumber": "000123456789",
+        "type": 1,
+        "point": 40,
+        "company": {
+            "id": "06b6ced1fc354591881d317539cd7bc4",
+            "name": "Công ty CP Thương mại Dược Sâm Ngọc Linh Quảng Nam",
+            "logo": "quasapharco.png",
+            "address": " 222 Huỳnh Thúc Kháng, P. An Xuân, TP. Tam Kỳ, Tỉnh Quảng Nam",
+            "tel": "0868 5058 39",
+            "email": "info@quasapharco.com.vn"
+        }
+    },
+    {
+        "_id": "5dccf81165538e4cd458fec1",
+        "owner": "LÊ CẢNH KHÁNH",
+        "cardnumber": "987654321000",
+        "type": 3,
+        "point": 60,
+        "company": {
+            "id": "135e8bae84234577a552c56a6e69781e",
+            "name": "Nhà máy sữa Thống Nhất",
+            "logo": "suathongnhat_intro.png",
+            "address": "12 Đặng Văn Bi, P. Trường Thọ, Q. Thủ Đức,Tp. Hồ Chí Minh (TPHCM)",
+            "tel": "(028) 38960725, 38972156",
+            "email": "thongnhat-hc@vinamilk-vn.com"
+        }
+    },
+    {
+        "_id": "5ddc8d0e1ec2850b1852b6b9",
+        "owner": "LÊ CẢNH KHÁNH",
+        "cardnumber": "987654321001",
+        "type": 3,
+        "point": 20,
+        "company": {
+            "id": "5d7efc4aa98c5f06b0b33a07",
+            "name": "Trung Nguyên International (TNI) - King Coffee",
+            "logo": "tni_intro.png",
+            "address": "198 Nguyễn Thị Minh Khai, Phường 6, Quận 3, Hồ Chí Minh",
+            "tel": "(84.28) 3526 0196",
+            "email": "info@TrungNguyenGlobal.com"
+        }
+    },
+    {
+        "_id": "5ddc8d181ec2850b1852b6ba",
+        "owner": "LÊ CẢNH KHÁNH",
+        "cardnumber": "987654321002",
+        "type": 3,
+        "point": 30,
+        "company": {
+            "id": "fa70bf8255744688b04f74a3e4ed17a5",
+            "name": "CÔNG TY CỔ PHẦN VIỆT NAM KỸ NGHỆ SÚC SẢN",
+            "logo": "vissan_intro.png",
+            "address": "420 Nơ Trang Long, P. 13, Quận Bình Thạnh, TP.HCM, Việt Nam",
+            "tel": "(84 28) 3553 3999 - 3553 3888",
+            "email": "vissanco@vissan.com.vn"
+        }
+    }
+]

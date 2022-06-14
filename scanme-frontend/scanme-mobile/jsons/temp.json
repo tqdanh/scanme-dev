@@ -1,0 +1,63 @@
+[
+    {
+        "_id": "5dc90c99cd653543c0eb3225",
+        "name": "Hộp sữa Vinamilk 200ml",
+        "image": "/images/vinamilk.png",
+        "quantity": 1,
+        "point": 60,
+        "company": {
+            "id": "135e8bae84234577a552c56a6e69781e",
+            "name": "Nhà máy sữa Thống Nhất",
+            "logo": "/images/suathongnhat_intro.png",
+            "address": "12 Đặng Văn Bi, P. Trường Thọ, Q. Thủ Đức,Tp. Hồ Chí Minh (TPHCM)",
+            "tel": "(028) 38960725, 38972156",
+            "email": "thongnhat-hc@vinamilk-vn.com"
+        }
+    },
+    {
+        "_id": "5dc90dabcd653543c0eb3226",
+        "name": "Hộp sữa Vinamilk 500ml",
+        "image": "/images/vinamilk_no.jpg",
+        "quantity": 1,
+        "point": 80,
+        "company": {
+            "id": "135e8bae84234577a552c56a6e69781e",
+            "name": "Nhà máy sữa Thống Nhất",
+            "logo": "/images/suathongnhat_intro.png",
+            "address": "12 Đặng Văn Bi, P. Trường Thọ, Q. Thủ Đức,Tp. Hồ Chí Minh (TPHCM)",
+            "tel": "(028) 38960725, 38972156",
+            "email": "thongnhat-hc@vinamilk-vn.com"
+        }
+    },
+    {
+        "_id": "5dc90dbccd653543c0eb3227",
+        "name": "Hộp sữa Vinamilk 1l",
+        "image": "/images/vinamilk_no1.jpg",
+        "quantity": 1,
+        "point": 120,
+        "company": {
+            "id": "135e8bae84234577a552c56a6e69781e",
+            "name": "Nhà máy sữa Thống Nhất",
+            "logo": "/images/suathongnhat_intro.png",
+            "address": "12 Đặng Văn Bi, P. Trường Thọ, Q. Thủ Đức,Tp. Hồ Chí Minh (TPHCM)",
+            "tel": "(028) 38960725, 38972156",
+            "email": "thongnhat-hc@vinamilk-vn.com"
+        }
+    },
+    {
+        "_id": "5dc90dcacd653543c0eb3228",
+        "name": "Lốc sữa 6 hộp Vinamil 200ml",
+        "image": "/images/vinamilk_no2.jpg",
+        "quantity": 1,
+        "point": 180,
+        "company": {
+            "id": "135e8bae84234577a552c56a6e69781e",
+            "name": "Nhà máy sữa Thống Nhất",
+            "logo": "/images/suathongnhat_intro.png",
+            "address": "12 Đặng Văn Bi, P. Trường Thọ, Q. Thủ Đức,Tp. Hồ Chí Minh (TPHCM)",
+            "tel": "(028) 38960725, 38972156",
+            "email": "thongnhat-hc@vinamilk-vn.com"
+        }
+    }
+]
+
