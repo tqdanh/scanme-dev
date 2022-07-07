@@ -91,6 +91,7 @@ export class ProductList extends SearchComponent<ProductModel, ProductSM, Histor
 
     createData = (products: any[]): any[] => {
         const displayData = [];
+        console.log(products);
         products.forEach((product) => {
             displayData.push([
                 product.imageAds,
@@ -100,6 +101,7 @@ export class ProductList extends SearchComponent<ProductModel, ProductSM, Histor
                 product.introduction
             ]);
         });
+        console.log(displayData);
         return displayData;
     }
     validate = values => {
@@ -183,6 +185,8 @@ export class ProductList extends SearchComponent<ProductModel, ProductSM, Histor
                     filter: false,
                     sort: false,
                     customBodyRender: (value, tableMeta) => {
+                        console.log(value);
+                        console.log(tableMeta);
                         return <img className='img-ad-product' src={`${config.imageURL}/${value}`}
                                     alt={'product-ad-image'} width='64px' height='64px'
                                     />;

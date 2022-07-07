@@ -11,5 +11,6 @@ export interface ProductsService extends DefaultGenericService<Products> {
     getProductById(productId: string): Observable<Products>;
     getProductByOrgId(orgId: string): Observable<ProductsByOrgId[]>;
     insert(product: Products): Observable<ResultInfo<Products>>;
+    insertList(products: Products[]): Observable<Products[]>;
     delete(productId: string): Observable<ResultInfo<Products>>;
 }

@@ -24,7 +24,7 @@ export class AuthenticationHandler {
       res.status(401).end('Format is Authorization: Bearer [token]');
     } else {
       const token = data.substr(7);
-      JsonWebTokenUtil.verifyToken(jwt, token, this.tokenSecret).pipe (flatMap((authorizationToken: AuthorizationToken) => {
+      JsonWebTokenUtil.verifyToken(jwt, token, this.tokenSecret).pipe(flatMap((authorizationToken: AuthorizationToken) => {
         const createAt = new Date(authorizationToken.iat * 1000);
         return this.service.check(authorizationToken.userId, token, createAt).pipe(map(reason => {
           if (!reason) {

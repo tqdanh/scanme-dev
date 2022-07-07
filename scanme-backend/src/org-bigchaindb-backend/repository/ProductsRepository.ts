@@ -10,5 +10,6 @@ export interface ProductsRepository extends GenericRepository<Products>  {
   findById(productId: string): Observable<Products>;
   findByOrgId(orgId: string): Observable<Products[]>;
   insert(products: Products): Observable<Products>;
+  insertList(products: Products[]): Observable<Products[]>;
   countItemByProductId(productId: string): Observable<number>;
 }

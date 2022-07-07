@@ -44,6 +44,24 @@ export class ProductsServiceImpl extends DefaultGenericService<Products> impleme
         }));
     }
 
+    insertList(products: Products[]): Observable<Products[]> {
+        return  this.productRepository.insertList(products).pipe(flatMap( 
+            products => {
+                const listProduct = [];
+                products.forEach(elem => {
+                    const product = new Products();
+                    product.productId = elem.productId;
+                    product.name = elem.name;
+                    product.organizationId = elem.organizationId;
+                    product.status = elem.status;
+                    listProduct.push(products);
+                });
+                return of(listProduct);
+            }
+        ));
+        
+    }
+
     delete(productId: string): Observable<ResultInfo<Products>> {
         return this.productRepository.countItemByProductId(productId).pipe(flatMap( count => {
             if (count > 0) {

@@ -129,6 +129,23 @@ export class ProductsController {
     }
   }
 
+  insertList(req: Request, res: Response) {
+    const obj = req.body;
+    if (!obj || obj === []) {
+      return res.status(400).end('The request body cannot be empty.');
+    } else {
+      this.productsService.insertList(obj).subscribe(
+        result => {
+          JsonUtil.minimizeJson(result);
+          return res.status(200).json(result);
+        },
+        err => {
+          ResponseUtil.error(res, err);
+        }
+      );
+    }
+  }
+
   update(req: Request, res: Response) {
     const obj = req.body;
     if (!obj || obj === '') {

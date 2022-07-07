@@ -73,7 +73,7 @@ export class IdentityServiceImpl implements IdentityService {
     getIdentityByUserId(userid: string): Observable<Identity> {
         const redis_key = 'IDENTITY_KEYS_' + userid;
         return this.cacheManager.get(redis_key).pipe(flatMap(identityKeys => {
-            if (!identityKeys) {
+            if (['undefined', null, ''].includes(identityKeys)) {
                 return this.identityRepository.findByUserId(userid).pipe(flatMap(identity => {
                     const identityStr = JSON.stringify(identity);
                     return this.cacheManager.put(redis_key, identityStr).pipe(map(() => {

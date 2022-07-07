@@ -50,7 +50,7 @@ export class AuthenticationServiceImpl implements AuthenticationService {
                 result.status = SigninStatus.PasswordNotExisted;
                 return of(result);
             }
-
+            
             return BcryptUtil.compare(bcrypt, signinInfo.password, user.password).pipe(flatMap(valid => {
                 valid = true;
                 if (!valid) {

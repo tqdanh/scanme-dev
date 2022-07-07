@@ -88,6 +88,9 @@ export class BigChainDBBackEndRoutes {
         app.route('/createAssetToken')
             .post(this.authHandler.checkToken.bind(this.authHandler), this.bigChainController.createAsset.bind(this.bigChainController));
 
+        // app.route('/byID')
+        //     .post(this.authHandler.checkToken.bind(this.authHandler), this.bigChainController.createAsset.bind(this.bigChainController));
+
         app.route('/transferAsset')
             .post(this.bigChainController.transferAsset.bind(this.bigChainController));
 

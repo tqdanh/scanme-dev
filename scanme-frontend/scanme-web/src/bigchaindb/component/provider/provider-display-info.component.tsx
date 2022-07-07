@@ -288,82 +288,82 @@ export class ProviderInfoForm extends React.Component<any, any> {
                             <Divider/>
                             <CardContent>
                                 <Grid container spacing={2}>
-                                    <Grid item xs={8}>
-                                        <Table className='provider-basic-info-table'>
+                                    <Grid item xs={7}>
+                                        <Table>
                                             <TableBody>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Mã doanh nghiệp</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.state.providerData._id}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Tên doanh nghiệp</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.state.providerData.organizationName}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Loại doanh nghiệp</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.getProviderTypeName(this.state.providerData.organizationType)}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Địa chỉ</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.state.providerData.organizationAddress}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Số điện thoại</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.state.providerData.organizationPhone}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Email</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.state.providerData.email}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Mô tả</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography style={{
                                                             display: 'block',
-                                                            height: 80,
-                                                            overflow: 'auto'
+                                                            overflow: 'auto',
+                                                            whiteSpace: 'pre-line'
                                                         }}>{this.state.providerData.description}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Chứng nhận</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         <Typography>{this.state.providerData.certificate}</Typography>
                                                     </TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>
+                                                    <TableCell colSpan={3}>
                                                         <Typography>Hình đại diện</Typography>
                                                     </TableCell>
-                                                    <TableCell>
+                                                    <TableCell colSpan={9}>
                                                         {this.state.providerData.imageUrl && <img
                                                             src={`${config.imageURL}/${this.state.providerData.imageUrl}`}
                                                             alt={'provider-ad-image'} style={{width: 250, height: 200}}
@@ -373,8 +373,8 @@ export class ProviderInfoForm extends React.Component<any, any> {
                                             </TableBody>
                                         </Table>
                                     </Grid>
-                                    <Grid item xs={4}>
-                                        <div style={{width: '100%'}}>
+                                    <Grid item xs={5}>
+                                        <div style={{width: '100%', padding: '20px'}}>
                                             {this.state.providerData && this.state.providerData.location && this.state.providerData.location.length > 0 && <LeafletMap
                                                 center={this.state.providerData.location}
                                                 zoom={12}

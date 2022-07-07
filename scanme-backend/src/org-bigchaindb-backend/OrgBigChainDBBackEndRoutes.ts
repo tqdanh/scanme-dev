@@ -132,6 +132,9 @@ export class OrgBigChainDBBackEndRoutes {
     app.route('/product/:id') // delete product
         .delete(this.productsController.delete.bind(this.productsController));
 
+    app.route('/products')   //Add list 
+        .post(this.productsController.insertList.bind(this.productsController));
+
     app.route('/file') // upload image
         .post(this.upload.single('file'), this.productsController.uploadImage.bind(this.productsController));
 

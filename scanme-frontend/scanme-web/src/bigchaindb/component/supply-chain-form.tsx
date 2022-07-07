@@ -263,7 +263,7 @@ export class SupplyChainForm extends SearchComponent<SupplyChain, SupplyChainSM,
                 pageIndex: searchModel.pageIndex
             }, () => {
                 const transactionIds = [];
-                this.state.results.forEach(item => {
+                this.state.results?.forEach(item => {
                     transactionIds.push(item.transactionId);
                 });
                 this.itemService.getSearchItemIdByTxId(transactionIds).subscribe(res => {
@@ -459,7 +459,7 @@ export class SupplyChainForm extends SearchComponent<SupplyChain, SupplyChainSM,
 
     createData = (transactions: any[]): Data[] => {
         const displayData = [];
-        transactions.forEach((tx) => {
+        transactions?.forEach((tx) => {
             displayData.push([
                 tx.assetData.contents.productLine,
                 tx.assetData.contents.productDescription,

@@ -46,6 +46,20 @@ export class ProductsRepositoryImpl extends MongoGenericRepository<Products> imp
         }));
     }
 
+    insertList(products: Products[]): Observable<Products[]> {
+        const collection = this.db.collection('products');
+        const productsTemp: any[] = []
+        for (let i = 0; i < products.length; i++) {
+            MongoUtil.rxInsert(collection, products[i]);
+            const query = {
+                _id: products[i].productId
+            };
+            const idName = this.getIdName();
+            productsTemp.push(MongoUtil.rxFindOne(collection, query).pipe(map(objs => MongoUtil.mapArray(objs, idName))));
+        }
+        return of(productsTemp);
+    } 
+
     findById(productId: string): Observable<Products> {
         const idName = this.getIdName();
         const query = {
